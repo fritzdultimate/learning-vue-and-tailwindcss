@@ -1,6 +1,6 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
-  prefix: "vc",
+  prefix: "wf-",
   theme: {
     extend: {},
   },

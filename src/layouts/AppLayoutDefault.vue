@@ -1,5 +1,5 @@
 <template>
-  <div>default
+  <div class="wf-h-full">
     <slot />
   </div>
 </template>
