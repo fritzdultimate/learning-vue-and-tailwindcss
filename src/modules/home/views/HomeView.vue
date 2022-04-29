@@ -7,7 +7,7 @@
             <section class="wf-flex wf-flex-wrap wf-justify-center">
                 <div class="wf-flex">
                     <div class="wf-h-14 wf-w-14 wf-bg-red-900 wf-m-2 wf-brightness-75" style="box-shadow:-7px 4px 14px 5px #300505"></div>
-                    <div class="wf-h-14 wf-w-14 wf-bg-slate-300 wf-m-2" style="box-shadow:-7px 4px 14px 5px #300505"></div>
+                    <div class="wf-h-14 wf-w-14 wf-bg-slate-300 wf-m-2 wf-translate-x-2 -wf-translate-y-2" style="box-shadow:-20px 20px 15px 7px #000000"></div>
                     <div class="wf-h-14 wf-w-14 wf-bg-red-900 wf-m-2" style="box-shadow:-7px 4px 14px 5px #300505"></div>
                 </div>
                 <div class="wf-flex">
