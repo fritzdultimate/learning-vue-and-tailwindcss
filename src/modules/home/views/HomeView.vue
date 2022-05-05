@@ -41,13 +41,17 @@
                 <h2 class="wf-font-extrabold wf-text-4xl wf-text-center wf-text-neutral-900 wf-mt-10">
                     One App That Manage Your Money
                 </h2>
-                <div class="wf-mt-12 wf-flex wf-h-12 wf-w-12 wf-bg-black wf-rounded-full wf-text-white wf-justify-center wf-items-center">
-                    <span class="wf-text-xl wf-text-slate-400">></span>
+                <div class="wf-mt-12 wf-flex wf-h-12 wf-w-12 wf-bg-black wf-rounded-full wf-justify-center wf-items-center">
+                    <ChevronRightIcon class="wf-text-xs wf-text-slate-400" />
                 </div>
             </section>
         </div>
     </main>
 </template>
+
+<script setup lang="ts">
+    import { ChevronRightIcon } from '@heroicons/vue/solid'
+</script>
 
 <style scoped>
     .box {
