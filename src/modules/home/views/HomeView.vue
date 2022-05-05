@@ -49,8 +49,8 @@
     </main>
 </template>
 
-<script setup lang="ts">
-    import { ChevronRightIcon } from '@heroicons/vue/solid'
+<script setup lang="">
+    import { ChevronRightIcon } from '@heroicons/vue/solid';
 </script>
 
 <style scoped>
