@@ -42,7 +42,7 @@
                     One App That Manage Your Money
                 </h2>
                 <div class="wf-mt-12 wf-flex wf-h-12 wf-w-12 wf-bg-black wf-rounded-full wf-justify-center wf-items-center">
-                    <ChevronRightIcon class="wf-text-xs wf-text-slate-400" />
+                    <ChevronRightIcon class="wf-text-[5px] wf-text-slate-400" />
                 </div>
             </section>
         </div>
