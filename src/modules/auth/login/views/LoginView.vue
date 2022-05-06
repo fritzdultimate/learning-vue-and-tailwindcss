@@ -14,6 +14,16 @@
                 Become a member -- you'll enjoy exclusive deals, offers, invites and rewards.
             </p>
             <div class="wf-border-gray-200/75 wf-border-[.01px] wf-my-4"></div>
+            <form>
+                <div class="">
+                    <label class="block">
+                        <span class="wf-block wf-text-sm wf-font-medium wf-text-slate-700 after:wf-absolute after:wf-content-['*'] after:wf-text-red-500 after:wf-p-px">
+                            Email
+                        </span>
+                    </label>
+                    <input type="text" value="tbone" class="wf-mt-1 wf-block wf-w-full wf-px-3 wf-py-2 wf-bg-white wf-border wf-border-slate-300 wf-rounded-md wf-text-sm wf-shadow-sm wf-placeholder-slate-400 wf-text-slate-700 wf-font-semibold focus:wf-ring wf-outline-transparent focus:wf-ring-blue-400 invalid:wf-border-pink-500 invalid:wf-text-600">
+                </div>
+            </form>
         </div>
     </main>
 </template>
