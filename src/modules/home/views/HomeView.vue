@@ -1,5 +1,5 @@
 <template>
-    <main class="wf-block wf-h-full">
+    <main class="wf-block wf-h-full wf-bg-yellow-500">
         <div class="wf-h-full wf-flex wf-justify-center wf-items-center wf-flex-wrap">
             <div class="wf-flex wf-mt-10 wf-self-end wf-skew-x-12 wf-skew-y-12">
                 <div class="wf-h-4 wf-w-4 wf-bg-white/[0.75] wf-self-end wf-justify-self-end"></div>
@@ -49,7 +49,7 @@
     </main>
 </template>
 
-<script setup lang="">
+<script setup lang="ts">
     import { ChevronRightIcon } from '@heroicons/vue/solid';
 </script>
 
