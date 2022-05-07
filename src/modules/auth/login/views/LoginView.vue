@@ -50,7 +50,7 @@
                     </a>
                 </div>
                 <div class="wf-p-2 wf-flex">
-                    <button class="wf-bg-yellow-600 wf-outline-transparent wf-border-0 wf-text-white wf-w-full wf-p-2 wf-rounded wf-text-sm focus:wf-ring focus:wf-ring-yellow-500/75">
+                    <button class="wf-bg-yellow-600 wf-outline-transparent wf-border-0 wf-text-white wf-w-full wf-p-2 wf-rounded wf-text-sm  wf-font-semibold focus:wf-ring focus:wf-ring-yellow-500/75">
                         Log in
                     </button>
                 </div>
