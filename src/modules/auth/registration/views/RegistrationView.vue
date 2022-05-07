@@ -36,15 +36,16 @@
                         <EyeIcon v-else class="wf-w-4 wf-h-4 wf-absolute wf-top-2/3 wf-transform -wf-translate-y-1/2 wf-right-3 wf-text-gray-500 wf-cursor-pointer" @click.prevent="togglePasswordVisibily(true)"/>
                     </label>
                 </div>
-                <div class="wf-p-2 wf-flex wf-justify-evenly">
-                    <div v-for="i in 4" :key="i" class="wf-border-gray-200 wf-bg-gray-200 wf-border-[1.5px] wf-my-4 wf-w-1/4 wf-m-1"></div>
+                <div class="wf-p-2 wf-pb-0 wf-flex wf-justify-evenly">
+                    <div v-for="i in 4" :key="i" :class="'password-strength-' +i" class="wf-border-gray-200 wf-bg-gray-200 wf-border-[1.5px] wf-my-4 wf-w-1/4 wf-m-1"></div>
                 </div>
+                <p class="wf-block wf-p-2 wf-pt-0 wf-text-center wf-text-sm wf-text-red-500">Password must be at least 8 characters and contain uppercase, lowercase and number</p>
                 <div class="wf-p-2 wf-pt-0">
                     <label class="wf-block wf-relative">
                         <span class="wf-block wf-text-sm wf-font-medium wf-text-slate-700 after:wf-absolute after:wf-content-['*'] after:wf-text-red-500 after:wf-p-px">
                             Date of birth
                         </span>
-                        <input type="date" invalid placeholder="at least 8 characters" value="" class="wf-invalid wf-peer wf-pl-12 wf-pr-10 wf-mt-1 wf-block wf-w-full wf-px-3 wf-py-2 wf-bg-white wf-border wf-border-slate-300 wf-rounded-md wf-text-sm wf-shadow-sm wf-placeholder-slate-400 wf-text-slate-700 wf-font-semibold focus:wf-ring wf-outline-transparent focus:wf-ring-blue-400 invalid:wf-border-pink-500 invalid:wf-text-600">
+                        <input type="date" invalid placeholder="at least 8 characters" value="" class="wf-invalid wf-peer wf-pl-12 wf-pr-10 wf-mt-1 wf-block wf-w-full wf-px-3 wf-py-2 wf-bg-white wf-border wf-border-slate-300 wf-rounded-md wf-text-sm wf-shadow-sm wf-text-gray-500 wf-uppercase wf-font-semibold focus:wf-ring wf-outline-transparent focus:wf-ring-blue-400 invalid:wf-border-pink-500 invalid:wf-text-600">
                         <CalendarIcon class="wf-pointer-events-none wf-w-6 wf-h-6 wf-absolute wf-top-2/3 wf-transform -wf-translate-y-1/2 wf-left-3 wf-text-gray-900 
                         peer-focus:wf-text-green-700 peer-focus:peer-invalid:wf-text-red-700" />
                     </label>
@@ -76,11 +77,21 @@
 
 <script setup lang="ts">
     import { UserAddIcon, LockClosedIcon, XIcon, MailIcon, EyeIcon, EyeOffIcon, CalendarIcon } from '@heroicons/vue/solid';
-    import { ref } from 'vue';
+    import { ref, onMounted } from 'vue';
 
     let password_visible = ref(false);
 
     function togglePasswordVisibily(visibility: boolean) {
         password_visible.value = visibility;
     }
+
+    onMounted(() => {
+        for(let i = 1; i <= 4; i++) {
+        console.log('password-strength-' + i)
+        document.getElementsByClassName('password-strength-' + i)[0].classList.remove('wf-bg-gray-200')
+        document.getElementsByClassName('password-strength-' + i)[0].classList.add('wf-bg-red-700')
+        document.getElementsByClassName('password-strength-' + i)[0].classList.remove('wf-border-gray-200')
+        document.getElementsByClassName('password-strength-' + i)[0].classList.add('wf-border-red-200')
+    }
+    })
 </script>
