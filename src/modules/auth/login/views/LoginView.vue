@@ -25,12 +25,16 @@
                     </label>
                 </div>
                 <div class="wf-p-2">
-                    <label class="block">
+                    <label class="wf-block wf-relative">
                         <span class="wf-block wf-text-sm wf-font-medium wf-text-slate-700 after:wf-absolute after:wf-content-['*'] after:wf-text-red-500 after:wf-p-px">
                             Password
                         </span>
+                        <input :type="password_visible ? 'text' : 'password'" invalid placeholder="Enter our password" value="" class="wf-invalid wf-peer wf-pl-12 wf-pr-10 wf-mt-1 wf-block wf-w-full wf-px-3 wf-py-2 wf-bg-white wf-border wf-border-slate-300 wf-rounded-md wf-text-sm wf-shadow-sm wf-placeholder-slate-400 wf-text-slate-700 wf-font-semibold focus:wf-ring wf-outline-transparent focus:wf-ring-blue-400 invalid:wf-border-pink-500 invalid:wf-text-600">
+                        <LockClosedIcon class="wf-pointer-events-none wf-w-6 wf-h-6 wf-absolute wf-top-2/3 wf-transform -wf-translate-y-1/2 wf-left-3 wf-text-gray-900 
+                        peer-focus:wf-text-green-700 peer-focus:peer-invalid:wf-text-red-700" />
+                        <EyeOffIcon v-if="password_visible" class="wf-w-4 wf-h-4 wf-absolute wf-top-2/3 wf-transform -wf-translate-y-1/2 wf-right-3 wf-text-gray-500 wf-cursor-pointer" @click.prevent="togglePasswordVisibily(false)"/>
+                        <EyeIcon v-else class="wf-w-4 wf-h-4 wf-absolute wf-top-2/3 wf-transform -wf-translate-y-1/2 wf-right-3 wf-text-gray-500 wf-cursor-pointer" @click.prevent="togglePasswordVisibily(true)"/>
                     </label>
-                    <input type="text" placeholder="Enter our password" value="" class="wf-mt-1 wf-block wf-w-full wf-px-3 wf-py-2 wf-bg-white wf-border wf-border-slate-300 wf-rounded-md wf-text-sm wf-shadow-sm wf-placeholder-slate-400 wf-text-slate-700 wf-font-semibold focus:wf-ring wf-outline-transparent focus:wf-ring-blue-400 invalid:wf-border-pink-500 invalid:wf-text-600">
                 </div>
                 <div class="wf-p-2 wf-flex wf-justify-around">
                     <div class="wf-flex">
@@ -61,4 +65,11 @@
 
 <script setup lang="ts">
     import { LockClosedIcon, XIcon, MailIcon, EyeIcon, EyeOffIcon } from '@heroicons/vue/solid';
+    import { ref } from 'vue';
+
+    let password_visible = ref(false);
+
+    function togglePasswordVisibily(visibility: boolean) {
+        password_visible.value = visibility;
+    }
 </script>
