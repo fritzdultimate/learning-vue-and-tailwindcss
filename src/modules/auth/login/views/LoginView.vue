@@ -1,6 +1,6 @@
 <template>
     <main class="wf-bg-gray-100 wf-h-full wf-flex wf-justify-center wf-items-center ">
-        <div class="wf-bg-white wf-shadow-lg wf-min-h-1/3 wf-w-1/3 wf-rounded-md  wf-p-4">
+        <div class="wf-bg-white wf-shadow-lg wf-min-h-1/3 md:wf-w-1/3 wf-rounded-md  wf-p-4 md:wf-m-0 wf-m-4">
             <div class="wf-flex">
                 <LockClosedIcon class="wf-p-1 wf-bg-green-200 wf-rounded-full wf-text-green-700 wf-text-[5px] wf-h-4 wf-w-4 md:wf-h-6 md:wf-w-6" />
                 <div class="wf-text-gray-900 wf-font-bold wf-text-base wf-self-baseline wf-px-3">
