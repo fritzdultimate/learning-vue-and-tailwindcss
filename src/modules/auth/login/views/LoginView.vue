@@ -15,19 +15,50 @@
             </p>
             <div class="wf-border-gray-200/75 wf-border-[.01px] wf-my-4"></div>
             <form>
-                <div class="">
-                    <label class="block">
+                <div class="wf-p-2">
+                    <label class="wf-block wf-relative">
                         <span class="wf-block wf-text-sm wf-font-medium wf-text-slate-700 after:wf-absolute after:wf-content-['*'] after:wf-text-red-500 after:wf-p-px">
                             Email
                         </span>
+                         <MailIcon class="wf-pointer-events-none wf-w-6 wf-h-6 wf-absolute wf-top-2/3 wf-transform -wf-translate-y-1/2 wf-left-3 wf-text-gray-900" />
+                         <input type="text" value="tbone" class="wf-block wf-w-full wf-pl-12 wf-px-3 wf-py-2 wf-bg-white wf-border wf-border-slate-300 wf-rounded-md wf-text-sm wf-shadow-sm wf-placeholder-slate-400 wf-text-slate-700 wf-font-semibold focus:wf-ring wf-outline-transparent focus:wf-ring-blue-400 invalid:wf-border-pink-500 invalid:wf-text-600">
                     </label>
-                    <input type="text" value="tbone" class="wf-mt-1 wf-block wf-w-full wf-px-3 wf-py-2 wf-bg-white wf-border wf-border-slate-300 wf-rounded-md wf-text-sm wf-shadow-sm wf-placeholder-slate-400 wf-text-slate-700 wf-font-semibold focus:wf-ring wf-outline-transparent focus:wf-ring-blue-400 invalid:wf-border-pink-500 invalid:wf-text-600">
                 </div>
+                <div class="wf-p-2">
+                    <label class="block">
+                        <span class="wf-block wf-text-sm wf-font-medium wf-text-slate-700 after:wf-absolute after:wf-content-['*'] after:wf-text-red-500 after:wf-p-px">
+                            Password
+                        </span>
+                    </label>
+                    <input type="text" placeholder="Enter our password" value="" class="wf-mt-1 wf-block wf-w-full wf-px-3 wf-py-2 wf-bg-white wf-border wf-border-slate-300 wf-rounded-md wf-text-sm wf-shadow-sm wf-placeholder-slate-400 wf-text-slate-700 wf-font-semibold focus:wf-ring wf-outline-transparent focus:wf-ring-blue-400 invalid:wf-border-pink-500 invalid:wf-text-600">
+                </div>
+                <div class="wf-p-2 wf-flex wf-justify-around">
+                    <div class="wf-flex">
+                        <input type="checkbox" class="wf-self-baseline wf-mr-1">
+                        <label class="wf-self-baseline">
+                            <span class="wf-block wf-text-sm wf-font-medium wf-text-gray-700">
+                                Remember me
+                            </span>
+                        </label>
+                    </div>
+                    <a href="#" class="wf-font-medium wf-text-sm wf-text-gray-500">
+                        Forgot password?
+                    </a>
+                </div>
+                <div class="wf-p-2 wf-flex">
+                    <button class="wf-bg-yellow-600 wf-outline-transparent wf-border-0 wf-text-white wf-w-full wf-p-2 wf-rounded wf-text-sm focus:wf-ring focus:wf-ring-yellow-500/75">
+                        Log in
+                    </button>
+                </div>
+                <div class="wf-border-gray-200/75 wf-border-[.01px] wf-my-4"></div>
+                <p class="wf-text-sm wf-text-gray-600 wf-text-center">
+                    Don't have an account? <a href="#" class="wf-text-yellow-700 wf-font-medium wf-p-1 hover:wf-text-yellow-900">Sign up</a>
+                </p>
             </form>
         </div>
     </main>
 </template>
 
 <script setup lang="ts">
-    import { LockClosedIcon, XIcon } from '@heroicons/vue/solid';
+    import { LockClosedIcon, XIcon, MailIcon, EyeIcon, EyeOffIcon } from '@heroicons/vue/solid';
 </script>
