@@ -16,6 +16,12 @@ const routes = [
         name: 'ChangePasswordView',
         component: () => import('../views/ChangePasswordView.vue'),
     },
+
+    {
+        path: '/auth/login/accounts',
+        name: 'AccountsListView',
+        component: () => import('../views/AccountsListView.vue')
+    }
 ];
 
 export default routes;
