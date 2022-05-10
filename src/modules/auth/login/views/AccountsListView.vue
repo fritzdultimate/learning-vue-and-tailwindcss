@@ -75,9 +75,9 @@
         },
 
         {
-            name: 'Richard Chi',
-            username: 'cisco',
-            imagSrc: '../../../src/assets/img/seth_1.jpg'
-        }
+            name: 'Richard Chinedu',
+            username: 'nobledsmarts',
+            imagSrc: '../../../src/assets/img/fritz_2.jpg'
+        },
     ]
 </script>
