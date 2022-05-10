@@ -15,8 +15,8 @@
             </p>
             <div class="wf-border-gray-200/75 wf-border-[.01px] wf-my-4"></div>
             <ul role="list" class="wf-divide-y wf-divide-slate-200 wf-border wf-border-gray-200 wf-rounded">
-                <li v-for="(user, index) in users" :key="index" class="wf-flex wf-py-2 wf-px-3 wf-px wf-mx-0">
-                    <img class="wf-object-cover wf-h-8 wf-w-8 wf-rounded-full wf-relative after:wf-absolute after:wf-content-[''] after:wf-text-lg after:wf-text-green-700 after:wf-right-0 after:wf-bottom-0 after:wf-z-20 after:wf-bg-green-700 after:wf-rounded-full after:wf-h-2 after:wf-w-2 after:wf-border wf-border-white" :src="`${user.imagSrc}`" alt="" />
+                <li v-for="(user, index) in users" :key="index" class="wf-z-10 wf-flex wf-py-2 wf-px-3 wf-px wf-mx-0">
+                    <img class="wf-object-cover wf-z-10 wf-h-8 wf-w-8 wf-rounded-full wf-relative after:wf-absolute after:wf-content-[''] after:wf-text-lg after:wf-text-green-700 after:-wf-right-1 after:wf-bottom-0 after:wf-z-20 after:wf-bg-green-700 after:wf-rounded-full after:wf-h-2 after:wf-w-2 after:wf-border wf-border-white" :src="`${user.imagSrc}`" alt="" />
                     <div class="wf-ml-3 wf-overflow-hidden">
                         <p class="wf-text-sm wf-font-medium wf-text-gray-700">
                             {{ user.name }}
@@ -66,7 +66,7 @@
         {
             name: 'Okoye Judith',
             username: 'judith_001',
-            imagSrc: '../../../src/assets/img/judith.jpg'
+            imagSrc: '../../../src/assets/img/judith.jpe'
         },
         {
             name: 'Nwosu Nkemjika',
@@ -77,7 +77,7 @@
         {
             name: 'Richard Chinedu',
             username: 'nobledsmarts',
-            imagSrc: '../../../src/assets/img/fritz_2.jpg'
+            imagSrc: '../../../src/assets/img/fritz_2.jpeg'
         },
     ]
 </script>
