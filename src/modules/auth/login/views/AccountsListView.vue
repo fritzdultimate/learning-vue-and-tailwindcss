@@ -66,7 +66,7 @@
         {
             name: 'Okoye Judith',
             username: 'judith_001',
-            imagSrc: '../../../src/assets/img/judith.jpe'
+            imagSrc: '../../../src/assets/img/judith.jpg'
         },
         {
             name: 'Nwosu Nkemjika',
