@@ -27,7 +27,7 @@
                     </div>
                     <CheckCircleIcon v-if="user.active" class="wf-text-blue-500 wf-h-6 wf-w-6 wf-font-extrabold wf-ml-auto wf-self-center" />
                 </li>
-                <li class="wf-flex wf-py-2 wf-px-3 wf-px wf-mx-0 wf-justify-start">
+                <li class="wf-flex wf-py-2 wf-px-3 wf-mx-0 wf-justify-start">
                     <PlusCircleIcon class="wf-text-gray-500 wf-h-6 wf-w-6 wf-font-semibold wf-self-center" />
                     <div class="wf-ml-3 wf-overflow-hidden wf-self-center">
                         <p class="wf-text-sm wf-font-medium wf-text-gray-500">
