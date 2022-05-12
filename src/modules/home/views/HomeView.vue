@@ -1,5 +1,5 @@
 <template>
-    <div class="wf-h-full wf-bg-gradient-to-r wf-from-gray-900 md:wf-from-gray-900/95 md:wf-via-gray-900 wf-to-gray-900/95">
+    <div class="md:wf-h-full wf-bg-gradient-to-r wf-from-gray-900 md:wf-from-gray-900/95 md:wf-via-gray-900 wf-to-gray-900/95">
         <main class="wf-h-full wf-container wf-w-full wf-m-auto" role="main">
             <HeaderComponent  class="md:wf-px-1 md:wf-pt-4"/>
             <section role="presentation" class="wf-p-4 md:wf-p-6 wf-flex wf-flex-col md:wf-flex-row md:wf-flex-wrap wf-justify-center wf-mt-8 wf-overflow-clip">
@@ -19,12 +19,56 @@
                         Easy dashboard to manage your assets, buy, send and exchange cryptocurrency, as well as buying and selling Nfts.
                     </h3>
                 </div>
-                <!-- <img src="" alt="" class="wf-bg-gradient-to-r wf-from-gray-900"> -->
             </section>
+            <div class="wf-flex wf-mt-8">
+                <div class="wf-flex wf-w-full wf-flex-wrap wf-justify-center">
+                    <div class="wf-w-full md:wf-w-1/4 wf-flex-row wf-shadow-xl wf-shadow-slate-900 wf-rounded wf-bg-black/50 wf-min-h-28 wf-m-2 md:wf-m-1 wf-flex" v-for="(ticker, index) in tickers" :key="index">
+                        <div class="wf-block wf-p-3">
+                            <img :src="ticker.logo_url" class="wf-w-8 wf-h-8 wf-rounded-full wf-mb-3">
+                            <span class="wf-text-base wf-text-gray-500 wf-font-medium wf-mb-2 wf-capitalize">
+                                {{ ticker.name }}
+                            </span>
+                            <div class="wf-font-bold wf-text-xl wf-text-white">
+                                <span class="wf-uppercase">
+                                    usd
+                                </span>
+                                <span>{{ formatNumberToCurrency(Number(ticker.price).toFixed(2)) }}</span>
+                            </div>
+                        </div>
+                        <div class="wf-block wf-p-3 wf-ml-auto wf-pt-6">
+                            <ArrowSmUpIcon v-if="is_gain" class="wf-h-4 wf-w-4 wf-text-green-700 wf-font-bold wf-inline" />
+                            <ArrowSmDownIcon v-else class="wf-h-4 wf-w-4 wf-text-red-700 wf-font-bold wf-inline" />
+                            <span :class="{'wf-text-green-700' : is_gain, 'wf-text-red-700': !is_gain}" class="wf-font-bold wf-text-base">{{ calculateGain(ticker['1d'].price_change, ticker.price) }}%</span>
+                            <div class="wf-text-base wf-text-gray-700 wf-font-medium wf-uppercase wf-text-right wf-mt-8">
+                                {{ ticker.currency }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
         </main>
     </div>
 </template>
 
 <script setup lang="ts">
     import HeaderComponent from '../components/layouts/HeaderComponent.vue';
+    import tickers from '../apis/tickers';
+    import { ArrowSmUpIcon, ArrowSmDownIcon } from '@heroicons/vue/solid';
+    import numeral from 'numeral';
+    import {ref} from 'vue';
+
+    let is_gain = ref(false);
+    function calculateGain(price_change, price) {
+        console.log(+price_change, typeof +price)
+        let diff = (+price / (+price - +price_change)) - 1;
+        let pct = diff * 100;
+        is_gain.value = diff > 0;
+        return pct.toFixed(2);
+    }
+
+    let formatNumberToCurrency = (money) => numeral(money).format('0,0.00')
+
+    console.log(numeral(100000000.098).format('0,0.000'));
+    
 </script>
