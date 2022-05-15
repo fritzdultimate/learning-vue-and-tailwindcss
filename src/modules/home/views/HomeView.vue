@@ -1,5 +1,5 @@
 <template>
-    <div class="md:wf-h-full wf-bg-gradient-to-r wf-from-gray-900 md:wf-from-gray-900/95 md:wf-via-gray-900 wf-to-gray-900/95">
+    <div class="">
         <main class="wf-h-full wf-container wf-w-full wf-m-auto" role="main">
             <HeaderComponent  class="md:wf-px-1 md:wf-pt-4"/>
             <section role="presentation" class="wf-p-4 md:wf-p-6 wf-flex wf-flex-col md:wf-flex-row md:wf-flex-wrap wf-justify-center wf-mt-8 wf-overflow-clip">
@@ -24,7 +24,32 @@
                 <div class="wf-flex wf-w-full wf-flex-wrap wf-justify-center">
                     <ticker-card v-for="(ticker, index) in tickers" :key="index" v-bind:ticker="ticker"></ticker-card>
                 </div>
-                
+            </div>
+            <div class="wf-flex wf-my-8 wf-flex-col md:wf-flex-row">
+                <div class="wf-w-full wf-flex md:wf-mr-12 md:wf-flex-wrap wf-flex-col md:wf-flex-row wf-order-last md:wf-order-first">
+                    <FeatureCard v-for="(feature, index) in features" :key="index">
+                        <template v-slot:header>
+                            {{ feature.header }}
+                        </template>
+                        <template v-slot:icon>
+                            <component :is="feature.icon" :class="feature.iconColor" class="wf-w-8 wf-h-8" />
+                        </template>
+                        <p class="wf-text-gray-600/60 wf-font-medium wf-text-xs wf-mt-4 wf-text-center">
+                            {{ feature.content }}
+                        </p>
+                    </FeatureCard>
+                </div>
+                <div class="md:wf-w-4/5 wf-w-full wf-bg-gradient-to-r wf-from-transparent wf-via-pink-500/20 wf-to-transparent wf-min-h-14 wf-py-4 wf-order-first md:wf-order-last">
+                    <h3 role="heading" class="wf-p-2 wf-font-bold wf-text-white wf-text-2xl md:wf-text-4xl wf-text-center md:wf-text-left">
+                        The most trusted cryptocurrency platform.
+                    </h3>
+                    <p class="wf-text-base wf-text-gray-500 wf-font-medium wf-p-4 wf-text-center md:wf-text-left wf-mb-2">
+                        CryptoApp has a variety of features that make it the best place to start investing
+                    </p>
+                    <a href="#" role="button" class="wf-bg-yellow-700 wf-text-gray-200 wf-rounded-full wf-px-6 wf-py-3 wf-text-center wf-w-full md:wf-w-1/3 wf-font-medium wf-ml-4 md:wf-ml-0">
+                        Let's Invest Now
+                    </a>
+                </div>
             </div>
         </main>
     </div>
@@ -34,5 +59,34 @@
     import HeaderComponent from '../components/layouts/HeaderComponent.vue';
     import TickerCard from '../components/cards/TickerCard.vue';
     import tickers from '../apis/tickers';
+    import { AcademicCapIcon, LockClosedIcon, AtSymbolIcon, BadgeCheckIcon } from '@heroicons/vue/solid';
+    import FeatureCard from '../../../common/components/Cards/FeatureCard.vue';
+
+    const features = [
+        {
+            icon: AcademicCapIcon,
+            iconColor: 'wf-text-yellow-900',
+            header: 'Educative Material',
+            content: 'Educative materials has been made available in the platform, where your can browse through.'
+        },
+        {
+            icon: LockClosedIcon,
+            iconColor: 'wf-text-green-900',
+            header: 'Vault Protection',
+            content: 'For added security, store your funds in a vault with time delayed withdrawals.'
+        },
+        {
+            icon: AtSymbolIcon,
+            iconColor: 'wf-text-purple-900',
+            header: 'Multiple Account',
+            content: 'Create multiple account for different purposes, and easily switch between them.'
+        },
+        {
+            icon: BadgeCheckIcon,
+            iconColor: 'wf-text-green-700',
+            header: 'Special Activities',
+            content: 'Get your account verified, and stand the chance to be able to borrow money from the platform.'
+        }
+    ]
     
 </script>
