@@ -76,6 +76,42 @@
                     </div>
                 </div>
             </section>
+            <section role="" class="wf-bg-white/80 wf-rounded wf-px-24 wf-py-20 wf-mt-12">
+                <span class="wf-px-6  wf-py-5 wf-bg-white/50 wf-rounded-full">
+                    <wallet  class="wf-w-12 wf-h-12 wf-fill-yellow-300 wf-stroke-yellow-700 wf-inline"/>
+                    <span class="wf-px-2 wf-font-bold wf-text-xl wf-text-yellow-700">Wallet</span>
+                </span>
+                <div class="wf-flex wf-my-12">
+                    <div class="wf-w-1/2">
+                        <h1 class="wf-text-yellow-700 wf-font-medium wf-text-4xl wf-font-sans">
+                            The Easiest and Most Powerful Crypto Wallet
+                        </h1>
+                        <ul class="wf-p-3 wf-m-2">
+                            <li class="wf-bg-yellow-300/20 wf-rounded-xl wf-border wf-border-yellow-900/10 wf-px-6 wf-py-4 wf-text-yellow-700 wf-font-medium wf-text-base wf-my-4 wf-cursor-pointer" @click="toggleFeature" @focus="toggleFeature" v-for="(num, i) in 3" :key="i" :data-id="i">
+                                Buy and Sell Crypto in Minutes
+                                <transition
+                                    enter-active-class="wf-duration-300 wf-ease-in wf-delay-150"
+                                    enter-from-class="wf-transform wf-opacity-20 wf-colors h-0"
+                                    enter-to-class="w-opacity-100 wf-h-auto"
+                                    leave-active-class="wf-duration-200 wf-ease-out"
+                                    leave-from-class="wf-opacity-100 wf-h-auto"
+                                    leave-to-class="wf-transform wf-opacity-0 wf-h-0"
+                                >
+                                    <p v-if="i == current_id" class="wf-my-3">
+                                        Instantly buy Bitcoin with credit card, debit card, or by linking your bank.
+                                    </p>
+                                </transition>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="wf-w-1/2 wf-flex wf-justify-end">
+                        <div class="wf-ml-auto">
+                            <img src="@/assets/img/tools/wallet-buy.png" class="wf-object-cover">
+                        </div>
+
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
 </template>
@@ -84,9 +120,12 @@
     import HeaderComponent from '../components/layouts/HeaderComponent.vue';
     import TickerCard from '../components/cards/TickerCard.vue';
     import tickers from '../apis/tickers';
+    import { Wallet, WalletOutline } from 'mdue';
     import { AcademicCapIcon, LockClosedIcon, AtSymbolIcon, BadgeCheckIcon } from '@heroicons/vue/solid';
     import FeatureCard from '../../../common/components/Cards/FeatureCard.vue';
+    import { ref } from 'vue';
 
+    const current_id = ref(null);
     const features = [
         {
             icon: AcademicCapIcon,
@@ -114,4 +153,27 @@
         }
     ]
     
+    function toggleFeature($event) {
+        console.dir($event.target)
+        const ID = $event.target.dataset.id;
+        current_id.value = ID;
+        console.log(current_id.value, ID)
+        // $event.target.firstElementChild.classList.remove('wf-hidden')
+        // $event.target.firstElementChild.classList.add('wf-opacity-100')
+        // $event.target.firstElementChild.classList.add('wf-opacity-0')
+        // console.dir($event.target.firstElementChild);
+    }
+
+
+
 </script>
+
+<style scoped>
+    .h-0 {
+        height: 0;
+    }
+
+    .h-auto {
+        height: auto;
+    }
+</style>
