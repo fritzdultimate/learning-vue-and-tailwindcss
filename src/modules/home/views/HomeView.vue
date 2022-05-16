@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="wf-flex wf-my-8 wf-flex-col md:wf-flex-row">
-                <div class="wf-w-full wf-flex md:wf-mr-12 md:wf-flex-wrap wf-flex-col md:wf-flex-row wf-order-last md:wf-order-first">
+                <div class="wf-w-full wf-flex md:wf-mr-12 md:wf-flex-wrap wf-flex-col md:wf-flex-row wf-order-last md:wf-order-first wf-justify-center">
                     <FeatureCard v-for="(feature, index) in features" :key="index">
                         <template v-slot:header>
                             {{ feature.header }}
@@ -39,7 +39,7 @@
                         </p>
                     </FeatureCard>
                 </div>
-                <div class="md:wf-w-4/5 wf-w-full wf-bg-gradient-to-r wf-from-transparent wf-via-pink-500/20 wf-to-transparent wf-min-h-14 wf-py-4 wf-order-first md:wf-order-last">
+                <div class="md:wf-w-4/5 wf-w-full wf-bg-gradient-to-r wf-from-transparent wf-via-pink-500/20 wf-to-transparent wf-min-h-14 wf-py-4 wf-order-first md:wf-order-last wf-bg-gradient-to- wf-justify-center md:wf-flex wf-flex-col">
                     <h3 role="heading" class="wf-p-2 wf-font-bold wf-text-white wf-text-2xl md:wf-text-4xl wf-text-center md:wf-text-left">
                         The most trusted cryptocurrency platform.
                     </h3>
@@ -51,6 +51,31 @@
                     </a>
                 </div>
             </div>
+            <section role="presentation" class="wf-mr-auto wf-mx-auto wf-rounded wf-bg-white wf-w-4/5 wf-px-12 wf-py-8">
+                <h1 class="wf-text-center wf-text-gray-700 wf-text-xl wf-font-mono wf-font-medium">
+                    Partners and Investors
+                </h1>
+                <div class="wf-flex wf-justify-center wf-flex-wrap wf-mt-6">
+                    <div class="wf-w-1/2 md:wf-w-1/4 md:wf-mx-4">
+                        <img src="@/assets/img/partners/binance.png" class="wf-object-cover wf-mx-4 wf-p-6">
+                    </div>
+                    <div class="wf-w-1/2 md:wf-w-1/4 md:wf-mx-4">
+                        <img src="@/assets/img/partners/coinbase.png" class="wf-object-cover wf-mx-4 wf-p-6">
+                    </div>
+                     <div class="wf-w-1/2 md:wf-w-1/4 md:wf-mx-4">
+                        <img src="@/assets/img/partners/blockchain.png" class="wf-object wf-mx-4 wf-p-6">
+                     </div>
+                     <div class="wf-w-1/2 md:wf-w-1/4 md:wf-mx-4">
+                        <img src="@/assets/img/partners/binance.png" class="wf-object-cover wf-mx-4 wf-p-6">
+                    </div>
+                    <div class="wf-w-1/2 md:wf-w-1/4 md:wf-mx-4">
+                        <img src="@/assets/img/partners/binance.png" class="wf-object-cover wf-mx-4 wf-p-6">
+                    </div>
+                    <div class="wf-w-1/2 md:wf-w-1/4 md:wf-mx-4">
+                        <img src="@/assets/img/partners/binance.png" class="wf-object-cover wf-mx-4 wf-p-6">
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
 </template>

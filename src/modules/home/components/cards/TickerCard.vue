@@ -15,7 +15,7 @@
         <div class="wf-block wf-p-3 wf-ml-auto wf-pt-6">
             <ArrowSmUpIcon v-if="is_gain" class="wf-h-4 wf-w-4 wf-text-green-700 wf-font-bold wf-inline" />
             <ArrowSmDownIcon v-else class="wf-h-4 wf-w-4 wf-text-red-700 wf-font-bold wf-inline" />
-            <!-- <span :class="{'wf-text-green-700' : is_gain, 'wf-text-red-700': !is_gain}" class="wf-font-bold wf-text-base">{{ calculateGain(ticker['1d'].price_change, ticker.price) }}%</span> -->
+            <span :class="{'wf-text-green-700' : is_gain, 'wf-text-red-700': !is_gain}" class="wf-font-bold wf-text-base">{{ calculateGain(ticker['1d'].price_change, ticker.price) }}%</span>
             <div class="wf-text-base wf-text-gray-700 wf-font-medium wf-uppercase wf-text-right wf-mt-8">
                 {{ ticker.currency }}
             </div>
@@ -24,17 +24,16 @@
 </template>
 
 <script setup lang="ts">
-import { toRefs } from 'vue'; 
+    import { toRefs, ref } from 'vue';
+    import { ArrowSmUpIcon, ArrowSmDownIcon } from '@heroicons/vue/solid';
+    import numeral from 'numeral';
+
     interface Props {
         readonly ticker: object
     }
-
-    const ticker = toRefs(defineProps<Props>())
-    console.log(ticker)
-
-    import { ArrowSmUpIcon, ArrowSmDownIcon } from '@heroicons/vue/solid';
-    import numeral from 'numeral';
-    import {ref} from 'vue';
+    const props = defineProps<Props>();
+    // let stateAsRefs = toRefs(props);
+    console.log(props.ticker)
 
     let is_gain = ref(false);
     function calculateGain(price_change, price) {
