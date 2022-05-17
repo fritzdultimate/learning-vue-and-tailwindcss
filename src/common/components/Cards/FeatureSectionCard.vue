@@ -27,7 +27,6 @@
 
 <script setup lang="ts">
     import DropDownSummaryList from './DropDownSummaryList.vue'
-    // import '../../../../src/assets/js/touchslider';
     import { onMounted } from 'vue'
     import { ref } from 'vue';
 
@@ -42,7 +41,6 @@
             required: true
         }
     };
-    onMounted(() => import('../../../../src/assets/js/touchslider.js'))
 
     const props = defineProps<Props>();
     

@@ -96,8 +96,171 @@
                     </FeatureCard>
                 </div>
             </div>
+            <section class="wf-flex wf-flex-col wf-items-center">
+                <h1 class="wf-text-gray-200 wf-font-serif wf-text-base md:wf-text-xl wf-uppercase">
+                    For Sale
+                </h1>
+                <h2 class="wf-text-gray-300 wf-font-serif wf-text-2xl md:wf-text-5xl wf-capitalize wf-py-2 md:wf-py-4">
+                    Local branches nationwide
+                </h2>
+                <!-- <div class="wf-relative wf-w-full wf-h-72 wf-mt-10 wf-mb-16"> -->
+                    <!-- <div class="slide-container wf-flex wf-flex-nowrap wf-justify-center wf-absolute"> -->
+                        
+                        <div class="slide wf-h-72 wf-w-80 wf-relative wf-m-3">
+                            <div class="wf-h-56 wf-w-80 wf-bg-yellow-200 wf-rounded-xl wf-absolute">
+                                <span class="wf-rounded-full wf-bg-yellow-700 wf-text-slate-900 wf-px-6 wf-py-1 wf-font-medium wf-absolute wf-m-2">
+                                    Out of STC
+                                </span>
+                                <img src="@/assets/img/houses/house_1.png" class="wf-object-cover wf-rounded-xl wf-h-56">
+                            </div>
+                            <div class="price-tag wf-text-white wf-absolute wf-w-full wf-top-56 wf-mt-4">
+                                <h5 class="wf-text-gray-300 wf-text-base wf-font-medium">
+                                    Claremont Close, Angel, N1
+                                </h5>
+                                <div class="wf-flex wf-justify-star">
+                                    <span class="wf-text-gray-400 wf-px-3">
+                                        <Bed class="wf-h-4 wf-w-4 wf-inline" />
+                                        <span class="wf-text-base wf-font-normal">
+                                            3
+                                        </span>
+                                    </span>
+                                    <span class="wf-text-gray-400">
+                                        <TagIcon class="wf-h-4 wf-w-4 wf-inline" />
+                                        <span class="wf-text-base wf-font-normal">
+                                            $600,000
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide wf-h-72 wf-w-80 wf-relative wf-m-3">
+                            <div class="wf-h-56 wf-w-80 wf-bg-yellow-200 wf-rounded-xl wf-absolute">
+                                <span class="wf-rounded-full wf-bg-yellow-700 wf-text-slate-200 wf-px-6 wf-py-1 wf-font-medium wf-absolute wf-m-2">
+                                    Out of STC
+                                </span>
+                                <img src="@/assets/img/houses/house_2.jpg" class="wf-object-cover wf-rounded-xl wf-h-56">
+                            </div>
+                            <div class="price-tag wf-text-white wf-absolute wf-w-full wf-top-56 wf-mt-4">
+                                <h5 class="wf-text-gray-300 wf-text-base wf-font-medium">
+                                    Poynder Court, Camden Road, Holloway, N7
+                                </h5>
+                                <div class="wf-flex wf-justify-star">
+                                    <span class="wf-text-gray-400 wf-px-3">
+                                        <Bed class="wf-h-4 wf-w-4 wf-inline" />
+                                        <span class="wf-text-base wf-font-normal">
+                                            1
+                                        </span>
+                                    </span>
+                                    <span class="wf-text-gray-400">
+                                        <TagIcon class="wf-h-4 wf-w-4 wf-inline" />
+                                        <span class="wf-text-base wf-font-normal">
+                                            $320,000
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide wf-h-72 wf-w-80 wf-relative wf-m-3">
+                            <div class="wf-h-56 wf-w-80 wf-bg-yellow-200 wf-rounded-xl wf-absolute">
+                                <span class="wf-rounded-full wf-bg-yellow-700 wf-text-slate-900 wf-px-6 wf-py-1 wf-font-medium wf-absolute wf-m-2">
+                                    Out of STC
+                                </span>
+                                <img src="@/assets/img/houses/house_3.jpg" class="wf-object-cover wf-rounded-xl wf-h-56">
+                            </div>
+                            <div class="price-tag wf-text-white wf-absolute wf-w-full wf-top-56 wf-mt-4">
+                                <h5 class="wf-text-gray-300 wf-text-base wf-font-medium">
+                                    Rotherfield Street, Islington, E1
+                                </h5>
+                                <div class="wf-flex wf-justify-star">
+                                    <span class="wf-text-gray-400 wf-px-3">
+                                        <Bed class="wf-h-4 wf-w-4 wf-inline" />
+                                        <span class="wf-text-base wf-font-normal">
+                                            3
+                                        </span>
+                                    </span>
+                                    <span class="wf-text-gray-400">
+                                        <TagIcon class="wf-h-4 wf-w-4 wf-inline" />
+                                        <span class="wf-text-base wf-font-normal">
+                                            $900,000
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide wf-h-72 wf-w-80 wf-relative wf-m-3">
+                            <div class="wf-h-56 wf-w-80 wf-bg-yellow-200 wf-rounded-xl wf-absolute">
+                                <span class="wf-rounded-full wf-bg-green-700 wf-text-gray-300 wf-px-6 wf-py-1 wf-font-medium wf-absolute wf-m-2">
+                                    Available
+                                </span>
+                                <img src="@/assets/img/houses/house_4.jpg" class="wf-object-cover wf-rounded-xl wf-h-56">
+                            </div>
+                            <div class="price-tag wf-text-white wf-absolute wf-w-full wf-top-56 wf-mt-4">
+                                <h5 class="wf-text-gray-300 wf-text-base wf-font-medium">
+                                    John Strype Court, Leyton, E10
+                                </h5>
+                                <div class="wf-flex wf-justify-star">
+                                    <span class="wf-text-gray-400 wf-px-3">
+                                        <Bed class="wf-h-4 wf-w-4 wf-inline" />
+                                        <span class="wf-text-base wf-font-normal">
+                                            4
+                                        </span>
+                                    </span>
+                                    <span class="wf-text-gray-400">
+                                        <TagIcon class="wf-h-4 wf-w-4 wf-inline" />
+                                        <span class="wf-text-base wf-font-normal">
+                                            $600,000
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide wf-h-72 wf-w-80 wf-relative wf-m-3">
+                            <div class="wf-h-56 wf-w-80 wf-bg-yellow-200 wf-rounded-xl wf-absolute">
+                                <span class="wf-rounded-full wf-bg-yellow-700 wf-text-slate-900 wf-px-6 wf-py-1 wf-font-medium wf-absolute wf-m-2">
+                                    Out of STC
+                                </span>
+                                <img src="@/assets/img/houses/house_5.jpg" class="wf-object-cover wf-rounded-xl wf-h-56">
+                            </div>
+                            <div class="price-tag wf-text-white wf-absolute wf-w-full wf-top-56 wf-mt-4">
+                                <h5 class="wf-text-gray-300 wf-text-base wf-font-medium">
+                                    Claremont Close, Angel, N1
+                                </h5>
+                                <div class="wf-flex wf-justify-star">
+                                    <span class="wf-text-gray-400 wf-px-3">
+                                        <Bed class="wf-h-4 wf-w-4 wf-inline" />
+                                        <span class="wf-text-base wf-font-normal">
+                                            5
+                                        </span>
+                                    </span>
+                                    <span class="wf-text-gray-400">
+                                        <TagIcon class="wf-h-4 wf-w-4 wf-inline" />
+                                        <span class="wf-text-base wf-font-normal">
+                                            $1,600,000
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                        </div>
+                    <!-- </div> -->
+                <!-- </div> -->
+                <div class="wf-flex wf-justify-center">
+                    <button class="wf-outline-none wf-cursor-pointer wf-bg-pink-100 wf-rounded wf-px-6 wf-py-2 wf-text-slate-900 wf-mx-2">
+                        <ArrowNarrowLeftIcon class="wf-h-4 wf-w-10 wf-text-xl wf-font-bold" />
+                    </button>
+                     <button class="wf-outline-none wf-cursor-pointer wf-bg-pink-100 wf-rounded wf-px-6 wf-py-2 wf-text-slate-900 wf-mx-2 wf-font-medium wf-text-base">
+                        View all homes for investing
+                    </button>
+                    <button class="wf-outline-none wf-cursor-pointer wf-bg-pink-100 wf-rounded wf-px-6 wf-py-2 wf-text-slate-900 wf-mx-2">
+                        <ArrowNarrowRightIcon class="wf-h-4 wf-w-10" />
+                    </button>
+                    </div>
+            </section>
             <hero-card class="wf-bg-slate-700 wf-px-10 wf-py-16 wf-mt-6"></hero-card>
-            m
         </main>
     </div>
 </template>
@@ -106,8 +269,9 @@
     import HeaderComponent from '../components/layouts/HeaderComponent.vue';
     import TickerCard from '../components/cards/TickerCard.vue';
     import tickers from '../apis/tickers';
-    import { Wallet, WalletOutline } from 'mdue';
-    import { AcademicCapIcon, LockClosedIcon, AtSymbolIcon, BadgeCheckIcon } from '@heroicons/vue/solid';
+    import { Wallet, Bed } from 'mdue';
+    import { AcademicCapIcon, LockClosedIcon, AtSymbolIcon, BadgeCheckIcon, TagIcon } from '@heroicons/vue/solid';
+    import { ArrowNarrowLeftIcon, ArrowNarrowRightIcon } from '@heroicons/vue/outline';
     import FeatureCard from '../../../common/components/Cards/FeatureCard.vue';
     import FeatureSectionCards from '../../../common/components/Cards/FeatureSectionCard.vue'
     import HeroCard from '../../../common/components/Cards/HeroCard.vue'
@@ -201,7 +365,13 @@
         
 
     ];
-
+    $(document).ready(function() {
+        $('.slick').slick({
+            slideToShow: 3,
+            autoplay: true,
+            autoplaySpeed: 2000
+        });
+    })
 
 </script>
 

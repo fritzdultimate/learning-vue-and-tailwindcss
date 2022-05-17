@@ -5,12 +5,15 @@ import App from "./App.vue";
 import router from "./router";
 import "./index.css";
 import AppLayout from './layouts/AppLayout.vue';
-// import './assets/js/touchslider.js';
+import VueSlickCarousel from 'vue-slick-carousel';
+import 'vue-slick-carousel/dist/vue-slick-carousel.css';
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 
 const app = createApp(App);
 
 app.use(createPinia());
 app.use(router);
 app.component('AppLayout', AppLayout);
+app.component('VueSlickCarousel', VueSlickCarousel);
 
 app.mount("#app");
