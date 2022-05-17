@@ -77,6 +77,27 @@
                 </div>
             </section>
             <FeatureSectionCards :features="walletFeature" :header="'The Easiest and Most Powerful Crypto Wallet'" :headerIcon="{text: 'Wallet', icon: Wallet}"/>
+
+            <div class="wf-my-8 wf-bg-gray-900 wf-rounded-xl wf-py-10">
+                <h3 role="heading" class="wf-font-bold wf-text-white wf-text-2xl md:wf-text-4xl wf-text-center md:wf-text-center wf-block wf-p-3 md:wf-p-6">
+                    Why is our site the best place to make investment?.
+                </h3>
+                <div class="wf-w-full wf-flex md:wf-mr-12 md:wf-flex-wrap wf-flex-col md:wf-flex-row wf-order-last md:wf-order-first wf-justify-center">
+                    <FeatureCard v-for="(feature, index) in whyWeAreTheBest" :key="index">
+                        <template v-slot:header>
+                            {{ feature.header }}
+                        </template>
+                        <template v-slot:icon>
+                            <component :is="feature.icon" :class="feature.iconColor" class="wf-w-8 wf-h-8" />
+                        </template>
+                        <p class="wf-text-gray-600/60 wf-font-medium wf-text-xs wf-mt-4 wf-text-center">
+                            {{ feature.content }}
+                        </p>
+                    </FeatureCard>
+                </div>
+            </div>
+            <hero-card class="wf-bg-slate-700 wf-px-10 wf-py-16 wf-mt-6"></hero-card>
+            m
         </main>
     </div>
 </template>
@@ -89,6 +110,7 @@
     import { AcademicCapIcon, LockClosedIcon, AtSymbolIcon, BadgeCheckIcon } from '@heroicons/vue/solid';
     import FeatureCard from '../../../common/components/Cards/FeatureCard.vue';
     import FeatureSectionCards from '../../../common/components/Cards/FeatureSectionCard.vue'
+    import HeroCard from '../../../common/components/Cards/HeroCard.vue'
 
     const features = [
         {
@@ -143,7 +165,42 @@
             detail: 'View and manage your balance across the Wallet, the Exchange, and your hardware, all in your wallet dashboard.',
             imgSrc: ''
         }
-    ]
+    ];
+
+    const whyWeAreTheBest = [
+        {
+            header: 'Secured and insured',
+            content: 'Industry-leading security and insurance means your investment and personal info are safe.',
+            icon: LockClosedIcon,
+            iconColor: 'wf-text-blue-700'
+        },
+        {
+            header: 'Invest a little, invest a lot',
+            content: 'You can invest with as little as $25.',
+            icon: LockClosedIcon,
+            iconColor: 'wf-text-yellow-700'
+        },
+        {
+            header: 'Base in USA',
+            content: 'Our site is based in San Francisco and trusted by 100+ million customers worldwide.',
+            icon: LockClosedIcon,
+            iconColor: 'wf-text-blue-700'
+        },
+        {
+            header: 'Convenient ways to invest',
+            content: 'Use your debit card or connect your bank account, it\'s up to you.',
+            icon: LockClosedIcon,
+            iconColor: 'wf-text-green-700'
+        },
+        {
+            header: 'Varieties of option to invest.',
+            content: 'You can invest in NFTs, cryptocurrencies, real estates and stocks.',
+            icon: LockClosedIcon,
+            iconColor: 'wf-text-green-700'
+        },
+        
+
+    ];
 
 
 </script>

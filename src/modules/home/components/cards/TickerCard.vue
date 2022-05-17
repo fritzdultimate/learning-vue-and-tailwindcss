@@ -33,7 +33,6 @@
     }
     const props = defineProps<Props>();
     // let stateAsRefs = toRefs(props);
-    console.log(props.ticker)
 
     let is_gain = ref(false);
     function calculateGain(price_change, price) {

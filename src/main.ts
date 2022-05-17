@@ -5,6 +5,7 @@ import App from "./App.vue";
 import router from "./router";
 import "./index.css";
 import AppLayout from './layouts/AppLayout.vue';
+// import './assets/js/touchslider.js';
 
 const app = createApp(App);
 
