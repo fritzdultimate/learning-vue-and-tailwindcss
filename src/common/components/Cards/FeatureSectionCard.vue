@@ -13,7 +13,7 @@
                     <component :is="DropDownSummaryList" v-for="(feature, i) in features" :key="i" :dataId="i" :data-id="i" @click="toggleFeature(i)" :currentId="current_id" :summary="feature.summary" :detail="feature.detail"/>
                 </ul>
             </div>
-            <div class="wf-w-1/2 wf-flex wf-justify-end">
+            <div class="wf-w-1/2 wf-flex wf-justify-end wf-bg-repeat wf-text-yellow-50"  style="background-image: url('../../../src/assets/img/bg/home-wallet-shapes-bg.png')">
                 <div class="wf-ml-auto">
                     <img src="@/assets/img/tools/wallet-buy.png" class="wf-object-cover">
                 </div>

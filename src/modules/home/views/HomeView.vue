@@ -119,8 +119,29 @@
 
     const walletFeature = [
         {
-            summary: 'First summary text',
-            detail: 'First detail text'
+            summary: 'Buy and Sell Crypto in Minutes',
+            detail: 'Instantly buy Bitcoin with credit card, debit card, or by linking your bank.',
+            imgSrc: ''
+        },
+        {
+            summary: 'Earn up to 12% in rewards',
+            detail: 'Fund a Rewards Account with crypto and watch it grow.',
+            imgSrc: ''
+        },
+        {
+            summary: 'Control your funds with Private Key Wallet',
+            detail: 'No one but you can access Private Key Wallets. Not even us.',
+            imgSrc: ''
+        },
+        {
+            summary: 'At home or on the go',
+            detail: 'Manage your Wallet from a desktop, mobile, or both.',
+            imgSrc: ''
+        },
+        {
+            summary: 'All your crypto in one place',
+            detail: 'View and manage your balance across the Wallet, the Exchange, and your hardware, all in your wallet dashboard.',
+            imgSrc: ''
         }
     ]
 
