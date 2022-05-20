@@ -103,17 +103,16 @@
                 <h2 class="wf-text-gray-300 wf-font-serif wf-text-2xl md:wf-text-5xl wf-capitalize wf-py-2 md:wf-py-4">
                     Local branches nationwide
                 </h2>
-                <!-- <div class="wf-relative wf-w-full wf-h-72 wf-mt-10 wf-mb-16"> -->
-                    <!-- <div class="slide-container wf-flex wf-flex-nowrap wf-justify-center wf-absolute"> -->
-                        
-                        <div class="slide wf-h-72 wf-w-80 wf-relative wf-m-3">
+                <div class="wf-flex wf-w-full wf-mt-10 wf-mb-16 wf-justify-start">
+                    <swiper class="wf-w-full wf-h-80 swiper" :breakpoints="breakpoints" :centeredSlides="true" :centeredSlidesBounds="true" :grabCursor="true">
+                        <swiper-slide class="wf-h-72 wf-w-80 wf-relative wf-m-2 wf-flex wf-justify-center md:wf-justify-start">
                             <div class="wf-h-56 wf-w-80 wf-bg-yellow-200 wf-rounded-xl wf-absolute">
                                 <span class="wf-rounded-full wf-bg-yellow-700 wf-text-slate-900 wf-px-6 wf-py-1 wf-font-medium wf-absolute wf-m-2">
                                     Out of STC
                                 </span>
                                 <img src="@/assets/img/houses/house_1.png" class="wf-object-cover wf-rounded-xl wf-h-56">
                             </div>
-                            <div class="price-tag wf-text-white wf-absolute wf-w-full wf-top-56 wf-mt-4">
+                            <div class="wf-flex md:wf-block wf-flex-col wf-items-center wf-text-white wf-absolute wf-w-full wf-top-56 wf-mt-4">
                                 <h5 class="wf-text-gray-300 wf-text-base wf-font-medium">
                                     Claremont Close, Angel, N1
                                 </h5>
@@ -132,44 +131,17 @@
                                     </span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="slide wf-h-72 wf-w-80 wf-relative wf-m-3">
-                            <div class="wf-h-56 wf-w-80 wf-bg-yellow-200 wf-rounded-xl wf-absolute">
-                                <span class="wf-rounded-full wf-bg-yellow-700 wf-text-slate-200 wf-px-6 wf-py-1 wf-font-medium wf-absolute wf-m-2">
-                                    Out of STC
-                                </span>
-                                <img src="@/assets/img/houses/house_2.jpg" class="wf-object-cover wf-rounded-xl wf-h-56">
-                            </div>
-                            <div class="price-tag wf-text-white wf-absolute wf-w-full wf-top-56 wf-mt-4">
-                                <h5 class="wf-text-gray-300 wf-text-base wf-font-medium">
-                                    Poynder Court, Camden Road, Holloway, N7
-                                </h5>
-                                <div class="wf-flex wf-justify-star">
-                                    <span class="wf-text-gray-400 wf-px-3">
-                                        <Bed class="wf-h-4 wf-w-4 wf-inline" />
-                                        <span class="wf-text-base wf-font-normal">
-                                            1
-                                        </span>
-                                    </span>
-                                    <span class="wf-text-gray-400">
-                                        <TagIcon class="wf-h-4 wf-w-4 wf-inline" />
-                                        <span class="wf-text-base wf-font-normal">
-                                            $320,000
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide wf-h-72 wf-w-80 wf-relative wf-m-3">
+                        </swiper-slide>
+                        <swiper-slide class="wf-h-72 wf-w-80 wf-relative wf-m-2 wf-flex wf-justify-center md:wf-justify-start">
                             <div class="wf-h-56 wf-w-80 wf-bg-yellow-200 wf-rounded-xl wf-absolute">
                                 <span class="wf-rounded-full wf-bg-yellow-700 wf-text-slate-900 wf-px-6 wf-py-1 wf-font-medium wf-absolute wf-m-2">
                                     Out of STC
                                 </span>
-                                <img src="@/assets/img/houses/house_3.jpg" class="wf-object-cover wf-rounded-xl wf-h-56">
+                                <img src="@/assets/img/houses/house_1.png" class="wf-object-cover wf-rounded-xl wf-h-56">
                             </div>
-                            <div class="price-tag wf-text-white wf-absolute wf-w-full wf-top-56 wf-mt-4">
+                            <div class="wf-flex md:wf-block wf-flex-col wf-items-center wf-text-white wf-absolute wf-w-full wf-top-56 wf-mt-4">
                                 <h5 class="wf-text-gray-300 wf-text-base wf-font-medium">
-                                    Rotherfield Street, Islington, E1
+                                    Claremont Close, Angel, N1
                                 </h5>
                                 <div class="wf-flex wf-justify-star">
                                     <span class="wf-text-gray-400 wf-px-3">
@@ -181,28 +153,28 @@
                                     <span class="wf-text-gray-400">
                                         <TagIcon class="wf-h-4 wf-w-4 wf-inline" />
                                         <span class="wf-text-base wf-font-normal">
-                                            $900,000
+                                            $600,000
                                         </span>
                                     </span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="slide wf-h-72 wf-w-80 wf-relative wf-m-3">
+                        </swiper-slide>
+                        <swiper-slide class="wf-h-72 wf-w-80 wf-relative wf-m-2 wf-flex wf-justify-center md:wf-justify-start">
                             <div class="wf-h-56 wf-w-80 wf-bg-yellow-200 wf-rounded-xl wf-absolute">
-                                <span class="wf-rounded-full wf-bg-green-700 wf-text-gray-300 wf-px-6 wf-py-1 wf-font-medium wf-absolute wf-m-2">
-                                    Available
+                                <span class="wf-rounded-full wf-bg-yellow-700 wf-text-slate-900 wf-px-6 wf-py-1 wf-font-medium wf-absolute wf-m-2">
+                                    Out of STC
                                 </span>
-                                <img src="@/assets/img/houses/house_4.jpg" class="wf-object-cover wf-rounded-xl wf-h-56">
+                                <img src="@/assets/img/houses/house_1.png" class="wf-object-cover wf-rounded-xl wf-h-56">
                             </div>
-                            <div class="price-tag wf-text-white wf-absolute wf-w-full wf-top-56 wf-mt-4">
+                            <div class="wf-flex md:wf-block wf-flex-col wf-items-center wf-text-white wf-absolute wf-w-full wf-top-56 wf-mt-4">
                                 <h5 class="wf-text-gray-300 wf-text-base wf-font-medium">
-                                    John Strype Court, Leyton, E10
+                                    Claremont Close, Angel, N1
                                 </h5>
                                 <div class="wf-flex wf-justify-star">
                                     <span class="wf-text-gray-400 wf-px-3">
                                         <Bed class="wf-h-4 wf-w-4 wf-inline" />
                                         <span class="wf-text-base wf-font-normal">
-                                            4
+                                            3
                                         </span>
                                     </span>
                                     <span class="wf-text-gray-400">
@@ -213,15 +185,15 @@
                                     </span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="slide wf-h-72 wf-w-80 wf-relative wf-m-3">
+                        </swiper-slide>
+                        <swiper-slide class="wf-h-72 wf-w-80 wf-relative wf-m-2 wf-flex wf-justify-center md:wf-justify-start">
                             <div class="wf-h-56 wf-w-80 wf-bg-yellow-200 wf-rounded-xl wf-absolute">
                                 <span class="wf-rounded-full wf-bg-yellow-700 wf-text-slate-900 wf-px-6 wf-py-1 wf-font-medium wf-absolute wf-m-2">
                                     Out of STC
                                 </span>
-                                <img src="@/assets/img/houses/house_5.jpg" class="wf-object-cover wf-rounded-xl wf-h-56">
+                                <img src="@/assets/img/houses/house_1.png" class="wf-object-cover wf-rounded-xl wf-h-56">
                             </div>
-                            <div class="price-tag wf-text-white wf-absolute wf-w-full wf-top-56 wf-mt-4">
+                            <div class="wf-flex md:wf-block wf-flex-col wf-items-center wf-text-white wf-absolute wf-w-full wf-top-56 wf-mt-4">
                                 <h5 class="wf-text-gray-300 wf-text-base wf-font-medium">
                                     Claremont Close, Angel, N1
                                 </h5>
@@ -229,38 +201,298 @@
                                     <span class="wf-text-gray-400 wf-px-3">
                                         <Bed class="wf-h-4 wf-w-4 wf-inline" />
                                         <span class="wf-text-base wf-font-normal">
-                                            5
+                                            3
                                         </span>
                                     </span>
                                     <span class="wf-text-gray-400">
                                         <TagIcon class="wf-h-4 wf-w-4 wf-inline" />
                                         <span class="wf-text-base wf-font-normal">
-                                            $1,600,000
+                                            $600,000
                                         </span>
                                     </span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="slick">
-                            <div>1</div>
-                            <div>2</div>
-                            <div>3</div>
-                        </div>
-                    <!-- </div> -->
-                <!-- </div> -->
-                <div class="wf-flex wf-justify-center">
-                    <button class="wf-outline-none wf-cursor-pointer wf-bg-pink-100 wf-rounded wf-px-6 wf-py-2 wf-text-slate-900 wf-mx-2">
+                        </swiper-slide>
+                        <swiper-slide class="wf-h-72 wf-w-80 wf-relative wf-m-2 wf-flex wf-justify-center md:wf-justify-start">
+                            <div class="wf-h-56 wf-w-80 wf-bg-yellow-200 wf-rounded-xl wf-absolute">
+                                <span class="wf-rounded-full wf-bg-yellow-700 wf-text-slate-900 wf-px-6 wf-py-1 wf-font-medium wf-absolute wf-m-2">
+                                    Out of STC
+                                </span>
+                                <img src="@/assets/img/houses/house_1.png" class="wf-object-cover wf-rounded-xl wf-h-56">
+                            </div>
+                            <div class="wf-flex md:wf-block wf-flex-col wf-items-center wf-text-white wf-absolute wf-w-full wf-top-56 wf-mt-4">
+                                <h5 class="wf-text-gray-300 wf-text-base wf-font-medium">
+                                    Claremont Close, Angel, N1
+                                </h5>
+                                <div class="wf-flex wf-justify-star">
+                                    <span class="wf-text-gray-400 wf-px-3">
+                                        <Bed class="wf-h-4 wf-w-4 wf-inline" />
+                                        <span class="wf-text-base wf-font-normal">
+                                            3
+                                        </span>
+                                    </span>
+                                    <span class="wf-text-gray-400">
+                                        <TagIcon class="wf-h-4 wf-w-4 wf-inline" />
+                                        <span class="wf-text-base wf-font-normal">
+                                            $600,000
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </swiper-slide>
+                    </swiper>
+                </div>
+                <div class="md:wf-flex wf-justify-center wf-hidden">
+                    <button class="wf-outline-none wf-cursor-pointer wf-bg-pink-100 wf-rounded wf-px-6 wf-py-2 wf-text-slate-900 wf-mx-2" @click="swiper.slidePrev()">
                         <ArrowNarrowLeftIcon class="wf-h-4 wf-w-10 wf-text-xl wf-font-bold" />
                     </button>
                      <button class="wf-outline-none wf-cursor-pointer wf-bg-pink-100 wf-rounded wf-px-6 wf-py-2 wf-text-slate-900 wf-mx-2 wf-font-medium wf-text-base">
                         View all homes for investing
                     </button>
-                    <button class="wf-outline-none wf-cursor-pointer wf-bg-pink-100 wf-rounded wf-px-6 wf-py-2 wf-text-slate-900 wf-mx-2">
+                    <button class="wf-outline-none wf-cursor-pointer wf-bg-pink-100 wf-rounded wf-px-6 wf-py-2 wf-text-slate-900 wf-mx-2" @click="swiperHook.slideNext()">
                         <ArrowNarrowRightIcon class="wf-h-4 wf-w-10" />
                     </button>
-                    </div>
+                </div>
             </section>
-            <hero-card class="wf-bg-slate-700 wf-px-10 wf-py-16 wf-mt-6"></hero-card>
+            <hero-card class="wf-bg-slate-700 wf-px-2 md:wf-px-10 wf-py-8 md:wf-py-16 wf-mt-2 md:wf-mt-6"></hero-card>
+            <div class="wf-flex wf-flex-col md:wf-flex-row wf-bg-white md:wf-py-0 wf-pt-2">
+                <div class="wf-w-full md:wf-w-1/3 wf-flex md:wf-flex-col md:wf-px-6 wf-py-4 wf-relative wf-justify-end md:wf-justify-start wf-overflow-hidden">
+                    <div class="md:wf-hidden wf-w-1/3 wf-h-full wf-flex wf-justify-center wf-overflow-hidden wf-absolute wf-top-5 -wf-left-2">
+                        <img src="@/assets/img/tools/sell.png" class="wf-object-cover wf-w-full wf-scale-105 wf-object-right-top">
+                    </div>
+                    <div class="wf-flex wf-flex-col wf-w-2/3 md:wf-w-full wf-text-slate-900 wf-px-3">
+                        <h2 class="wf-text-2xl md:wf-text-4xl wf-font-bold">
+                            We're the agent that not only sells your home...
+                        </h2>
+                        <p class="wf-text-base md:wf-py-6 wf-py-4">
+                            <span class="wf-font-bold">Your</span> local agent will achieve the best price for your current home
+                        </p>
+                        <button class="wf-hidden md:wf-inline wf-bg-slate-800 wf-rounded-lg wf-text-xl wf-capitalize wf-font-medium wf-text-white wf-w-1/3 wf-py-4 wf-text-center">
+                            selling
+                        </button>
+                    </div>
+                </div>
+                <div class="wf-w-full md:wf-w-1/3 wf-hidden wf-p-6 md:wf-flex wf-justify-center wf-items-center">
+                    <img src="@/assets/img/tools/sell-and-buy.png" class="wf-object-cover">
+                </div>
+                <div class="wf-w-full md:wf-w-1/3 wf-flex md:wf-flex-col md:wf-px-6 wf-py-4 wf-bg-yellow-100 md:wf-bg-inherit wf-relative wf-overflow-hidden">
+                    <div class="md:wf-hidden wf-w-1/3 wf-h-full wf-flex wf-justify-center wf-absolute wf-top-12 -wf-right-2">
+                        <img src="@/assets/img/tools/bought.png" class="wf-object-cover wf-scale-105 wf-w-full wf-object-right-top">
+                    </div>
+                    <div class="wf-flex wf-flex-col wf-w-2/3 md:wf-w-full wf-text-slate-900 wf-items-end wf-px-3 wf-text-left md:wf-text-right">
+                        <h2 class="wf-text-2xl md:wf-text-4xl wf-font-bold">
+                           ...But also saves you thousands on your new home
+                        </h2>
+                        <p class="wf-text-base wf-py-6">
+                            <span class="wf-font-bold">While</span> our buying agents help you find and negotiate the best price on your new one.
+                        </p>
+                        <button class="wf-hidden md:wf-inline wf-bg-slate-800 wf-rounded-lg wf-text-xl wf-capitalize wf-font-medium wf-text-white wf-w-1/3 wf-py-4 wf-text-center">
+                            buying
+                        </button>
+                    </div>
+                </div>
+
+                <div class="wf-flex md:wf-hidden wf-justify-center wf-p-2 wf-bg-slate-700">
+                    <button class="wf-rounded wf-bg-white wf-text-slate-900 wf-font-bold wf-text-base wf-w-1/2 wf-text-center wf-px-6 wf-py-3 wf-m-1">Real Estate</button>
+                    <button class="wf-rounded wf-bg-white wf-text-slate-900 wf-font-bold wf-text-base wf-w-1/2 wf-text-center wf-px-6 wf-py-3 wf-m-1">Crypto</button>
+                </div>
+            </div>
+            <div class="wf-flex wf-flex-col md:wf-flex-row wf-justify-center wf-items-center wf-text-slate-900 wf-bg-yellow-200 wf-p-5 md:wf-py-6 md:wf-px-14">
+                <img src="" class="wf-rounded-full wf-object-cover wf-mb-4 md:wf-mb-0">
+                <div class="wf-flex wf-flex-col wf-items-center wf-text-center">
+                    <h3 class="wf-text-2xl md:wf-text-4xl wf-font-bold wf-p-2">
+                        Mum knows best
+                    </h3>
+                    <p class="wf-text-base md:wf-text-xl wf-font-bold">
+                        The only investment approved by Mumsnet
+                    </p>
+                </div>
+                <button class="md:wf-ml-auto wf-rounded wf-text-white wf-bg-slate-900 wf-font-medium wf-text-base wf-text-center wf-px-6 wf-py-3 md:wf-px-6 wf-my-5">Find out more</button>
+            </div>
+
+            <div class="wf-flex wf-flex-col md:wf-flex-row wf-bg-white wf-text-slate-900 wf-p-4 md:wf-p-6">
+                <div class="wf-w-full md:wf-w-1/2 wf-order-first md:wf-order-last"></div>
+                <div class="wf-w-full md:wf-w-1/2 wf-order-last md:wf-order-first wf-flex wf-flex-col md:wf-items-start wf-items-center wf-text-center md:wf-text-left md:wf-px-12">
+                    <h3 class="wf-text-2xl md:wf-text-5xl wf-font-bold wf-py-3">
+                        Smart investing at your fingertips
+                    </h3>
+                    <p class="wf-text-sm md:wf-text-base wf-pt-6">
+                        The platform gives you access to everything you need to know about the investment.
+                    </p>
+
+                    <p class="wf-text-sm md:wf-text-base wf-py-6">
+                        Keep up to date with your viewing calendar, view detailed feedback from interested investors, then review offers as they come in
+                    </p>
+
+                    <button class="wf-rounded wf-bg-gray-200 wf-text-slate-900 wf-font-medium wf-text-base wf-text-center wf-px-6 wf-py-3 md:wf-px-6 wf-mb-5">Find out more</button>
+                </div>
+            </div>
+
+            <div class="wf-flex wf-flex-col md:wf-flex-row wf-bg-white wf-text-slate-900 wf-p-4 md:wf-p-6">
+                <div class="wf-w-full md:wf-w-1/2"></div>
+                <div class="wf-w-full md:wf-w-1/2 wf-flex wf-flex-col md:wf-items-start wf-items-center wf-text-center md:wf-text-left md:wf-px-12">
+                    <h3 class="wf-text-2xl md:wf-text-5xl wf-font-bold md:wf-py-3">
+                        Same great service, with safety in mind
+                    </h3>
+                    <p class="wf-text-sm md:wf-text-base wf-pt-6">
+                        Ensuring the safety of our sellers, buyers, and agents is our number one priority during the Coronavirus pandemic.
+                    </p>
+
+                    <p class="wf-text-sm md:wf-text-base wf-py-6">
+                        From virtual valuations to 3D virtual tours, Nested will find you a buyer whatever the world throws at us.
+                    </p>
+
+                    <button class="wf-rounded wf-bg-gray-200 wf-text-slate-900 wf-font-medium wf-text-base wf-text-center wf-px-6 wf-py-3 md:wf-px-6 wf-mb-5">How safe we are</button>
+                </div>
+            </div>
+            <div class="wf-flex wf-flex-col md:wf-bg-yellow-100 wf-bg-white wf-text-slate-900 md:wf-px-20 md:wf-pt-6 wf-items-center">
+                <div class="wf-w-full wf-flex wf-justify-center wf-px-4 wf-py-4 md:wf-px-24">
+                    <div class="wf-text-center">
+                        <h1 class="wf-text-2xl md:wf-text-4xl wf-font-bold">
+                            Always invest, no fee
+                        </h1>
+                        <p class="wf-text-base wf-py-3 wf-font-medium">
+                            How our platform stacks up against other investment platforms
+                        </p>
+                    </div>
+                    <img src="" class="wf-hidden md:wf-block wf-ml-auto">
+                </div>
+                <div class="wf-p-4 wf-bg-white wf-rounded-t-xl md:wf-p-20 md:wf-mx-20">
+                    <table class="wf-border-collapse wf-table-fixed wf-w-full">
+                        <thead>
+                            <tr>
+                                <th class="wf-font-medium wf-h-[100px] wf-text-left wf-whitespace-nowrap wf-relative wf-text-base">
+                                    <div class="wf-absolute wf-bottom-[20px] wf-left-0">
+                                        Features
+                                    </div>
+                                </th>
+                                <th class="wf-font-medium wf-h-[100px] wf-text-left wf-whitespace-nowrap wf-relative wf-text-sm wf-w-[50px] md:wf-p-8 md:wf-whitespace-normal md:wf-text-center">
+                                    <div class="-wf-rotate-[45deg] md:wf-rotate-0 wf-absolute wf-bottom-[15px] wf-left-0" style="transform-origin: 0px 0px;">
+                                        Our Platform
+                                    </div>
+                                </th>
+                                <th class="wf-font-medium wf-h-[100px] wf-text-left wf-whitespace-nowrap wf-relative wf-text-sm wf-w-[50px] md:wf-p-8 md:wf-whitespace-normal md:wf-text-center">
+                                    <div class="-wf-rotate-[45deg] md:wf-rotate-0 wf-absolute wf-bottom-[15px] wf-left-2" style="transform-origin: 0px 0px;">
+                                        Saxo
+                                    </div>
+                                </th>
+                                <th class="wf-font-medium wf-h-[100px] wf-text-left wf-whitespace-nowrap wf-relative wf-text-sm wf-w-[50px] md:wf-p-8 md:wf-whitespace-normal md:wf-text-center">
+                                    <div class="-wf-rotate-[45deg] md:wf-rotate-0 wf-absolute wf-bottom-[15px] wf-left-0" style="transform-origin: 0px 0px;">
+                                        Others
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="wf-border-t-gray-300 wf-border-t wf-h-14 md:wf-h-16">
+                                <td class="wf-py-3 wf-text-base wf-relative wf-text-left">
+                                    Variety Investment option
+                                </td>
+                                <td class="wf-text-center">
+                                    <CheckIcon class="wf-text-green-400 wf-w-8 wf-h-8" />
+                                </td>
+                                <td class="wf-text-center">
+                                    <XIcon class="wf-text-gray-300 wf-w-8 wf-h-8" />
+                                </td>
+                                <td class="wf-text-center">
+                                    <XIcon class="wf-text-gray-300 wf-w-8 wf-h-8" />
+                                </td>
+                            </tr>
+                            <tr class="wf-border-t-gray-300 wf-border-t wf-h-14 md:wf-h-16">
+                                <td class="wf-py-3 wf-text-base wf-relative wf-text-left">
+                                    Invest, no fee
+                                </td>
+                                <td class="wf-text-center">
+                                    <CheckIcon class="wf-text-green-400 wf-w-8 wf-h-8" />
+                                </td>
+                                <td class="wf-text-center">
+                                    <CheckIcon class="wf-text-green-400 wf-w-8 wf-h-8" />
+                                </td>
+                                <td class="wf-text-center">
+                                    <XIcon class="wf-text-gray-300 wf-w-8 wf-h-8" />
+                                </td>
+                            </tr>
+                            <tr class="wf-border-t-gray-300 wf-border-t wf-h-14 md:wf-h-16">
+                                <td class="wf-py-3 wf-text-base wf-relative wf-text-left">
+                                    Special investment offers
+                                </td>
+                                <td class="wf-text-center">
+                                    <CheckIcon class="wf-text-green-400 wf-w-8 wf-h-8" />
+                                </td>
+                                <td class="wf-text-center">
+                                    <XIcon class="wf-text-gray-300 wf-w-8 wf-h-8" />
+                                </td>
+                                <td class="wf-text-center">
+                                    <XIcon class="wf-text-gray-300 wf-w-8 wf-h-8" />
+                                </td>
+                            </tr>
+                            <tr class="wf-border-t-gray-300 wf-border-t wf-h-14 md:wf-h-16">
+                                <td class="wf-py-3 wf-text-base wf-relative wf-text-left">
+                                    Online dashboard
+                                </td>
+                                <td class="wf-text-center">
+                                    <CheckIcon class="wf-text-green-400 wf-w-8 wf-h-8" />
+                                </td>
+                                <td class="wf-text-center">
+                                    <CheckIcon class="wf-text-green-400 wf-w-8 wf-h-8" />
+                                </td>
+                                <td class="wf-text-center">
+                                    <CheckIcon class="wf-text-green-400 wf-w-8 wf-h-8" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="wf-flex wf-flex-col md:wf-flex-row wf-justify-start wf-bg-slate-900 wf-py-4 md:wf-px-24 md:wf-p-12">
+                <div class="wf-w-full md:wf-w-1/2"></div>
+                <div class="wf-w-full md:wf-w-1/2 wf-text-gray-200 wf-px-2 md:wf-px-12 wf-text-center md:wf-text-left">
+                    <h3 class="wf-font-bold wf-text-2xl md:wf-text-4xl wf-leading-10">
+                        An investment fit for the 21st Century
+                    </h3>
+                    <p class="wf-text-base wf-py-4 wf-font-normal">
+                        Making your next step on the investment choice exciting, But the reality is often stress and uncertainty. At our platform we're building a better way.
+                    </p>
+                    <p class="wf-text-base wf-py-4 wf-font-normal">
+                        Making your next step on the investment choice exciting, But the reality is often stress and uncertainty. At our platform we're building a better way.
+                    </p>
+                    <p class="wf-text-base wf-py-4 wf-font-normal">
+                        Making your next step on the investment choice exciting, But the reality is often stress and uncertainty. At our platform we're building a better way.
+                    </p>
+                    <button class="wf-rounded wf-bg-gray-200 wf-text-slate-900 wf-font-medium wf-text-base wf-text-center wf-px-6 wf-py-3 md:wf-px-6 wf-mb-5">About us</button>
+                </div>
+            </div>
+
+            <div class="wf-flex wf-flex-col wf-w-full wf-mt-10 wf-mb-3 wf-justify-center wf-bg-white">
+                <div class="wf-m-3 wf-flex wf-flex-col wf-items-center wf-p-6">
+                    <img src="">
+                    <h4 class="wf-text-xl wf-text-slate-900">
+                        Rated <strong class="wf-font-medium">excellent</strong> by investors on
+                    </h4>
+                    <img src="">
+                </div>
+                <swiper class="wf-w-full wf-flex wf-mx-3" :breakpoints="breakpoints" :grabCursor="true">
+                    <swiper-slide v-for="i in 12" :key="i">
+                        <div class="wf-h-48, wf-rounded-xl wf-bg-white wf-text-slate-700 wf-text-sm wf-flex wf-flex-col wf-items-center wf-shadow-xl wf-px-5 wf-py-6 wf-mx-2 wf-my-3">
+                            <p>
+                                "Great service, great people. Everyone I spoke to and dealth with offered a great value, great people. Everyone I spoke to and dealth with offered a great value, great people. Everyone I spoke to and dealth with offered a great value"
+                            </p>
+                            <div class="wf-inline-flex wf-flex-row wf-p-4 wf-text-left wf-relative">
+                                <div class="wf-font-bold wf-text-base wf-mr-28 ">V patrick</div>
+                                <div class="wf-font-bold wf-text-base">rate</div>
+                                <img src="">
+                            </div>
+                        </div>
+                    </swiper-slide>
+                </swiper>
+                <div class="md:wf-flex wf-justify-center wf-hidden wf-my-6">
+                     <button class="wf-outline-none wf-cursor-pointer wf-bg-gray-300 wf-rounded wf-px-6 wf-py-2 wf-text-slate-900 wf-mx-2 wf-font-medium wf-text-base">
+                        see all reviews
+                    </button>
+                </div>
+            </div>
+            mmm
         </main>
     </div>
 </template>
@@ -270,11 +502,14 @@
     import TickerCard from '../components/cards/TickerCard.vue';
     import tickers from '../apis/tickers';
     import { Wallet, Bed } from 'mdue';
-    import { AcademicCapIcon, LockClosedIcon, AtSymbolIcon, BadgeCheckIcon, TagIcon } from '@heroicons/vue/solid';
+    import { AcademicCapIcon, LockClosedIcon, AtSymbolIcon, BadgeCheckIcon, TagIcon, CheckIcon, XIcon } from '@heroicons/vue/solid';
     import { ArrowNarrowLeftIcon, ArrowNarrowRightIcon } from '@heroicons/vue/outline';
     import FeatureCard from '../../../common/components/Cards/FeatureCard.vue';
     import FeatureSectionCards from '../../../common/components/Cards/FeatureSectionCard.vue'
     import HeroCard from '../../../common/components/Cards/HeroCard.vue'
+    import {onMounted } from 'vue';
+    import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue';
+    import 'swiper/css';
 
     const features = [
         {
@@ -365,14 +600,21 @@
         
 
     ];
-    $(document).ready(function() {
-        $('.slick').slick({
-            slideToShow: 3,
-            autoplay: true,
-            autoplaySpeed: 2000
-        });
-    })
 
+    const breakpoints = {
+        320: {
+            slidesPerView: 1,
+            // spaceBetween: 20
+        },
+        480: {
+            slidesPerView: 2,
+            // spaceBetween: 20
+        },
+        640: {
+            slidesPerView: 4,
+            // spaceBetween: 20
+        }
+    }
 </script>
 
 <style scoped>
