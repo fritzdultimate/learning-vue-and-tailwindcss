@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <main class="wf-h-full wf-container wf-w-full wf-m-auto" role="main">
+        <main class="wf-h-full wf-containerm wf-w-full wf-m-auto" role="main">
             <HeaderComponent  class="md:wf-px-1 md:wf-pt-4"/>
             <section role="presentation" class="wf-p-4 md:wf-p-6 wf-flex wf-flex-col md:wf-flex-row md:wf-flex-wrap wf-justify-center wf-mt-8 wf-overflow-clip">
                 <div class="wf-flex wf-flex-col wf-w-full md:wf-w-1/2 wf-z-10">
@@ -298,7 +298,7 @@
                 </div>
             </div>
             <div class="wf-flex wf-flex-col md:wf-flex-row wf-justify-center wf-items-center wf-text-slate-900 wf-bg-yellow-200 wf-p-5 md:wf-py-6 md:wf-px-14">
-                <img src="" class="wf-rounded-full wf-object-cover wf-mb-4 md:wf-mb-0">
+                <img class="wf-object-cover wf-mb-4 md:wf-mb-0" src="@/assets/img/tools/mumsnet.png">
                 <div class="wf-flex wf-flex-col wf-items-center wf-text-center">
                     <h3 class="wf-text-2xl md:wf-text-4xl wf-font-bold wf-p-2">
                         Mum knows best
@@ -311,7 +311,9 @@
             </div>
 
             <div class="wf-flex wf-flex-col md:wf-flex-row wf-bg-white wf-text-slate-900 wf-p-4 md:wf-p-6">
-                <div class="wf-w-full md:wf-w-1/2 wf-order-first md:wf-order-last"></div>
+                <div class="wf-w-full md:wf-w-1/2 wf-order-first md:wf-order-last">
+                    <img src="@/assets/img/tools/pupil-selling.png" class="wf-object-cover wf-scale-105 wf-w-full wf-object-right-top wf-mb-5 md:wf-mb-0">
+                </div>
                 <div class="wf-w-full md:wf-w-1/2 wf-order-last md:wf-order-first wf-flex wf-flex-col md:wf-items-start wf-items-center wf-text-center md:wf-text-left md:wf-px-12">
                     <h3 class="wf-text-2xl md:wf-text-5xl wf-font-bold wf-py-3">
                         Smart investing at your fingertips
@@ -329,7 +331,9 @@
             </div>
 
             <div class="wf-flex wf-flex-col md:wf-flex-row wf-bg-white wf-text-slate-900 wf-p-4 md:wf-p-6">
-                <div class="wf-w-full md:wf-w-1/2"></div>
+                <div class="wf-w-full md:wf-w-1/2">
+                    <img src="@/assets/img/tools/house-smart-selling.png" class="wf-object-cover wf-scale-105 wf-w-full wf-object-right-top wf-mb-5 md:wf-mb-0">
+                </div>
                 <div class="wf-w-full md:wf-w-1/2 wf-flex wf-flex-col md:wf-items-start wf-items-center wf-text-center md:wf-text-left md:wf-px-12">
                     <h3 class="wf-text-2xl md:wf-text-5xl wf-font-bold md:wf-py-3">
                         Same great service, with safety in mind
@@ -355,7 +359,7 @@
                             How our platform stacks up against other investment platforms
                         </p>
                     </div>
-                    <img src="" class="wf-hidden md:wf-block wf-ml-auto">
+                    <img src="@/assets/img/tools/bark-dog.png" class="wf-hidden md:wf-block wf-ml-auto wf-object-cover wf-scale-105 wf-w-full wf-object-right-top wf-mb-5 md:wf-mb-0">
                 </div>
                 <div class="wf-p-4 wf-bg-white wf-rounded-t-xl md:wf-p-20 md:wf-mx-20">
                     <table class="wf-border-collapse wf-table-fixed wf-w-full">
@@ -446,7 +450,9 @@
             </div>
 
             <div class="wf-flex wf-flex-col md:wf-flex-row wf-justify-start wf-bg-slate-900 wf-py-4 md:wf-px-24 md:wf-p-12">
-                <div class="wf-w-full md:wf-w-1/2"></div>
+                <div class="wf-w-full md:wf-w-1/2 wf-p-6 md:wf-p-3">
+                    <img src="@/assets/img/tools/about-us.png" class="wf-object-cover wf-w-full wf-object-right-top wf-mb-5 md:wf-mb-0">
+                </div>
                 <div class="wf-w-full md:wf-w-1/2 wf-text-gray-200 wf-px-2 md:wf-px-12 wf-text-center md:wf-text-left">
                     <h3 class="wf-font-bold wf-text-2xl md:wf-text-4xl wf-leading-10">
                         An investment fit for the 21st Century
@@ -464,7 +470,7 @@
                 </div>
             </div>
 
-            <div class="wf-flex wf-flex-col wf-w-full wf-mt-10 wf-mb-3 wf-justify-center wf-bg-white">
+            <div class="wf-flex wf-flex-col wf-w-full wf-justify-center wf-bg-white">
                 <div class="wf-m-3 wf-flex wf-flex-col wf-items-center wf-p-6">
                     <img src="">
                     <h4 class="wf-text-xl wf-text-slate-900">
@@ -492,13 +498,37 @@
                     </button>
                 </div>
             </div>
-            mmm
+            <div class="wf-flex wf-flex-col wf-justify-center wf-items-center wf-bg-slate-900 wf-py-10 wf-px-5">
+                <div class="wf-h-[120px] wf-my-0 wf-mx-5 wf-relative wf-w-[101px] wf-bg-yellow-100 wf-rounded-tr-[70px] wf-rounded-tl-[70px]">
+                    <img class="wf-w-[125px] wf-absolute wf-top-5 -wf-left-2 wf-scale-[1.3]" src="@/assets/img/tools/weigh.png">
+                </div>
+                <h3 class="wf-text-2xl wf-font-bold wf-text-white wf-whitespace-pre-wrap wf-font-[StriverText] wf-text-center wf-mt-5 md:wf-w-[45%] md:wf-text-4xl">
+                    Subscribe to our news channel today
+                </h3>
+                <div class="wf-text-center md:wf-w-[45%]">
+                    <p class="wf-text-base md:wf-text-xl wf-text-gray-200 wf-mt-5 wf-font-[Euclid]">
+                        Keep in touch with us through our news channel, be among the first to receive our mouth watery offers directly through your mail box, no-obligation valuation.
+                    </p>
+                </div>
+                <form class="wf-relative wf-mt-7 wf-w-full wf-max-w-[290px]">
+                    <div class="wf-relative wf-bg-white wf-rounded-lg">
+                        <div>
+                            <input type="text" class="wf-text-gray-700 wf-appearance-none wf-overflow-ellipsis wf-bg-white wf-w-full wf-text-base wf-py-5 wf-pr-[130px] wf-pl-3 wf-rounded wf-outline-none wf-placeholder-gray-400" placeholder="Enter email address">
+                        </div>
+                        <div class="wf-absolute wf-inline-block wf-right-2 wf-bottom-[15px] wf-h-[36px]">
+                            <button class="wf-py-2 wf-px-4 wf-text-base wf-rounded wf-border-none wf-inline-block wf-font-bold wf-h-10m wf-cursor-pointer wf-select-none wf-bg-yellow-500 wf-text-gray-800 wf-capitalize">subscribe</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <FooterComponent />
         </main>
     </div>
 </template>
 
 <script setup lang="ts">
     import HeaderComponent from '../components/layouts/HeaderComponent.vue';
+    import FooterComponent from '../components/layouts/FooterComponent.vue';
     import TickerCard from '../components/cards/TickerCard.vue';
     import tickers from '../apis/tickers';
     import { Wallet, Bed } from 'mdue';
