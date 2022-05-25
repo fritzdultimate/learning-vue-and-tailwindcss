@@ -15,6 +15,14 @@ const routes = [
           layout: 'AppLayoutHome'
         }
     },
+    {
+        path: '/support/contact-us',
+        name: 'ContactUsView',
+        component: () => import('../views/ContactUsView.vue'),
+        meta: {
+          layout: 'AppLayoutHome'
+        }
+    },
 ];
 
 export default routes;
