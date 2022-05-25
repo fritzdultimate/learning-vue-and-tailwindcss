@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "AppLayoutHome",
+  name: "AppLayoutProfile",
 }
 </script>
 

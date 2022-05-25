@@ -2,7 +2,7 @@
     <nav class="wf-bg-gray-transparent wf-py-2 md:wf-py4">
         <div class="wf-container wf-px-4 wf-mx-auto md:wf-flex md:wf-items-center">
             <div class="wf-flex wf-justify-between wf-items-center">
-                <a href="#" class="wf-font-bold wf-text-xl wf-text-gray-200">FlowBank</a>
+                <router-link to="/" class="wf-font-bold wf-text-xl wf-text-gray-200">Spacearn.com</router-link>
                 <MenuAlt3Icon class="wf-h-6 wf-w-6 wf-text-gray-50 wf-opacity-50 wf-font-bold hover:wf-opacity-75 md:wf-hidden" @click="toggleMenu"/>
             </div>
             <div class="wf-hidden md:wf-flex wf-flex-col md:wf-flex-row md:wf-ml-auto wf-mt-3 md:wf-mt-0" id="navbar-collapse" ref="collapse">
