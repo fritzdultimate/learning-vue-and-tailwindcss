@@ -12,9 +12,9 @@
                 <router-link to="/about" class="wf-p-2 lg:wf-px-4 md:wf-mx-2 wf-text-gray-200 wf-rounded hover:wf-bg-gray-100/5 hover:wf-text-gray-500 wf-transition-colors wf-duration-300">
                     About Us
                 </router-link>
-                <a href="#" class="wf-p-2 lg:wf-px-4 md:wf-mx-2 wf-text-gray-200 wf-rounded hover:wf-bg-gray-100/5 hover:wf-text-gray-500 wf-transition-colors wf-duration-300">
+                <router-link to="/support/contact-us" class="wf-p-2 lg:wf-px-4 md:wf-mx-2 wf-text-gray-200 wf-rounded hover:wf-bg-gray-100/5 hover:wf-text-gray-500 wf-transition-colors wf-duration-300">
                     Contact Us
-                </a>
+                </router-link>
                 <a href="#" class="wf-p-2 lg:wf-px-4 md:wf-mx-2 wf-text-gray-200 wf-rounded hover:wf-bg-gray-100/5 hover:wf-text-gray-500 wf-transition-colors wf-duration-300">
                     Pricing
                 </a>
