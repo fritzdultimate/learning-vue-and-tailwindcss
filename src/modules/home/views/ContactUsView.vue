@@ -120,8 +120,8 @@
                             To protect your privacy, please ensure you are not providing any personal identifying information when submitting this request. 
                         </p>
                         <div class="">
-                            <button class="wf-my-5 wf-rounded wf-bg-yellow-700 wf-inline wf-py-2 wf-px-5 wf-text-white wf-text-base wf-font-bold">
-                                Send verification email
+                            <button class="wf-my-5 wf-rounded wf-bg-yellow-700 wf-inline wf-py-2 wf-px-5 wf-text-white wf-text-base wf-font-bold wf-capitalize">
+                                send verification email
                             </button>
                         </div>
                     </div>
