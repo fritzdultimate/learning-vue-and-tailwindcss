@@ -22,7 +22,7 @@
 
         <div class="wf-flex wf-mt-10 wf-px-10 wf-mx-auto wf-max-w-[1200px] wf-w-full">
             <div class="wf-w-full md:wf-w-3/4">
-                <div class="">
+                <div class="wf-pr-5">
                     <h1 class="wf-text-3xl md:wf-text-5xl wf-font-bold">
                         We're here to help
                     </h1>
@@ -47,7 +47,7 @@
                     </p>
                 </div>
 
-                <section class="wf-flex wf-mt-10 wf-flex-wrap wf-w-full wf-pr-20">
+                <section class="wf-flex wf-mt-10 wf-flex-wrap wf-w-full wf-pr-5">
                     <div class="wf-w-1/2 md:wf-w-1/3" v-for="i in 6" :key="i">
                         <label :for="i" class="wf-flex wf-flex-col wf-items-center wf-justify-center wf-mr-3 wf-mb-3 wf-border wf-border-gray-300 wf-rounded wf-h-56 wf-cursor-pointer hover:wf-bg-gray-100">
                             <figure class="wf-rounded-[50%] wf-relative wf-w-20 wf-h-20 wf-mx-auto wf-mb-0 wf-shadow-md wf-shadow-gray-400">
@@ -130,14 +130,59 @@
                     To get in touch with Spacearn Custody, please visit our custody and find our contact information.
                 </p>
             </div>
-            <div class="wf-w-full md:wf-w-1/4"></div>
+            <div class="wf-w-full md:wf-w-1/4 wf-mt-20">
+                <div class="wf-mb-5 wf-border wf-border-gray-300 wf-rounded">
+                    <div class="wf-flex wf-justify-center wf-px-4 wf-py-4 wf-border-b wf-border-b-gray-300">
+                        <div class="wf-w-2/3 wf-pr-5">
+                            <h4 class="wf-font-bold wf-text-xl wf-mb-4 wf-text-gray-900">WhatsApp live support</h4>
+                            <p class="wf-text-base wf-font-medium wf-text-cyan-900">
+                                Chat directly with someone on our support team to get answers about your account, crypto purchases, or payments.
+                            </p>
+                        </div>
+                        <figure class="wf-w-1/3 wf-mb-4">
+                            <img src="@/assets/img/tools/spacearnOnePhoneLightning.svg" class="wf-w-full wf-h-auto wf-object-cover">
+                        </figure>
+                    </div>
+                    <div class="wf-flex wf-flex-col wf-justify-center wf-px-2 wf-py-2">
+                        <div class="wf-flex wf-ml-3 wf-mt-8" v-for="i in 6" :key="i">
+                            <span class="wf-rounded-full wf-p-2 wf-w-10 wf-h-10 wf-bg-gray-50 wf-border wf-border-gray-200 wf-text-center wf-mr-4">
+                                <PhoneIcon class="wf-h-auto wf-w-full wf-align-middle wf-text-gray-500" />
+                            </span>
+                            <p class="wf-align-middle">
+                                <span class="wf-block wf-text-base wf-text-gray-600 wf-font-medium">USA</span>
+                                <a class="wf-block wf-text-yellow-500 wf-text-base wf-font-medium wf-text-medium">+34 284645382</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wf-mb-5 wf-border wf-border-gray-300 wf-rounded">
+                    <div class="wf-flex wf-justify-center wf-px-4 wf-py-4 wf-mb-5">
+                        <div class="wf-w-2/3 wf-pr-5">
+                            <h4 class="wf-font-bold wf-text-xl wf-mb-4 wf-text-gray-900">
+                                Suspicious activity?
+                            </h4>
+                            <p class="wf-text-base wf-font-medium wf-text-cyan-900">
+                                If you suspect your account has been compromised, you can call Coinbase Support to lock your account.
+                            </p>
+                        </div>
+                        <figure class="wf-w-1/3 wf-mb-4">
+                            <img src="@/assets/img/tools/securityShield.svg" class="wf-w-full wf-h-auto wf-object-cover">
+                        </figure>
+                    </div>
+                    <div class="wf-mb-5 wf-mx-3">
+                        <a href="#" class="wf-w-full wf-block wf-text-white wf-text-base wf-font-medium wf-bg-yellow-700 wf-rounded wf-py-2 wf-px-4 wf-text-center wf-w-full">Learn more</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
+
 <script setup lang="ts">
     // import { HomeSearch, SearchWeb, MapSearch, SelectSearch } from 'mdue';
-    import { SearchIcon, XIcon } from '@heroicons/vue/solid'
+    import { SearchIcon, XIcon, PhoneIcon } from '@heroicons/vue/solid'
     import { ref, computed } from 'vue';
 
     const search = ref('');
