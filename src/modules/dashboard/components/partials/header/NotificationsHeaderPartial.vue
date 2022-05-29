@@ -5,7 +5,7 @@
         class="wf-w-8 wf-h-8 wf-flex wf-items-center wf-justify-center wf-bg-slate-100 hover:wf-bg-slate-200 wf-transition wf-duration-150 wf-rounded-full" 
         :class="{'bg-slate-200' : dropdownOpen}"
         aria-haspopup="true"
-        aria-expanded={dropdownOpen}
+        :aria-expanded="false"
         >
         <span class="wf-sr-only">Notifications</span>
         <svg class="wf-w-4 wf-h-4" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
@@ -27,6 +27,7 @@
         > -->
         <div
             ref={dropdown}
+            v-if="false"
         >
         <div class="wf-text-xs wf-font-semibold wf-text-slate-400 wf-uppercase wf-pt-1.5 wf-pb-2 wf-px-4">Notifications</div>
         <ul>

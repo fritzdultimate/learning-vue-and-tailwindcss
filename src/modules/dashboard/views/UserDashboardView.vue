@@ -9,7 +9,7 @@
                     <button
                     class="wf-text-slate-500 hover:wf-text-slate-600 lg:wf-hidden"
                     aria-controls="sidebar"
-                    aria-expanded={sidebarOpen}
+                    :aria-expanded="false"
                     >
                     <span class="wf-sr-only">Open sidebar</span>
                     <svg class="wf-w-6 wf-h-6 wf-fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -36,14 +36,21 @@
                         </svg>
                     </button>
                     <SearchModal id="search-modal" searchId="search" modalOpen={searchModalOpen} setModalOpen={setSearchModalOpen} />
-                    <Notifications />
+                    <NotificationsHeaderPartial />
                     <Help />
                     <!-- /*  Divider */ -->
                     <hr class="wf-w-px wf-h-6 wf-bg-slate-200 wf-mx-3" />
-                    <UserMenu />
+                    <UserMenuHeaderPartial />
                 </div>
             </div>
         </div>
     </header>
 
 </template>
+
+<script setup lang="ts">
+    import NotificationsHeaderPartial from '../components/partials/header/NotificationsHeaderPartial.vue'
+    import UserMenuHeaderPartial from '../components/partials/header/UserMenuHeaderPartial.vue'
+    // import HelpHeaderPartial from '../components/partials/header/HelpHeaderPartial.vue'
+    // import SearchModalHeaderPartial from '../components/partials/header/HelpHeaderPartial.vue'
+</script>
