@@ -1,5 +1,5 @@
 <template>
-    <div class="wf-flex wf-h-screen wf-overflow-hidden">
+    <div class="wf-flex wf-h-screen wf-overflow-hidden wf-bg-gray-100">
 
       <!-- Sidebar  -->
       <SidebarPartial />
@@ -10,7 +10,7 @@
                 <div class="wf-px-4 sm:wf-px-6 lg:wf-px-8">
                     <div class="wf-flex wf-items-center wf-justify-between wf-h-16 -wf-mb-px">
                         <!-- Header: Left side -->
-                        <div class="wf-flex">
+                        <div class="wf-flexx wf-hidden">
 
                             <!-- Hamburger button -->
                             <button
@@ -29,7 +29,7 @@
                         </div>
 
                         <!-- /* Header: Right side */ -->
-                        <div class="wf-flex wf-items-center">
+                        <div class="wf-flex wf-items-center wf-ml-auto">
 
                             <button
                             class="wf-w-8 wf-h-8 wf-flex wf-items-center wf-justify-center wf-bg-slate-100 hover:wf-bg-slate-200 wf-transition wf-duration-150 wf-rounded-full wf-ml-3" 
