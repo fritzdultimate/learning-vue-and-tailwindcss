@@ -53,5 +53,20 @@
     "vite": "^2.9.5",
     "vitest": "^0.9.3",
     "vue-tsc": "^0.34.7"
+  },
+  "description": "Repo where I create project while learning Vue + Tailwindcss",
+  "main": "postcss.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fritzdultimate/learning-vue-and-tailwindcss.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fritzdultimate/learning-vue-and-tailwindcss/issues"
+  },
+  "homepage": "https://github.com/fritzdultimate/learning-vue-and-tailwindcss#readme",
+  "engines": {
+    "node": "16.14.0"
   }
 }
