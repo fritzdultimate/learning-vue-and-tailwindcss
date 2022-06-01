@@ -26,7 +26,7 @@
                 </a>
 
                 <a href="#" class="wf-p-2 md:wf-px-4 lg:wf-x-4 md:wf-mx-2 wf-text-gray-200 wf-text-center wf-border wf-border-solid wf-border-yellow-600 wf-bg-yellow-600 wf-rounded md:wf-rounded-full hover:wf-bg-yellow-100 hover:wf-text-yellow-700 hover:wf-border-transparent wf-transition-colors wf-duration-300 wf-mt-1 md:wf-mt-0 md:wf-ml-1">
-                    Get  Started
+                    Get  Started 
                 </a>
             </div>
         </div>
