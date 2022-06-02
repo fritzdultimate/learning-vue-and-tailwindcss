@@ -25,9 +25,9 @@
             </nav>
             <!-- NavBar Mobile -->
 
-            <nav class="wf-fixed wf-bottom-0 wf-inset-x-0 wf-bg-yellow-100 wf-flex wf-justify-center wf-text-sm wf-text-yellow-900 wf-uppercase wf-font-mono md:wf-hidden">
+            <nav class="wf-fixed wf-bottom-0 wf-inset-x-0 wf-bg-yellow-100 wf-flex wf-justify-center wf-text-xs wf-text-yellow-900 wf-uppercase wf-font-mono md:wf-hidden wf-font-bold">
                 <router-link to="#" class="wf-w-full wf-block wf-py-2 wf-px-3 wf-text-center hover:wf-bg-yellow-200 hover:wf-text-yellow-800 wf-transition wf-duration-300" v-for="(link, id) in mobileNavLinks" :key="id">
-                    <component :is="link.icon" class="wf-w-6 wf-h-6 wf-mx-auto wf-mb-2" />
+                    <component :is="link.icon" class="wf-w-4 wf-h-4 wf-mx-auto wf-mb-2" />
                     {{ link.name == 'Dashboard' ? 'home' : link.name }}
                 </router-link>
             </nav>
@@ -100,7 +100,8 @@
             name: 'Sell',
             icon: Wallet,
             to: "#",
-            id: 'sell'
+            id: 'sell',
+            mobile: true
         },
         {
             name: 'Profile',
