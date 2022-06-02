@@ -1,5 +1,5 @@
 <template>
-    <nav class="wf-bg-gray-transparent wf-py-2 md:wf-py4">
+    <nav class="wf-bg-gray-transparen wf-bg-gradient-to-r wf-from-gray-900 md:wf-from-gray-900/95 md:wf-via-gray-900 wf-to-gray-900/95 wf-py-2 md:wf-py4 wf-sticky wf-top-0 wf-z-50">
         <div class="wf-container wf-px-4 wf-mx-auto md:wf-flex md:wf-items-center">
             <div class="wf-flex wf-justify-between wf-items-center">
                 <router-link to="/" class="wf-font-bold wf-text-xl wf-text-gray-200">Spacearn.com</router-link>
@@ -26,7 +26,7 @@
                 </a>
 
                 <a href="#" class="wf-p-2 md:wf-px-4 lg:wf-x-4 md:wf-mx-2 wf-text-gray-200 wf-text-center wf-border wf-border-solid wf-border-yellow-600 wf-bg-yellow-600 wf-rounded md:wf-rounded-full hover:wf-bg-yellow-100 hover:wf-text-yellow-700 hover:wf-border-transparent wf-transition-colors wf-duration-300 wf-mt-1 md:wf-mt-0 md:wf-ml-1">
-                    Get  Started
+                    Get  Started 
                 </a>
             </div>
         </div>

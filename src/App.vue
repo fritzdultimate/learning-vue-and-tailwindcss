@@ -3,9 +3,9 @@
 </script>
 
 <template>
-  <div id="app" class="wf-h-full">
+  <!-- <div id="app" class="wf-h-full"> -->
     <AppLayout>
         <router-view />
     </AppLayout>
-  </div>
+  <!-- </div> -->
 </template>
