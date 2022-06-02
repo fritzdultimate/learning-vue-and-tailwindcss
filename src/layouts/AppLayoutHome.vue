@@ -1,6 +1,6 @@
 <template>
   <!-- <div class=""> -->
-        <main class="wf-bg-gradient-to-r wf-from-gray-900 md:wf-from-gray-900/95 md:wf-via-gray-900 wf-to-gray-900/95 wf-h-full  wf-w-full wf-m-auto" role="main">
+        <main class="wf-bg-gradient-to-r wf-from-gray-900 md:wf-from-gray-900/95 md:wf-via-gray-900 wf-to-gray-900/95  wf-w-full wf-m-auto" role="main">
             <HeaderComponent  class="md:wf-px-1 md:wf-pt-4"/>
             <slot />
             <FooterComponent  class="md:wf-px-1 md:wf-pt-4"/>
