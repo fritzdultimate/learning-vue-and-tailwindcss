@@ -1,63 +1,87 @@
 <template>
-    <div class="wf-flex wf-h-screen wf-overflow-hidden wf-bg-gray-100">
+    <div class="wf-h-full wf-bg-gray-100">
+        <div class="wf-flex wf-pt-5 wf-h-full wf-pr-5">
+            <!-- Sidebar Desktop -->
+            <div class="wf-w-[16%] w-hidden md:wf-flex wf-flex-col wf-items-center wf-h-full wf-bg-gray-100">
+                <!-- Company Logo -->
+                <figure class="wf-mt-8 wf-mb-5">
+                    <!-- <img> -->
+                    <span class="wf-font-bold wf-text-gray-900/75 wf-text-3xl">
+                        Spacearn
+                    </span>
+                </figure>
+                <ul class="wf-w-full">
+                    <li class="wf-mb-6 wf-relative before:wf-absolute before:wf-content-[''] before:wf-w-1 before:wf-h-full before:wf-bg-yellow-700 before:wf-rounded-r-lg">
+                        <router-link to="#" class="wf-flex wf-items-center wf-py-1.5 wf-bg-yellow-700 wf-rounded-lg wf-ml-5 wf-text-gray-100">
+                            <HomeIcon class="wf-w-8 wf-h-6 wf-mr-3 wf-ml-4" />
+                            <span class="wf-font-bold wf-text-base">Dashboard</span>
+                        </router-link>
+                    </li>
 
-      <!-- Sidebar  -->
-      <SidebarPartial />
+                    <li class="wf-mb-6 wf-relative hover:before:wf-absolute before:wf-content-[''] before:wf-w-1 before:wf-h-full before:wf-bg-yellow-700/30 before:wf-rounded-r-lg">
+                        <router-link to="#" class="wf-flex wf-items-center wf-py-1.5 hover:wf-bg-yellow-700/30 hover:wf-text-gray-900/50 wf-rounded-lg wf-ml-5 wf-text-yellow-700/40 wf-transition-all">
+                            <ChartSquareBarIcon class="wf-w-8 wf-h-6 wf-mr-3 wf-ml-4" />
+                            <span class="wf-font-bold wf-text-medium">Exchange</span>
+                        </router-link>
+                    </li>
 
-      <!-- Content area  -->
-      <div class="wf-relative wf-flex wf-flex-col wf-flex-1 wf-overflow-y-auto wf-overflow-x-hidden">
-            <header class="wf-sticky wf-top-0 wf-bg-white wf-border-b wf-border-slate-200 wf-z-30">
-                <div class="wf-px-4 sm:wf-px-6 lg:wf-px-8">
-                    <div class="wf-flex wf-items-center wf-justify-between wf-h-16 -wf-mb-px">
-                        <!-- Header: Left side -->
-                        <div class="wf-flexx wf-hidden">
+                    <li class="wf-mb-6 wf-relative hover:before:wf-absolute before:wf-content-[''] before:wf-w-1 before:wf-h-full before:wf-bg-yellow-700/30 before:wf-rounded-r-lg">
+                        <router-link to="#" class="wf-flex wf-items-center wf-py-1.5 hover:wf-bg-yellow-700/30 hover:wf-text-gray-900/50 wf-rounded-lg wf-ml-5 wf-text-yellow-700/40 wf-transition-all">
+                            <Wallet class="wf-w-8 wf-h-6 wf-mr-3 wf-ml-4" />
+                            <span class="wf-font-bold wf-text-medium">Wallet</span>
+                        </router-link>
+                    </li>
 
-                            <!-- Hamburger button -->
-                            <button
-                            class="wf-text-slate-500 hover:wf-text-slate-600 lg:wf-hidden"
-                            aria-controls="sidebar"
-                            :aria-expanded="false"
-                            >
-                            <span class="wf-sr-only">Open sidebar</span>
-                            <svg class="wf-w-6 wf-h-6 wf-fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="4" y="5" width="16" height="2" />
-                                <rect x="4" y="11" width="16" height="2" />
-                                <rect x="4" y="17" width="16" height="2" />
-                            </svg>
-                            </button>
+                    <li class="wf-mb-6 wf-relative hover:before:wf-absolute before:wf-content-[''] before:wf-w-1 before:wf-h-full before:wf-bg-yellow-700/30 before:wf-rounded-r-lg">
+                        <router-link to="#" class="wf-flex wf-items-center wf-py-1.5 hover:wf-bg-yellow-700/30 hover:wf-text-gray-900/50 wf-rounded-lg wf-ml-5 wf-text-yellow-700/40 wf-transition-all">
+                            <Wallet class="wf-w-8 wf-h-6 wf-mr-3 wf-ml-4" />
+                            <span class="wf-font-bold wf-text-medium">Send</span>
+                        </router-link>
+                    </li>
 
-                        </div>
+                    <li class="wf-mb-6 wf-relative hover:before:wf-absolute before:wf-content-[''] before:wf-w-1 before:wf-h-full before:wf-bg-yellow-700/30 before:wf-rounded-r-lg">
+                        <router-link to="#" class="wf-flex wf-items-center wf-py-1.5 hover:wf-bg-yellow-700/30 hover:wf-text-gray-900/50 wf-rounded-lg wf-ml-5 wf-text-yellow-700/40 wf-transition-all">
+                            <Wallet class="wf-w-8 wf-h-6 wf-mr-3 wf-ml-4" />
+                            <span class="wf-font-bold wf-text-medium">Receive</span>
+                        </router-link>
+                    </li>
 
-                        <!-- /* Header: Right side */ -->
-                        <div class="wf-flex wf-items-center wf-ml-auto">
+                    <li class="wf-mb-6 wf-relative hover:before:wf-absolute before:wf-content-[''] before:wf-w-1 before:wf-h-full before:wf-bg-yellow-700/30 before:wf-rounded-r-lg">
+                        <router-link to="#" class="wf-flex wf-items-center wf-py-1.5 hover:wf-bg-yellow-700/30 hover:wf-text-gray-900/50 wf-rounded-lg wf-ml-5 wf-text-yellow-700/40 wf-transition-all">
+                            <Wallet class="wf-w-8 wf-h-6 wf-mr-3 wf-ml-4" />
+                            <span class="wf-font-bold wf-text-medium">Profile</span>
+                        </router-link>
+                    </li>
 
-                            <button
-                            class="wf-w-8 wf-h-8 wf-flex wf-items-center wf-justify-center wf-bg-slate-100 hover:wf-bg-slate-200 wf-transition wf-duration-150 wf-rounded-full wf-ml-3" 
-                            :class="{'bg-slate-200' : searchModalOpen }"
-                            aria-controls="search-modal"
-                            >
-                                <span class="wf-sr-only">Search</span>
-                                <svg class="wf-w-4 wf-h-4" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                    <path class="wf-fill-current wf-text-slate-500" d="M7 14c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zM7 2C4.243 2 2 4.243 2 7s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5z" />
-                                    <path class="wf-fill-current wf-text-slate-400" d="M15.707 14.293L13.314 11.9a8.019 8.019 0 01-1.414 1.414l2.393 2.393a.997.997 0 001.414 0 .999.999 0 000-1.414z" />
-                                </svg>
-                            </button>
-                            <SearchModal id="search-modal" searchId="search" modalOpen={searchModalOpen} setModalOpen={setSearchModalOpen} />
-                            <NotificationsHeaderPartial />
-                            <Help />
-                            <!-- /*  Divider */ -->
-                            <hr class="wf-w-px wf-h-6 wf-bg-slate-200 wf-mx-3" />
-                            <UserMenuHeaderPartial />
-                        </div>
-                    </div>
-                </div>
-            </header>
+                    <li class="wf-mb-6 wf-relative hover:before:wf-absolute before:wf-content-[''] before:wf-w-1 before:wf-h-full before:wf-bg-yellow-700/30 before:wf-rounded-r-lg">
+                        <router-link to="#" class="wf-flex wf-items-center wf-py-1.5 hover:wf-bg-yellow-700/30 hover:wf-text-gray-900/50 wf-rounded-lg wf-ml-5 wf-text-yellow-700/40 wf-transition-all">
+                            <Wallet class="wf-w-8 wf-h-6 wf-mr-3 wf-ml-4" />
+                            <span class="wf-font-bold wf-text-medium">Settings</span>
+                        </router-link>
+                    </li>
+                </ul>
+
+                <form>
+                    <button class="wf-outline-0 wf-bg-yellow-700 wf-px-10 wf-py-1 wf-font-medium wf-text-base wf-text-gray-100 wf-rounded wf-mt-10 hover:wf-bg-yellow-900 focus:wf-bg-yellow-900 hover:wf-ring hover:wf-ring-yellow-700/50 focus:wf-ring focus:wf-ring-yellow-700/50">Logout</button>
+                </form>
+            </div>
+
+            <!-- Content area  -->
+            <div class="wf-w-full md:wf-w-[62%] wf-h-full wf-px-4">
+                <div class="wf-h-full wf-bg-white wf-rounded-l-3xl wf-shadow-lg"></div>
+            </div>
+
+            <div class="wf-w-full md:wf-w-[22%] wf-h-full">
+                <div class="wf-h-full wf-bg-white/75 wf-rounded-r-3xl wf-shadow-lg"></div>
+            </div>
         </div>
     </div>
 
 </template>
 
 <script setup lang="ts">
+    import { Wallet, Tool } from 'mdue'
+    import { HomeIcon, ChartSquareBarIcon } from '@heroicons/vue/solid'
     import NotificationsHeaderPartial from '../partials/NotificationsHeaderPartial.vue'
     import UserMenuHeaderPartial from '../partials/UserMenuHeaderPartial.vue'
     // import HelpHeaderPartial from '../components/partials/header/HelpHeaderPartial.vue'
