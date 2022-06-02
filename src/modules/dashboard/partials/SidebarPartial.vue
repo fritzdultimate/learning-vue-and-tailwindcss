@@ -12,7 +12,7 @@
             <!-- Sidebar header -->
             <div class="wf-flex wf-justify-between wf-mb-10 wf-pr-3 sm:wf-px-2">
             <!-- Close button -->
-                <button
+                <button 
                     ref="trigger"
                     class="lg:wf-hidden wf-text-slate-500 hover:wf-text-slate-400"
                     @click="(sidebarOpen = !sidebarOpen)"

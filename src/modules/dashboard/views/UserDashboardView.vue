@@ -1,66 +1,127 @@
 <template>
-    <div class="wf-flex wf-h-screen wf-overflow-hidden wf-bg-gray-100">
+    <div class="wf-bg-gray-100">
+        <div class="wf-flex wf-pt-5 wf-pr-5">
+            <!-- Sidebar Desktop -->
+            <nav class="wf-absolut wf-bottom-0 wf-fixed wf-w-full wf-hidden md:wf-static md:wf-w-[16%] md:wf-flex md:wf-flex-col wf-items-center wf-bg-gray-100 wf-pb-10">
+                <!-- Company Logo -->
+                <figure class="wf-mt-8 wf-mb-5 wf-hidden md:wf-block">
+                    <!-- <img> -->
+                    <span class="wf-font-bold wf-text-gray-900/75 wf-text-3xl">
+                        Spacearn
+                    </span>
+                </figure>
+                <ul class="wf-w-full wf-flex md:wf-block">
+                    <li class="wf-mb-6 wf-relative before:wf-content-[''] before:wf-w-1 before:wf-h-full before:wf-rounded-r-lg" :class="link.id == activeLink ? 'before:wf-absolute before:wf-bg-yellow-700' : 'hover:before:wf-absolute before:wf-bg-yellow-700/30' " v-for="(link, id) of NavLinks" :key="id">
+                        <router-link :to="link.to" class="wf-flex wf-items-center wf-py-1.5 wf-rounded-lg wf-ml-5 wf-text-gray-100 wf-transition-all" :class="link.id == activeLink ? 'wf-bg-yellow-700' : 'hover:wf-text-gray-900/50 wf-text-yellow-700/40 hover:wf-bg-yellow-700/30'" @click.prevent="navigate(link)">
+                            <component :is="link.icon" class="wf-w-8 wf-h-6 wf-mr-3 wf-ml-4" />
+                            <span class="wf-font-bold">{{ link.name }}</span>
+                        </router-link>
+                    </li>
+                </ul>
 
-      <!-- Sidebar  -->
-      <SidebarPartial />
+                <form class="wf-hidden md:wf-block">
+                    <button class="wf-outline-0 wf-bg-yellow-700 wf-px-10 wf-py-1 wf-font-medium wf-text-base wf-text-gray-100 wf-rounded wf-mt-10 hover:wf-bg-yellow-900 focus:wf-bg-yellow-900 hover:wf-ring hover:wf-ring-yellow-700/50 focus:wf-ring focus:wf-ring-yellow-700/50">Logout</button>
+                </form>
+            </nav>
+            <!-- NavBar Mobile -->
 
-      <!-- Content area  -->
-      <div class="wf-relative wf-flex wf-flex-col wf-flex-1 wf-overflow-y-auto wf-overflow-x-hidden">
-            <header class="wf-sticky wf-top-0 wf-bg-white wf-border-b wf-border-slate-200 wf-z-30">
-                <div class="wf-px-4 sm:wf-px-6 lg:wf-px-8">
-                    <div class="wf-flex wf-items-center wf-justify-between wf-h-16 -wf-mb-px">
-                        <!-- Header: Left side -->
-                        <div class="wf-flexx wf-hidden">
+            <nav class="wf-fixed wf-bottom-0 wf-inset-x-0 wf-bg-yellow-100 wf-flex wf-justify-center wf-text-xs wf-text-yellow-900 wf-uppercase wf-font-mono md:wf-hidden wf-font-bold">
+                <router-link to="#" class="wf-w-full wf-block wf-py-2 wf-px-3 wf-text-center hover:wf-bg-yellow-200 hover:wf-text-yellow-800 wf-transition wf-duration-300" v-for="(link, id) in mobileNavLinks" :key="id">
+                    <component :is="link.icon" class="wf-w-4 wf-h-4 wf-mx-auto wf-mb-2" />
+                    {{ link.name == 'Dashboard' ? 'home' : link.name }}
+                </router-link>
+            </nav>
 
-                            <!-- Hamburger button -->
-                            <button
-                            class="wf-text-slate-500 hover:wf-text-slate-600 lg:wf-hidden"
-                            aria-controls="sidebar"
-                            :aria-expanded="false"
-                            >
-                            <span class="wf-sr-only">Open sidebar</span>
-                            <svg class="wf-w-6 wf-h-6 wf-fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="4" y="5" width="16" height="2" />
-                                <rect x="4" y="11" width="16" height="2" />
-                                <rect x="4" y="17" width="16" height="2" />
-                            </svg>
-                            </button>
+            <!-- Content area  -->
+            <div class="wf-w-full md:wf-w-[62%] wf-h-full wf-px-4">
+                <div class="wf-h-full wf-bg-white wf-rounded-l-3xl wf-shadow-lg">content</div>
+            </div>
 
-                        </div>
-
-                        <!-- /* Header: Right side */ -->
-                        <div class="wf-flex wf-items-center wf-ml-auto">
-
-                            <button
-                            class="wf-w-8 wf-h-8 wf-flex wf-items-center wf-justify-center wf-bg-slate-100 hover:wf-bg-slate-200 wf-transition wf-duration-150 wf-rounded-full wf-ml-3" 
-                            :class="{'bg-slate-200' : searchModalOpen }"
-                            aria-controls="search-modal"
-                            >
-                                <span class="wf-sr-only">Search</span>
-                                <svg class="wf-w-4 wf-h-4" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                    <path class="wf-fill-current wf-text-slate-500" d="M7 14c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zM7 2C4.243 2 2 4.243 2 7s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5z" />
-                                    <path class="wf-fill-current wf-text-slate-400" d="M15.707 14.293L13.314 11.9a8.019 8.019 0 01-1.414 1.414l2.393 2.393a.997.997 0 001.414 0 .999.999 0 000-1.414z" />
-                                </svg>
-                            </button>
-                            <SearchModal id="search-modal" searchId="search" modalOpen={searchModalOpen} setModalOpen={setSearchModalOpen} />
-                            <NotificationsHeaderPartial />
-                            <Help />
-                            <!-- /*  Divider */ -->
-                            <hr class="wf-w-px wf-h-6 wf-bg-slate-200 wf-mx-3" />
-                            <UserMenuHeaderPartial />
-                        </div>
-                    </div>
-                </div>
-            </header>
+            <div class="wf-w-full md:wf-w-[22%] wf-h-full">
+                <div class="wf-h-full wf-bg-white/75 wf-rounded-r-3xl wf-shadow-lg"></div>
+            </div>
         </div>
     </div>
 
 </template>
 
 <script setup lang="ts">
+    import { Wallet, Tool } from 'mdue'
+    import { HomeIcon, ChartSquareBarIcon } from '@heroicons/vue/solid'
     import NotificationsHeaderPartial from '../partials/NotificationsHeaderPartial.vue'
     import UserMenuHeaderPartial from '../partials/UserMenuHeaderPartial.vue'
     // import HelpHeaderPartial from '../components/partials/header/HelpHeaderPartial.vue'
     // import SearchModalHeaderPartial from '../components/partials/header/HelpHeaderPartial.vue'
     import SidebarPartial from '../partials/SidebarPartial.vue'
+    import { ref, computed } from 'vue';
+
+    const NavLinks = ref([
+        {
+            name: 'Dashboard',
+            icon: HomeIcon,
+            to: "#",
+            id: 'dashboard',
+            mobile: true
+
+        },
+        {
+            name: 'Exchange',
+            icon: ChartSquareBarIcon,
+            to: "#",
+            id: 'exchange',
+        },
+        {
+            name: 'Wallet',
+            icon: Wallet,
+            to: "#",
+            id: 'wallet',
+            mobile: true
+        },
+        {
+            name: 'Send',
+            icon: Wallet,
+            to: "#",
+            id: 'send',
+        },
+        {
+            name: 'Receive',
+            icon: Wallet,
+            to: "#",
+            id: 'receive'
+        },
+        {
+            name: 'Buy',
+            icon: Wallet,
+            to: "#",
+            id: 'buy',
+            mobile: true,
+        },
+        {
+            name: 'Sell',
+            icon: Wallet,
+            to: "#",
+            id: 'sell',
+            mobile: true
+        },
+        {
+            name: 'Profile',
+            icon: Wallet,
+            to: "#",
+            id: 'profile',
+            mobile: true,
+        },
+        {
+            name: 'Settings',
+            icon: Wallet,
+            to: "#",
+            id: 'settings'
+        }
+    ])
+    const activeLink = ref('dashboard')
+
+    const mobileNavLinks = computed(() => NavLinks.value.filter(el => el.mobile));
+
+    function navigate(nav) {
+        activeLink.value = nav.id;
+    }
 </script>
