@@ -1,6 +1,6 @@
 <template>
     <div class="wf-bg-gray-100">
-        <div class="wf-flex wf-pt-5 wf-pr-5">
+        <div class="wf-flex wf-flex-col md:wf-flex-row md:wf-pt-5 md:wf-pr-5">
             <!-- Sidebar Desktop -->
             <nav class="wf-absolut wf-bottom-0 wf-fixed wf-w-full wf-hidden md:wf-static md:wf-w-[16%] md:wf-flex md:wf-flex-col wf-items-center wf-bg-gray-100 wf-pb-10">
                 <!-- Company Logo -->
@@ -33,8 +33,26 @@
             </nav>
 
             <!-- Content area  -->
-            <div class="wf-w-full md:wf-w-[62%] wf-h-full wf-px-4">
-                <div class="wf-h-full wf-bg-white wf-rounded-l-3xl wf-shadow-lg">content</div>
+            <div class="wf-w-full md:wf-w-[62%] wf-h-full md:wf-px-4">
+                <div class="wf-h-full wf-bg-white md:wf-rounded-l-3xl md:wf-shadow-lg wf-px-5">
+                    <div class="wf-flex wf-pt-10">
+                        <div class="wf-flex wf-flex-col">
+                            <span class="wf-text-gray-500/75 wf-capitalize wf-font-mono wf-text-base wf-font-medium">
+                                hello Friz,
+                            </span>
+                            <span class="wf-text-xl wf-text-slate-700 wf-blur-[1px] wf-font-bold wf-capitalize">
+                                welcome back!
+                            </span>
+                        </div>
+                        <div class="wf-ml-auto">
+                            <span class="wf-flex wf-justify-center wf-items-center wf-px-2 wf-py-2 wf-bg-gray-100/50 wf-shadow wf-rounded-md">
+                                <i class="wf-relative before:wf-absolute before:wf-top-[1px] before:wf-right-[4px] before:wf-content-[''] before:wf-w-[7px] before:wf-h-[7px] before:wf-bg-red-500 before:wf-rounded-full">
+                                    <BellIcon class="wf-w-6 wf-h-auto wf-text-slate-900/75" />
+                                </i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="wf-w-full md:wf-w-[22%] wf-h-full">
@@ -46,8 +64,9 @@
 </template>
 
 <script setup lang="ts">
-    import { Wallet, Tool } from 'mdue'
+    import { Wallet } from 'mdue';
     import { HomeIcon, ChartSquareBarIcon } from '@heroicons/vue/solid'
+    import { BellIcon } from '@heroicons/vue/outline'
     import NotificationsHeaderPartial from '../partials/NotificationsHeaderPartial.vue'
     import UserMenuHeaderPartial from '../partials/UserMenuHeaderPartial.vue'
     // import HelpHeaderPartial from '../components/partials/header/HelpHeaderPartial.vue'
