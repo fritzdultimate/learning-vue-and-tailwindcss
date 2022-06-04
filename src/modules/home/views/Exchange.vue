@@ -132,7 +132,7 @@
         <div class="wf-flex wf-flex-col md:wf-flex-row wf-justify-center wf-pt-8">
             <div class="wf-basis-1/1 md:wf-basis-1/2 wf-borer wf-border-gray-500 ">
                 <div class="wf-flex mx-auto wf-justify-center">
-                <img src="@/assets/img/security-lock.jpg" class="wf-h-[90%] wf-w-[90%]"/>
+                    <img src="@/assets/img/security-lock.jpg" class="wf-h-[90%] wf-w-[90%]"/>
             </div>
             </div>
             <div class="wf-basis-1/1 md:wf-basis-1/2 wf-flex wf-borde wf-justify-center wf-px-12 md:wf-pr-24">

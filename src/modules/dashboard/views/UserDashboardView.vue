@@ -131,63 +131,28 @@
                         </div>
 
                         <div class="wf-flex wf-flex-col wf-mt-5">
-                            <!-- Header -->
-                            <div class="wf-flex">
-                                <span class="wf-text-xl wf-font-bold wf-font-san">
-                                    Recent activity
-                                </span>
-                                <span class="wf-ml-auto wf-mb-2">
-                                <router-link to="#" class="wf-mr-2 wf-text-sm wf-font-medium wf-text-gray-500">
-                                    See all
-                                </router-link>
-                            </span>
-                            </div>
-                            <!-- Activities -->
-                            <div class="wf-flex wf-flex-col wf-mt-5">
-                                <div class="wf-flex wf-justify-between wf-mb-5">
-                                    <div class="wf-flex">
-                                        <figure class="wf-p-1 wf-rounded-full wf-bg-gray-100 wf-shadow wf-flex wf-justify-center wf-items-center wf-mr-5">
-                                            <img src="../../../../src/assets/img/fritz_1.jpg" class="wf-cover wf-w-9 wf-h-9 wf-rounded-full">
-                                        </figure>
-                                        <p class="wf-flex wf-flex-col">
-                                            <span class="wf-text-base wf-font-bold wf-text-gray-900">
-                                                Ethereum deposit
-                                            </span>
-                                            <span class="wf-text-sm wf-font-medium wf-text-gray-500">
-                                                08 Jan, 2022
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <span class="wf-text-base wf-font-bold wf-text-gray-900">
-                                        $899.0
-                                    </span>
-                                </div>
-                                <div class="wf-flex wf-justify-between wf-mb-5">
-                                    <div class="wf-flex">
-                                        <figure class="wf-p-1 wf-rounded-full wf-bg-gray-100 wf-shadow wf-flex wf-justify-center wf-items-center wf-mr-5">
-                                            <img src="../../../../src/assets/img/fritz_1.jpg" class="wf-cover wf-w-9 wf-h-9 wf-rounded-full">
-                                        </figure>
-                                        <p class="wf-flex wf-flex-col">
-                                            <span class="wf-text-base wf-font-bold wf-text-gray-900">
-                                                Bitcoin deposit
-                                            </span>
-                                            <span class="wf-text-sm wf-font-medium wf-text-gray-500">
-                                                08 Jan, 2022
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <span class="wf-text-base wf-font-bold wf-text-gray-900">
-                                        $299.0
-                                    </span>
-                                </div>
-                            </div>
+                            <RecentActivityPartial class="md:wf-hidden"/>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="wf-w-full md:wf-w-[22%] wf-h-full">
-                <div class="wf-h-full wf-bg-white/75 wf-rounded-r-3xl wf-shadow-lg"></div>
+            <div class="wf-w-full md:wf-w-[22%] wf-h-full wf-ml-5 wf-hidden md:wf-block">
+                <div class="wf-h-full wf-bg-white/75 wf-rounded-r-3xl wf-shadow-lg wf-px-3 wf-pb-5">
+                    <div class="wf-flex wf-pt-10 wf-items-center">
+                        <NotificationsHeaderPartial class="wf-cursor-pointer"/>
+
+                        <div class="wf-ml-auto">
+                            <figure class="wf-rounded-full wf-flex wf-justify-center wf-items-center wf-cursor-pointer">
+                                <img src="../../../../src/assets/img/fritz_1.jpg" class="wf-cover wf-w-8 wf-h-8 wf-rounded-full">
+                                <span class="wf-text-gray-800 wf-text-xs wf-font-bold wf-ml-2 wf-flex wf-justify-center wf-items-center">
+                                    Nwosu Darlington
+                                    <ChevronDownIcon class="wf-w-4 wf-h-4 wf-text-gray-500" />
+                                </span>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -196,13 +161,14 @@
 
 <script setup lang="ts">
     import { Wallet } from 'mdue';
-    import { HomeIcon, ChartSquareBarIcon, ViewGridIcon, ReplyIcon, TrendingDownIcon, TrendingUpIcon } from '@heroicons/vue/solid'
+    import { HomeIcon, ChartSquareBarIcon, ViewGridIcon, ReplyIcon, TrendingDownIcon, TrendingUpIcon, ChevronDownIcon } from '@heroicons/vue/solid'
     import { PlusIcon, SearchIcon, UserIcon, CreditCardIcon, ShoppingCartIcon } from '@heroicons/vue/outline'
     import NotificationsHeaderPartial from '../partials/NotificationsHeaderPartial.vue'
     import UserMenuHeaderPartial from '../partials/UserMenuHeaderPartial.vue'
     import CoinDataPartial from '../partials/CoinDataPartial.vue'
     import SearchBoxHeaderPartial from '../partials/SearchBoxHeaderPartial.vue'
     import SidebarPartial from '../partials/SidebarPartial.vue'
+    import RecentActivityPartial from '../partials/RecentActivityPartial.vue'
     import { ref, computed } from 'vue';
 
     const NavLinks = ref([
