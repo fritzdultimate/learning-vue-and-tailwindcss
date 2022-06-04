@@ -34,7 +34,7 @@
 
             <!-- Content area  -->
             <div class="wf-w-full md:wf-w-[62%] wf-h-full md:wf-px-4 wf-mb-10">
-                <div class="wf-h-full wf-bg-white md:wf-rounded-l-3xl md:wf-shadow-lg wf-px-5">
+                <div class="wf-h-full wf-bg-white md:wf-bg-gray-50 md:wf-rounded-l-3xl md:wf-shadow-lg wf-px-5">
                     <div class="wf-flex wf-pt-10">
                         <div class="wf-flex wf-flex-col">
                             <span class="wf-text-gray-500/75 wf-capitalize wf-font-mono wf-text-base wf-font-bold">
@@ -45,39 +45,40 @@
                             </span>
                         </div>
                         <div class="wf-ml-auto">
-                            <span class="wf-flex wf-justify-center wf-items-center wf-px-2 wf-py-2 wf-bg-gray-100/50 wf-shadow wf-rounded-md">
-                                <i class="wf-relative before:wf-absolute before:wf-top-[1px] before:wf-right-[4px] before:wf-content-[''] before:wf-w-[7px] before:wf-h-[7px] before:wf-bg-red-600 before:wf-rounded-full">
-                                    <BellIcon class="wf-w-6 wf-h-auto wf-text-slate-900/75" />
-                                </i>
-                            </span>
+                            <NotificationsHeaderPartial class="md:wf-hidden"/>
+                            <SearchBoxHeaderPartial class="wf-hidden md:wf-block" />
                         </div>
                     </div>
 
                     <!-- Main content -->
                     <div class="wf-flex wf-flex-col wf-mt-10">
                         <!-- Account balance card -->
-                        <div class="wf-w-full wf-overflow-hidden wf-h-24 wf-rounded-md wf-bg-black/90 wf-flex wf-relative wf-items-center wf-px-5">
-                            <div class="wf-absolute wf-w-[70%] wf-h-28 wf-rounded-full wf-bg-gray-500/20 wf-rotate-[15deg] -wf-left-[115px] wf-top-6 wf-bg-"></div>
-                            <div class="wf-absolute wf-w-[70%] wf-h-28 wf-rounded-full wf-bg-gray-500/20 wf-rotate-[15deg] -wf-right-[115px] wf-bottom-6 wf-z-0"></div>
+                        <div class="wf-w-full wf-overflow-hidden wf-h-24 md:wf-h-48 wf-rounded-md wf-bg-black/90 md:wf-bg-blue-800/75 wf-flex wf-relative wf-items-center wf-px-5">
+                            <div class="md:wf-hidden wf-block wf-absolute wf-w-[70%] wf-h-28 wf-rounded-full wf-bg-gray-500/20 wf-rotate-[15deg] -wf-left-[115px] wf-top-6 wf-bg-"></div>
+                            <div class="wf-absolute wf-w-[70%] md:wf-w-[200%] wf-h-28 wf-rounded-full md:wf-bg-blue-500/20 wf-bg-gray-500/20 wf-rotate-[15deg] -wf-right-[115px] md:-wf-right-[16px] wf-bottom-6 md:wf-bottom-16 wf-z-0"></div>
+                            <CreditCardIcon class="md:wf-block wf-hidden wf-h-10 wf-w-10 wf-text-gray-300 wf-mr-5" />
                             <div class="wf-flex wf-flex-col">
-                                <span class="wf-capitalize wf-text-gray-300/75 wf-text-base wf-font-medium">
+                                <span class="wf-capitalize wf-text-gray-300/75 wf-text-base md:wf-text-xl wf-font-medium">
                                     current balance
                                 </span>
-                                <span class="wf-text-2xl wf-text-gray-100 wf-font-bold">
-                                    $4,570,80
+                                <span class="wf-text-2xl md:wf-text-4xl wf-text-gray-100 wf-font-bold">
+                                    $ 4,570,80
                                 </span>
                             </div>
                             <div class="wf-ml-auto">
-                                <span class="wf-bg-white wf-relative wf-z-10 wf-rounded-full  wf-mr-8 wf-p-3 wf-flex wf-border-4 wf-border-black/90">
-                                    <PlusIcon class="wf-w-4 wf-h-auto wf-text-black wf-font-bold" />
-                                </span>
+                                <div class="wf-bg-white md:wf-bg-transparent wf-relative wf-z-10 wf-rounded-full md:wf-rounded-none  wf-mr-8 md:wf-mr-0 wf-p-3 md:wf-p-0 wf-flex wf-border-4 md:wf-border-transparent wf-border-black/90">
+                                    <PlusIcon class="wf-block md:wf-hidden wf-w-4 wf-h-auto wf-text-black wf-font-bold" />
+                                    <button class="wf-hidden md:wf-block wf-text-base wf-font-bold wf-text-blue-900 wf-bg-blue-100 wf-px-8 wf-py-3 wf-rounded wf-transition wf-duration-700 hover:wf-bg-blue-800 hover:wf-text-blue-100 wf-shadow">Buy coins</button>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Invest in stocks -->
-                        <div class="wf-mt-5 wf-flex wf-border-2 wf-border-dashed wf-border-yellow-600 wf-bg-yellow-200 wf-h-16 wf-rounded-xl wf-justify-center wf-items-center wf-text-base wf-font-bold wf-text-yellow-700 wf-capitalize">
-                            <ShoppingCartIcon class="wf-w-6 wf-h-6 wf-mr-3" />
-                            Invest on stocks
+                        <div class="wf-mt-5 wf-flex wf-border-2 wf-border-dashed wf-border-yellow-600 wf-bg-yellow-200 wf-h-16 md:wf-h-32 wf-rounded-xl wf-justify-center md:wf-justify-start md:wf-pl-5 wf-items-center wf-text-base wf-font-bold wf-text-yellow-700 wf-capitalize">
+                            <ShoppingCartIcon class="wf-w-6 md:wf-w-10 wf-h-6 md:wf-h-10 wf-mr-3" />
+                            <span class="md:wf-text-xl wf-relative wf-inline-block wf-px-2">
+                                <span class="wf-relative wf-text-whit">Invest on stocks</span>
+                            </span>
                         </div>
 
                         <div class="wf-flex wf-mt-5">
@@ -113,8 +114,8 @@
                                     See all
                                 </router-link>
                             </span>
-                            <div class="wf-flex">
-                                <div class="wf-w-1/5 wf-flex wf-flex-col wf-items-center wf-mx-px first:wf-ml-0">
+                            <div class="wf-flex wf-flex-wrap">
+                                <div class="wf-w-1/5 md:wf-hidden wf-flex wf-flex-col wf-items-center wf-mx-px first:wf-ml-0">
                                     <figure class="wf-p-1 wf-bg-gray-100 wf-border wf-border-gray-300 wf-rounded-full">
                                         <span class="wf-bg-black wf-rounded-full wf-flex wf-p-1.5 wf-justify-center wf-items-center wf-text-gray-100">
                                             <SearchIcon class="wf-w-6 wf-h-6" />
@@ -125,51 +126,7 @@
                                         Search
                                     </span>
                                 </div>
-                                <div class="wf-w-1/5 wf-flex wf-flex-col wf-items-center wf-mx-px first:wf-ml-0">
-                                    <figure class="wf-p-1 wf-bg-gray-100 wf-border wf-border-gray-300 wf-rounded-full">
-                                        <!-- <span class="wf-bg-black wf-rounded-full wf-flex wf-p-1.5 wf-justify-center wf-items-center wf-text-gray-100"> -->
-                                            <img src="../../../../src/assets/img/fritz_1.jpg" class="wf-cover wf-w-9 wf-h-9 wf-rounded-full">
-                                        <!-- </span> -->
-                                        
-                                    </figure>
-                                    <span class="wf-text-sm wf-text-gray-600 wf-font-bold wf-mt-2">
-                                        Btc
-                                    </span>
-                                </div>
-                                <div class="wf-w-1/5 wf-flex wf-flex-col wf-items-center wf-mx-px first:wf-ml-0">
-                                    <figure class="wf-p-1 wf-bg-gray-100 wf-border wf-border-gray-300 wf-rounded-full">
-                                        <!-- <span class="wf-bg-black wf-rounded-full wf-flex wf-p-1.5 wf-justify-center wf-items-center wf-text-gray-100"> -->
-                                            <img src="../../../../src/assets/img/fritz_1.jpg" class="wf-cover wf-w-9 wf-h-9 wf-rounded-full">
-                                        <!-- </span> -->
-                                        
-                                    </figure>
-                                    <span class="wf-text-sm wf-text-gray-600 wf-font-bold wf-mt-2">
-                                        Eth
-                                    </span>
-                                </div>
-                                <div class="wf-w-1/5 wf-flex wf-flex-col wf-items-center wf-mx-px first:wf-ml-0">
-                                    <figure class="wf-p-1 wf-bg-gray-100 wf-border wf-border-gray-300 wf-rounded-full">
-                                        <!-- <span class="wf-bg-black wf-rounded-full wf-flex wf-p-1.5 wf-justify-center wf-items-center wf-text-gray-100"> -->
-                                            <img src="../../../../src/assets/img/fritz_1.jpg" class="wf-cover wf-w-9 wf-h-9 wf-rounded-full">
-                                        <!-- </span> -->
-                                        
-                                    </figure>
-                                    <span class="wf-text-sm wf-text-gray-600 wf-font-bold wf-mt-2">
-                                        Bch
-                                    </span>
-                                </div>
-                                <div class="wf-w-1/5 wf-flex wf-flex-col wf-items-center wf-mx-px first:wf-ml-0 last:wf-mr-0">
-                                    <figure class="wf-p-1 wf-bg-gray-100 wf-border wf-border-gray-300 wf-rounded-full">
-                                        <!-- <span class="wf-bg-black wf-rounded-full wf-flex wf-p-1.5 wf-justify-center wf-items-center wf-text-gray-100"> -->
-                                            <img src="../../../../src/assets/img/fritz_1.jpg" class="wf-cover wf-w-9 wf-h-9 wf-rounded-full">
-                                        <!-- </span> -->
-                                        
-                                    </figure>
-                                    <span class="wf-text-sm wf-text-gray-600 wf-font-bold wf-mt-2">
-                                        Trc
-                                    </span>
-                                </div>
-                                
+                                <CoinDataPartial v-for="i in 3" :key="i"/>
                             </div>
                         </div>
 
@@ -240,11 +197,11 @@
 <script setup lang="ts">
     import { Wallet } from 'mdue';
     import { HomeIcon, ChartSquareBarIcon, ViewGridIcon, ReplyIcon, TrendingDownIcon, TrendingUpIcon } from '@heroicons/vue/solid'
-    import { BellIcon, PlusIcon, SearchIcon, UserIcon, CreditCardIcon, ShoppingCartIcon } from '@heroicons/vue/outline'
+    import { PlusIcon, SearchIcon, UserIcon, CreditCardIcon, ShoppingCartIcon } from '@heroicons/vue/outline'
     import NotificationsHeaderPartial from '../partials/NotificationsHeaderPartial.vue'
     import UserMenuHeaderPartial from '../partials/UserMenuHeaderPartial.vue'
-    // import HelpHeaderPartial from '../components/partials/header/HelpHeaderPartial.vue'
-    // import SearchModalHeaderPartial from '../components/partials/header/HelpHeaderPartial.vue'
+    import CoinDataPartial from '../partials/CoinDataPartial.vue'
+    import SearchBoxHeaderPartial from '../partials/SearchBoxHeaderPartial.vue'
     import SidebarPartial from '../partials/SidebarPartial.vue'
     import { ref, computed } from 'vue';
 
