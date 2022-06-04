@@ -202,6 +202,7 @@
 <script setup lang="ts">
     import { onBeforeMount, onMounted } from 'vue';
     import topbar from '../../../plugins/topbar';
+    // import all icon from the same part in a single line
     import { CheckIcon, CashIcon, SwitchVerticalIcon, UsersIcon } from '@heroicons/vue/solid';
 
     onBeforeMount(() => topbar.show())
