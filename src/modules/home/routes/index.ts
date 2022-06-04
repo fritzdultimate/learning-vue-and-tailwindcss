@@ -23,6 +23,14 @@ const routes = [
           layout: 'AppLayoutHome'
         }
     },
+    {
+        path: '/exchange',
+        name: 'Exchange',
+        component: () => import('../views/Exchange.vue'),
+        meta: {
+          layout: 'AppLayoutHome'
+        }
+    },
 ];
 
 export default routes;
