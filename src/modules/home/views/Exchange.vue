@@ -211,10 +211,8 @@
 <script setup lang="ts">
     import { onBeforeMount, onMounted } from 'vue';
     import topbar from '../../../plugins/topbar';
-    import { CheckIcon } from '@heroicons/vue/solid';
-    import { CashIcon } from '@heroicons/vue/solid';
-    import { SwitchVerticalIcon } from '@heroicons/vue/solid';
-    import { UsersIcon } from '@heroicons/vue/solid';
+    // import all icon from the same part in a single line
+    import { CheckIcon, CashIcon, SwitchVerticalIcon, UsersIcon } from '@heroicons/vue/solid';
 
     onBeforeMount(() => topbar.show())
     onMounted(() => topbar.hide())

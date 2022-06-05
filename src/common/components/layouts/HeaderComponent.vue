@@ -6,9 +6,9 @@
                 <MenuAlt3Icon class="wf-h-6 wf-w-6 wf-text-gray-50 wf-opacity-50 wf-font-bold hover:wf-opacity-75 md:wf-hidden" @click="toggleMenu"/>
             </div>
             <div class="wf-hidden md:wf-flex wf-flex-col md:wf-flex-row md:wf-ml-auto wf-mt-3 md:wf-mt-0" id="navbar-collapse" ref="collapse">
-                <a href="#" class="wf-p-2 lg:wf-px-4 md:wf-mx-2 wf-text-gray-200 wf-rounded hover:wf-bg-gray-100/5 hover:wf-text-gray-500 wf-transition-colors wf-duration-300">
+                <router-link to="/exchange" class="wf-p-2 lg:wf-px-4 md:wf-mx-2 wf-text-gray-200 wf-rounded hover:wf-bg-gray-100/5 hover:wf-text-gray-500 wf-transition-colors wf-duration-300">
                     Exchange
-                </a>
+                </router-link>
                 <router-link to="/about" class="wf-p-2 lg:wf-px-4 md:wf-mx-2 wf-text-gray-200 wf-rounded hover:wf-bg-gray-100/5 hover:wf-text-gray-500 wf-transition-colors wf-duration-300">
                     About Us
                 </router-link>
