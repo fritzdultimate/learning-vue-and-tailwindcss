@@ -73,13 +73,8 @@
                             </div>
                         </div>
 
-                        <!-- Invest in stocks -->
-                        <div class="wf-mt-5 wf-flex wf-border-2 wf-border-dashed wf-border-yellow-600 wf-bg-yellow-200 wf-h-16 md:wf-h-32 wf-rounded-xl wf-justify-center md:wf-justify-start md:wf-pl-5 wf-items-center wf-text-base wf-font-bold wf-text-yellow-700 wf-capitalize">
-                            <ShoppingCartIcon class="wf-w-6 md:wf-w-10 wf-h-6 md:wf-h-10 wf-mr-3" />
-                            <span class="md:wf-text-xl wf-relative wf-inline-block wf-px-2">
-                                <span class="wf-relative wf-text-whit">Invest on stocks</span>
-                            </span>
-                        </div>
+                        <!-- Invest in stocks, crypto etc -->
+                        <InvestHeroCard v-for="(card, i) in investmentCallActionCards" :key="i" v-bind="card" />
 
                         <div class="wf-flex wf-mt-5">
                             <div class="wf-w-1/3">
@@ -132,6 +127,17 @@
 
                         <div class="wf-flex wf-flex-col wf-mt-5">
                             <RecentActivityPartial class="md:wf-hidden"/>
+                            <div class="wf-block wf-ml-auto">
+                                <button class="wf-bg-yellow-600 wf-text-white wf-text-sm md:wf-text-base wf-px-6 wf-py-1 wf-rounded-md wf-text-center wf-font-bold hover:wf-bg-yellow-900 focus:wf-ring-1 focus:wf-ring-yellow-500 focus:wf-border">
+                                    See all
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="wf-flex wf-flex-col wf-my-5">
+                            <div class="wf-text-gray-700 wf-text-sm md:wf-text-base wf-font-bold">
+                                Spacearn Charts
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -196,7 +202,6 @@
             </div>
         </div>
     </div>
-
 </template>
 
 <script setup lang="ts">
@@ -209,6 +214,7 @@
     import SearchBoxHeaderPartial from '../partials/SearchBoxHeaderPartial.vue'
     import SidebarPartial from '../partials/SidebarPartial.vue'
     import RecentActivityPartial from '../partials/RecentActivityPartial.vue'
+    import InvestHeroCard from '../components/cards/InvestHeroCard.vue'
     import { ref, computed } from 'vue';
 
     const NavLinks = ref([
@@ -344,6 +350,37 @@
                 textColor: 'wf-bg-blue-700',
                 bgColor: 'wf-text-blue-200',
             }
+        }
+    ]
+
+    const investmentCallActionCards = [
+        {
+            item: 'Cryptocurrency',
+            icon: ShoppingCartIcon,
+            bgColor: 'wf-bg-yellow-200',
+            borderColor: 'wf-border-yellow-600',
+            textColor: 'wf-text-yellow-700'
+        },
+        {
+            item: 'Live Socks',
+            icon: ShoppingCartIcon,
+            bgColor: 'wf-bg-green-200',
+            borderColor: 'wf-border-green-600',
+            textColor: 'wf-text-green-700'
+        },
+        {
+            item: 'Real Estate',
+            icon: ShoppingCartIcon,
+            bgColor: 'wf-bg-red-200',
+            borderColor: 'wf-border-red-600',
+            textColor: 'wf-text-red-700'
+        },
+        {
+            item: 'NFTs',
+            icon: ShoppingCartIcon,
+            bgColor: 'wf-bg-blue-200',
+            borderColor: 'wf-border-blue-600',
+            textColor: 'wf-text-blue-700'
         }
     ]
 </script>
