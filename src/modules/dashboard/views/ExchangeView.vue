@@ -8,18 +8,7 @@
             <!-- Content area  -->
             <ContentAreaPartial class="md:wf-ml-10 wf-overflow-hidden">
                 <template #header>
-                    <div class="wf-flex wf-pb-10">
-                        <span class="wf-p-4 wf-bg-gray-700 wf-rounded-full">
-                            <ViewGridIcon class="wf-w-5 wf-h-5 wf-text-white" />
-                        </span>
-                        <div class="wf-relative wf-ml-auto wf-w-full">
-                            <div class="wf-bg-gray-700 wf-p-4 wf-w-1/2 wf-absolute wf-top-0 -wf-right-[25%] wf-rounded-full wf-flex">
-                                <span class="wf-relative before:wf-absolute before:-wf-bottom-6 before:wf-right-1 before:wf-py-1 before:wf-px-1.5 before:wf-text-xs before:wf-font-bold wf-text-center before:wf-rounded-full before:wf-content-['9\+'] before:wf-text-white before:wf-bg-yellow-600">
-                                    <BellIcon class="wf-w-6 wf-h-6 wf-text-white" />
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+                    <HeaderPartial />
                 </template>
                 <div class="wf-block">
                     <div class="wf-flex wf-flex-col wf-items-center">
@@ -54,7 +43,7 @@
                             </span>
                             <DotsHorizontalIcon class="wf-ml-auto wf-w-6 wf-h-6 wf-text-gray-900" />
                         </div>
-                        <div class="wf-flex wf-flex-col wf-bg-gray-200 wf-text-gray-800 wf-rounded-3xl wf-py-5">
+                        <div class="wf-flex wf-flex-col wf-bg-gray-200 wf-text-gray-800 wf-rounded-3xl wf-py-5 md:wf-mb-20">
                             <div class="wf-px-3 wf-flex wf-flex-col">
                                 <div class="wf-flex wf-flex-col wf-mb-3">
                                     <span class="wf-text-base wf-font-bold wf-ml-3 wf-mb-2">
@@ -131,6 +120,7 @@
     import ContentAreaPartial from '../partials/ContentAreaPartial.vue';
     import SidebarPartial from '../partials/SidebarPartial.vue';
     import RightSidebarPartial from '../partials/RightSidebarPartial.vue';
+    import HeaderPartial from '../partials/header/HeaderPartial.vue';
     import MobileKeyPad from '../../../common/components/Cards/MobileKeyPad.vue';
     import { onBeforeMount, onMounted, ref } from 'vue';
     import topbar from '../../../plugins/topbar';
