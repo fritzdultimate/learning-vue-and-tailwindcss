@@ -7,6 +7,15 @@ const routes = [
             // layout: 'AppLayoutHome'
         }
     },
+
+    {
+        path: '/app/space/user/exchange',
+        name: 'ExchangeView',
+        component: () => import('../views/ExchangeView.vue'),
+        meta: {
+            // layout: 'AppLayoutHome'
+        }
+    },
 ];
 
 export default routes;
