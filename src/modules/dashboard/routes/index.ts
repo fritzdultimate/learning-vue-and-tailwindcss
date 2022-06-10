@@ -16,6 +16,15 @@ const routes = [
             // layout: 'AppLayoutHome'
         }
     },
+
+    {
+        path: '/app/space/user/wallet',
+        name: 'WalletView',
+        component: () => import('../views/WalletView.vue'),
+        meta: {
+            // layout: 'AppLayoutHome'
+        }
+    },
 ];
 
 export default routes;
