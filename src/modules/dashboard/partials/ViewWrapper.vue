@@ -7,7 +7,7 @@
 
             <!-- Content area  -->
             <ContentAreaPartial class="md:wf-ml-10 wf-overflow-hidden md:wf-pt-5">
-                <template #header>
+                <template #header v-if="visibleHeader">
                     <HeaderPartial />
                 </template>
                 <slot></slot>
@@ -23,4 +23,6 @@
     import SidebarPartial from './SidebarPartial.vue';
     import RightSidebarPartial from './RightSidebarPartial.vue';
     import HeaderPartial from './header/HeaderPartial.vue';
+
+    defineProps<{visibleHeader:{default: true}}>()
 </script>

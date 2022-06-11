@@ -25,6 +25,24 @@ const routes = [
             // layout: 'AppLayoutHome'
         }
     },
+
+    {
+        path: '/app/space/user/send',
+        name: 'SendView',
+        component: () => import('../views/SendView.vue'),
+        meta: {
+            // layout: 'AppLayoutHome'
+        }
+    },
+
+    {
+        path: '/app/space/user/send/preview',
+        name: 'SendPreviewView',
+        component: () => import('../views/SendPreviewView.vue'),
+        meta: {
+            // layout: 'AppLayoutHome'
+        }
+    },
 ];
 
 export default routes;
