@@ -2,9 +2,14 @@
     <ViewWrapper :visibleHeader="false">
         <div class="wf-flex wf-flex-col">
             <div class="wf-flex wf-mb-5">
-                <span class="wf-text-gray-700 wf-font-medium wf-text-base">
-                    Send to
+                <span class="wf-text-gray-700 wf-font-bold wf-text-base">
+                    Confirmation
                 </span>
+                <div class="wf-flex wf-justify-center wf-mt-4 wf-mx-auto">
+                    <span class="wf-w-5 wf-h-1 wf-bg-yellow-600 wf-rounded wf-mr-1"></span>
+                    <span class="wf-w-5 wf-h-1 wf-bg-yellow-600 wf-rounded wf-mr-1"></span>
+                    <span class="wf-w-5 wf-h-1 wf-bg-gray-200 wf-rounded wf-mr-1"></span>
+                </div>
                 <span class="wf-ml-auto wf-p-1 wf-bg-gray-200 wf-text-gray-800 wf-flex wf-justify-center wf-items-center wf-rounded wf-cursor-pointer">
                     <XIcon class="wf-w-5 wf-h-5" />
                 </span>

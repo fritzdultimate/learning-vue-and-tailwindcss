@@ -12,10 +12,10 @@
         buttons: object,
         modelValue: string
     }
-    defineProps<Props>();
+    const props = defineProps<Props>();
     const emit = defineEmits(['update:modelValue'])
     const value = ref({});
-    const final_values = ref('')
+    const final_values = ref(props.modelValue)
 
     function formatNumber(num) {
         if(num == '.') {
