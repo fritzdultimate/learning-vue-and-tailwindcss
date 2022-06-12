@@ -1,6 +1,6 @@
 <template>
     <div class="wf-pb-10">
-        <div class="wf-flex wf-flex-col md:wf-flex-row md:wf-pr-5">
+        <div class="wf-flex wf-flex-col md:wf-flex-row md:wf-pr-5 wf-bg-[#f3f4f6]">
 
             <!-- Left Sidebar -->
             <SidebarPartial />
