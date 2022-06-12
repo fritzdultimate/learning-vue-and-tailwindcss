@@ -4,7 +4,7 @@
         <span class="md:wf-text-xl wf-relative wf-inline-block wf-px-2">
             <span class="wf-relative wf-text-whit">Invest on {{ item }}</span>
         </span>
-        <div class="wf-absolute wf-top-0 wf-right-0 wf-mr-5 wf-hidden md:wf-block">
+        <div class="wf-absolute wf-top-0 wf-right-0 wf-mr-5 wf-hidden md:wf-block wf-py-2">
             <ListBox class="wf-w-48"/>
         </div>
     </div>
