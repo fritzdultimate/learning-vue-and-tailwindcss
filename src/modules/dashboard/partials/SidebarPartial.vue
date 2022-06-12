@@ -118,6 +118,7 @@
 
     function navigate(nav) {
         activeLink.value = nav.id;
-        console.log(router.push(nav.to));
+       router.push(nav.to);
+       console.log(router);
     }
 </script>
