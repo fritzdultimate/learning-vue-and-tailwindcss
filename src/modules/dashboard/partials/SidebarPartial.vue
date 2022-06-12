@@ -10,15 +10,17 @@
             </span>
         </figure>
         <ul class="wf-w-full wf-flex md:wf-block">
+
             <li class="wf-mb-6 wf-relative before:wf-content-[''] before:wf-w-1 before:wf-h-full before:wf-rounded-r-lg"
                 :class="link.id == activeLink ? 'before:wf-absolute before:wf-bg-yellow-700' : 'hover:before:wf-absolute before:wf-bg-yellow-700/30' "
                 v-for="(link, id) of NavLinks" :key="id">
-                <router-link :to="link.to"
+                <router-link to="#"
                     class="wf-flex wf-items-center wf-py-1.5 wf-rounded-lg wf-ml-5 wf-text-gray-100 wf-transition-all"
                     :class="link.id == activeLink ? 'wf-bg-yellow-700' : 'hover:wf-text-gray-900/50 wf-text-[#a16207bf] hover:wf-bg-yellow-700/30'"
                     @click.prevent="navigate(link)">
                     <component :is="link.icon" class="wf-w-8 wf-h-6 wf-mr-3 wf-ml-4" />
                     <span class="wf-font-bold">{{ link.name }}</span>
+                    {{ activeLink }}
                 </router-link>
             </li>
         </ul>
@@ -43,6 +45,7 @@
 
 <script setup lang="ts">
     import { computed, ref } from 'vue';
+    import router from '../../router';
     import { HomeIcon, ChartSquareBarIcon, TrendingDownIcon, TrendingUpIcon } from '@heroicons/vue/solid';
     import { UserIcon, CreditCardIcon } from '@heroicons/vue/outline';
     import { Wallet } from 'mdue';
@@ -115,5 +118,6 @@
 
     function navigate(nav) {
         activeLink.value = nav.id;
+        console.log(router.push(nav.to));
     }
 </script>
