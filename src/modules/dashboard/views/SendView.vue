@@ -20,7 +20,7 @@
                 <span class="wf-text-base wf-font-bold wf-text-gray-700 wf-uppercase">0.084 eth</span>
             </div>
 
-            <div class="wf-flex wf-border wf-border-gray-200 wf-rounded-md wf-py-2">
+            <div class="wf-flex wf-border wf-border-gray-200 wf-rounded-md wf-py-2 wf-mx-2">
                 <figure class="wf-flex-shrink-0 wf-mr-3">
                     <!-- <img> -->
                 </figure>
@@ -38,11 +38,11 @@
                 </span>
             </div>
 
-            <div class="wf-mx-1 wf-mt-5 wf-mb-5">
+            <div class="wf-mt-5 wf-mb-5">
                 <MobileKeyPad :buttons="keypadButtons" v-model="amount"/>
             </div>
 
-            <button class="wf-capitalize wf-bg-yellow-600 wf-py-3 wf-text-gray-100 wf-font-medium wf-text-base wf-rounded hover:wf-bg-yellow-700">continue</button>
+            <button class="wf-capitalize wf-bg-yellow-600 wf-py-3 wf-mx-2 wf-text-gray-100 wf-font-medium wf-text-base wf-rounded hover:wf-bg-yellow-700">continue</button>
         </div>
     </ViewWrapper>
 </template>
