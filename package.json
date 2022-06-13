@@ -18,6 +18,7 @@
     "@fortawesome/vue-fontawesome": "^2.0.6",
     "@heroicons/vue": "^1.0.6",
     "axios": "^0.27.2",
+    "esbuild": "^0.14.43",
     "mdue": "^0.1.4",
     "numeral": "^2.0.6",
     "pinia": "^2.0.13",

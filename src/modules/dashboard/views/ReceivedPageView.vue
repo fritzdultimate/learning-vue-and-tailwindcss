@@ -3,7 +3,7 @@
         <div class="wf-flex wf-flex-col">
             <div class="wf-flex wf-flex-col wf-items-center">
                 <h4 class="wf-text-gray-400 wf-text-base wf-font-bold wf-mb-5">BTC QR Code</h4>
-                <QRCode value="wallet address" class="wf-mb-5" size="150" level="Q"/>
+                <QRCode value="val" class="wf-mb-5" size="150" level="Q"/>
                 <h5 class="wf-text-base wf-text-gray-400 wf-font-bold wf-mb">BTC Address</h5>
                 <div class="wf-text-gray-700 wf-font-medium wf-text-xs md:wf-text-xl wf-border-b wf-border-b-gray-900 wf-mb-5">
                     bciderjxcvbnsieodhfnbsdkeioepsaldoexdms

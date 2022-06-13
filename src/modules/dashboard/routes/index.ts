@@ -61,6 +61,15 @@ const routes = [
             // layout: 'AppLayoutHome'
         }
     },
+
+    {
+        path: '/app/space/user/receive/details',
+        name: 'TransactionDescription',
+        component: () => import('../views/TransactionDescription.vue'),
+        meta: {
+            // layout: 'AppLayoutHome'
+        }
+    },
 ];
 
 export default routes;
