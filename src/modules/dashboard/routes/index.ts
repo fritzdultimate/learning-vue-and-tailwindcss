@@ -25,6 +25,14 @@ const routes = [
             // layout: 'AppLayoutHome'
         }
     },
+    {
+        path: '/app/space/user/wallet/preview',
+        name: 'WalletPreviewView',
+        component: () => import('../views/WalletPreviewView.vue'),
+        meta: {
+            // layout: 'AppLayoutHome'
+        }
+    },
 
     {
         path: '/app/space/user/send',

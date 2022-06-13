@@ -14,7 +14,7 @@
                 <div class="wf-flex wf-w-full wf-justify-cente wf-mb-5">
                     <div class="wf-w-1/2 wf-pr-2">
                         <router-link to="#" class="wf-block wf-w-full wf-rounded-md wf-text-gray-200 wf-text-center wf-bg-green-700 wf-py-2 wf-font-medium">
-                            Deposit
+                            Receive
                         </router-link>
                     </div>
                     <div class="wf-w-1/2 wf-pl-2">
@@ -24,22 +24,14 @@
                     </div>
                 </div>
             </div>
-            <div class="wf-flex wf-flex-col">
-                <div class="wf-flex wf-mb-3">
-                    <span class="wf-text-gray-600 wf-text-base wf-font-medium wf-capitalize">
-                        my tokens
-                    </span>
-                </div>
-                <ListTileWrapper>
-                    <ListTile v-for="i in 51" :key="i" :item="'Bitcoin'" :amount="669.15" :bgColor="'wf-bg-gray-200'" :color="'wf-text-gray-800'" class="wf-mb-2 wf-rounded-md md:wf-w-[calc(50%-20px)] md:wf-mr-4"></ListTile>
-                </ListTileWrapper>
-            </div>
+            <WalletList title="crypto wallets" :wallets="wallets" header="balance" :headerValue="'$5130.65'" subheader="6 crypto investments"/>
         </div>
     </ViewWrapper>
 </template>
 
 <script setup lang="ts">
     import ViewWrapper from '../partials/ViewWrapper.vue';
+    import WalletList from '../../../common/components/list/WalletList.vue';
     import ListTile from '../../../common/components/list/ListTile.vue';
     import ListTileWrapper from '../../../common/components/list/ListTileWrapper.vue';
     import { onBeforeMount, onMounted, ref } from 'vue';
@@ -47,4 +39,39 @@
 
     onBeforeMount(() => topbar.show())
     onMounted(() => topbar.hide())
+
+    const wallets = [
+    {
+        name: 'bitcoin',
+        symbol: 'btc',
+        balance: 234.54,
+        amountInCurrency: 0.00256,
+        icon: '',
+        actionLink: '/app/space/user/wallet/preview'
+    },
+    {
+        name: 'ethereum',
+        symbol: 'eth',
+        balance: 575.54,
+        amountInCurrency: 0.256,
+        icon: '',
+        actionLink: '#'
+    },
+    {
+        name: 'ripple',
+        symbol: 'rpx',
+        balance: 23,
+        amountInCurrency: 59,
+        icon: '',
+        actionLink: '#'
+    },
+    {
+        name: 'tether',
+        symbol: 'usdt',
+        balance: 1000,
+        amountInCurrency: 1000,
+        icon: '',
+        actionLink: '#'
+    }
+    ]
 </script>
