@@ -16,4 +16,14 @@ app.use(router);
 app.component('AppLayout', AppLayout);
 app.component('VueSlickCarousel', VueSlickCarousel);
 
+// const focus = {
+//     beforeMount(el) {
+//         console.log(el)
+//     }
+// }
+app.directive('focus', {
+    mounted(el, binding) {
+        el.focus();
+    }
+})
 app.mount("#app");

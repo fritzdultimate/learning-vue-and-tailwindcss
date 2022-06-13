@@ -43,6 +43,24 @@ const routes = [
             // layout: 'AppLayoutHome'
         }
     },
+
+    {
+        path: '/app/space/user/receive',
+        name: 'ReceiveView',
+        component: () => import('../views/ReceiveView.vue'),
+        meta: {
+            // layout: 'AppLayoutHome'
+        }
+    },
+
+    {
+        path: '/app/space/user/receive/copy',
+        name: 'ReceivedPageView',
+        component: () => import('../views/ReceivedPageView.vue'),
+        meta: {
+            // layout: 'AppLayoutHome'
+        }
+    },
 ];
 
 export default routes;
