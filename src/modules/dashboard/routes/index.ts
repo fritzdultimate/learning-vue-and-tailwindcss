@@ -78,6 +78,14 @@ const routes = [
             // layout: 'AppLayoutHome'
         }
     },
+    {
+        path: '/app/space/user/transaction/status/success',
+        name: 'TransactionStatusReport',
+        component: () => import('../views/TransactionStatusReport.vue'),
+        meta: {
+            // layout: 'AppLayoutHome'
+        }
+    },
 ];
 
 export default routes;

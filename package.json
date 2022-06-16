@@ -20,6 +20,7 @@
     "axios": "^0.27.2",
     "esbuild": "^0.14.43",
     "mdue": "^0.1.4",
+    "moralis": "^1.8.0",
     "numeral": "^2.0.6",
     "pinia": "^2.0.13",
     "qrcode.vue": "^3.3.3",
@@ -30,7 +31,8 @@
     "vue-awesome": "^4.5.0",
     "vue-router": "^4.0.14",
     "vue-slick-carousel": "^1.0.6",
-    "vue-unicons": "^3.3.1"
+    "vue-unicons": "^3.3.1",
+    "web3": "^1.7.3"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.0",
