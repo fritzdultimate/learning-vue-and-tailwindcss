@@ -25,6 +25,14 @@ const routes = [
             // layout: 'AppLayoutHome'
         }
     },
+    {
+        path: '/app/space/user/wallet/preview',
+        name: 'WalletPreviewView',
+        component: () => import('../views/WalletPreviewView.vue'),
+        meta: {
+            // layout: 'AppLayoutHome'
+        }
+    },
 
     {
         path: '/app/space/user/send',
@@ -90,6 +98,14 @@ const routes = [
         path: '/app/space/user/profile',
         name: 'ProfileView',
         component: () => import('../views/ProfileView.vue'),
+        meta: {
+            // layout: 'AppLayoutHome'
+        }
+    },
+    {
+        path: '/app/space/user/transaction/status/success',
+        name: 'TransactionStatusReport',
+        component: () => import('../views/TransactionStatusReport.vue'),
         meta: {
             // layout: 'AppLayoutHome'
         }
