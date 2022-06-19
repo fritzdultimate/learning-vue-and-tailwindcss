@@ -73,7 +73,7 @@
                                         @keypress.prevent="validateNumber" type="text"
                                         class="wf-outline-none wf-w-full wf-bg-transparent wf-border-0 wf-text-gray-300 wf-font-normal placeholder:wf-text-gray-500"
                                         placeholder="0.0002 - 100" data-model="currency_value"
-                                        @focus="setActiveKeyboard" autofocus>
+                                        @focus="setActiveKeyboard" @blur="clearActiveKeyboard" autofocus>
                                 </div>
                                 <span
                                     class="wf-ml-auto wf-uppercase wf-text-yellow-600 wf-text-sm wf-font-medium wf-mr-1">max</span>
@@ -108,7 +108,8 @@
                                         class="wf-outline-none wf-w-full wf-bg-transparent wf-border-0 wf-text-gray-300 wf-font-normal placeholder:wf-text-gray-500"
                                         v-model="coin_value" placeholder="0.0002 - 100"
                                         v-debounce:300="getCurrencyValue" @focus="setActiveKeyboard"
-                                        data-model="coin_value">
+                                        data-model="coin_value" @keypress.prevent="validateNumber"
+                                        @blur="clearActiveKeyboard">
                                 </div>
                             </div>
                             <!-- balance -->
@@ -126,7 +127,7 @@
 
                     <div class="wf-flex wf-mx-3">
                         <span class="wf-text-gray-700 wf-font-bold wf-text-sm wf-pl-3">
-                            Total
+                            Total :
                         </span>
                         <span class="wf-ml-auto wf-text-gray-700 wf-font-bold wf-text-sm wf-pr-3">
                             $581.79
@@ -134,7 +135,8 @@
                     </div>
                 </div>
                 <div class="wf-mx-1 wf-mt-5 md:wf-hidden">
-                    <MobileKeyPad :buttons="keypadButtons" v-model="activeKeyboard" />
+                    <MobileKeyPad :buttons="keypadButtons" v-model="changeActiveKey" :inputs="inputs"
+                        :focusCount="focusCount" />
                 </div>
             </div>
         </div>
@@ -144,7 +146,7 @@
 <script setup lang="ts">
 import ViewWrapper from '../partials/ViewWrapper.vue';
 import MobileKeyPad from '../../../common/components/Cards/MobileKeyPad.vue';
-import { onBeforeMount, onMounted, ref } from 'vue';
+import { onBeforeMount, onMounted, ref, watch, reactive, customRef, computed } from 'vue';
 import topbar from '../../../plugins/topbar';
 import { ChevronDownIcon, ChevronRightIcon, BackspaceIcon } from '@heroicons/vue/solid';
 import { SwitchVerticalIcon, DotsHorizontalIcon } from '@heroicons/vue/outline';
@@ -174,42 +176,97 @@ let actionLine = [
 const keypadButtons = [
     ...mappedDigit,
     ...actionLine
-]
-const from_value = ref('');
+];
+
 const coin = ref('btc');
 const coin_value = ref('');
 const currency = ref('usd');
 const currency_value = ref('');
-const activeKeyboard = ref(null);
+const focusCount = ref(1);
+
+function useActiveKeyRef(value) {
+    return customRef((track, trigger) => {
+        return {
+            get() {
+                track();
+                return value
+            },
+            set(newValue){
+                value = newValue;
+                console.log(newValue);
+                trigger();
+            }
+        }
+    });
+}
+const inputs = useActiveKeyRef({
+    currentlyFocused: 'currency_value',
+    currency_value : currency_value,
+    coin_value : coin_value,
+});
+const changeActiveKey = computed({
+    get : () => {
+        if (inputs.value.currentlyFocused == 'currency_value') {
+            return (currency_value.value);
+        } else if (inputs.value.currentlyFocused == 'coin_value') {
+            return (coin_value.value);
+        }
+        // return input.value.key;
+    },
+    set : (value) => {
+        if(inputs.value.currentlyFocused == 'currency_value'){
+            currency_value.value = value;
+        } else if (inputs.value.currentlyFocused == 'coin_value'){
+            coin_value.value = value;
+            console.log(coin_value.value);
+
+        }
+    }
+})
+const currentlyFocused = computed({
+    get() {
+        return inputs.value.currentlyFocused;
+    },
+    set(value) {
+        inputs.value.currentlyFocused = value;
+        if (inputs.value.currentlyFocused == 'currency_value') {
+            currency_value.value = currency_value.value;
+            // console.log(currency_value.value);
+        } else if (inputs.value.currentlyFocused == 'coin_value') {
+            coin_value.value = coin_value.value;
+
+        }
+    }
+})
 
 function setActiveKeyboard(e){
     let input = e.currentTarget;
     if(input.dataset.model == 'currency_value'){
-        activeKeyboard.value = currency_value;
-        // console.log(activeKeyboard.value);
-        // console.log(currency_value.value);
+        currentlyFocused.value = 'currency_value';
     } else if (input.dataset.model == 'coin_value') {
-        activeKeyboard.value = coin_value;
+        currentlyFocused.value = 'coin_value';
     }
-    console.log(e.currentTarget);
+    focusCount.value++;
 }
 
 function validateNumber(e) {
-    console.log(e);
+    let { currentlyFocused } = inputs.value;
+    let input = inputs.value[currentlyFocused];
     let ASCIICode = (e.which) ? e.which : e.keyCode;
     if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57) && (ASCIICode != 46)) {
         console.log(ASCIICode)
         return false;
     }
-    if (currency_value.value.indexOf('.') != -1 && ASCIICode == 46) return
-    if (!currency_value.value.length && ASCIICode == 46) {
-        currency_value.value += '0.';
+    if (input.value.indexOf('.') != -1 && ASCIICode == 46) return
+    if (!input.value.length && ASCIICode == 46) {
+        input.value += '0.';
         return;
     }
-    currency_value.value += e.key;
-    console.log(e);
+    input.value += e.key;
     return true;
 }
+
+
 
 async function fetchRate() {
     let response = await fetch(`https://min-api.cryptocompare.com/data/price?fsym=${currency.value}&tsyms=${coin.value}`);
