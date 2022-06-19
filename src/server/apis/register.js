@@ -1,5 +1,5 @@
 // register user with username, email, password and date of birth
-export function register(username, email, password, dob) {
+export async function register(username, email, password, dob) {
     const user = new Moralis.User();
 
     user.set('username', username);
