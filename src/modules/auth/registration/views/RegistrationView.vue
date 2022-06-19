@@ -110,11 +110,11 @@
             let special = /\W/;
             let capital = /[A-Z]/;
             let small = /[a-z]/;
-            value = password.match( digit ) ? value+20 : value;
-            value = password.match( special ) ? value+20 : value;
-            value = password.match( capital ) ? value+20 : value;
-            value = password.match( small ) ? value+20 : value;
-            value = password.length <= 32 && password.length >= 8 ? value+20 : value;
+            value = password.match( digit ) ? value + 20 : value;
+            value = password.match( special ) ? value + 20 : value;
+            value = password.match( capital ) ? value + 20 : value;
+            value = password.match( small ) ? value + 20 : value;
+            value = password.length <= 32 && password.length >= 8 ? value + 20 : value;
 
             return value;
         }
