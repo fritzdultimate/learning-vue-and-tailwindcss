@@ -18,9 +18,18 @@
                 <div class="wf-p-2">
                     <label class="wf-block wf-relative">
                         <span class="wf-block wf-text-sm wf-font-medium wf-text-slate-700 after:wf-absolute after:wf-content-['*'] after:wf-text-red-500 after:wf-p-px">
+                            Username
+                        </span>
+                         <input type="text" v-model="username" class="wf-peer wf-block wf-w-full wf-pl-12 wf-px-3 wf-py-2 wf-bg-white wf-border wf-border-slate-300 wf-rounded-md wf-text-sm wf-shadow-sm wf-placeholder-slate-400 wf-text-slate-700 wf-font-semibold focus:wf-ring wf-outline-transparent focus:wf-ring-blue-400 invalid:wf-border-pink-500 invalid:wf-text-600" placeholder="choose a username">
+                         <UserIcon class="peer-focus:wf-text-green-700 wf-pointer-events-none wf-w-6 wf-h-6 wf-absolute wf-top-2/3 wf-transform -wf-translate-y-1/2 wf-left-3 wf-text-gray-900" />
+                    </label>
+                </div>
+                <div class="wf-p-2">
+                    <label class="wf-block wf-relative">
+                        <span class="wf-block wf-text-sm wf-font-medium wf-text-slate-700 after:wf-absolute after:wf-content-['*'] after:wf-text-red-500 after:wf-p-px">
                             Email
                         </span>
-                         <input type="text" v-model="email" class="wf-peer wf-block wf-w-full wf-pl-12 wf-px-3 wf-py-2 wf-bg-white wf-border wf-border-slate-300 wf-rounded-md wf-text-sm wf-shadow-sm wf-placeholder-slate-400 wf-text-slate-700 wf-font-semibold focus:wf-ring wf-outline-transparent focus:wf-ring-blue-400 invalid:wf-border-pink-500 invalid:wf-text-600" placeholder="example@gmail.com">
+                         <input type="email" v-model="email" class="wf-peer wf-block wf-w-full wf-pl-12 wf-px-3 wf-py-2 wf-bg-white wf-border wf-border-slate-300 wf-rounded-md wf-text-sm wf-shadow-sm wf-placeholder-slate-400 wf-text-slate-700 wf-font-semibold focus:wf-ring wf-outline-transparent focus:wf-ring-blue-400 invalid:wf-border-pink-500 invalid:wf-text-600" placeholder="example@email.com">
                          <MailIcon class="peer-focus:wf-text-green-700 wf-pointer-events-none wf-w-6 wf-h-6 wf-absolute wf-top-2/3 wf-transform -wf-translate-y-1/2 wf-left-3 wf-text-gray-900" />
                     </label>
                 </div>
@@ -42,7 +51,7 @@
                         <span class="wf-block wf-text-sm wf-font-medium wf-text-slate-700 after:wf-absolute after:wf-content-['*'] after:wf-text-red-500 after:wf-p-px">
                             Date of birth
                         </span>
-                        <input type="date" invalid placeholder="at least 8 characters" value="" class="wf-invalid wf-peer wf-pl-12 wf-pr-10 wf-mt-1 wf-block wf-w-full wf-px-3 wf-py-2 wf-bg-white wf-border wf-border-slate-300 wf-rounded-md wf-text-sm wf-shadow-sm wf-text-gray-500 wf-uppercase wf-font-semibold focus:wf-ring wf-outline-transparent focus:wf-ring-blue-400 invalid:wf-border-pink-500 invalid:wf-text-600">
+                        <input type="date" invalid placeholder="at least 8 characters" v-model="dob" class="wf-invalid wf-peer wf-pl-12 wf-pr-10 wf-mt-1 wf-block wf-w-full wf-px-3 wf-py-2 wf-bg-white wf-border wf-border-slate-300 wf-rounded-md wf-text-sm wf-shadow-sm wf-text-gray-500 wf-uppercase wf-font-semibold focus:wf-ring wf-outline-transparent focus:wf-ring-blue-400 invalid:wf-border-pink-500 invalid:wf-text-600">
                         <CalendarIcon class="wf-pointer-events-none wf-w-6 wf-h-6 wf-absolute wf-top-2/3 wf-transform -wf-translate-y-1/2 wf-left-3 wf-text-gray-900 
                         peer-focus:wf-text-green-700 peer-focus:peer-invalid:wf-text-red-700" />
                     </label>
@@ -51,7 +60,7 @@
                     We want to give you a special treat on your birthday
                 </p>
                 <div class="wf-p-2 wf-flex wf-mb-5">
-                    <input type="checkbox" class="wf-self-baseline wf-mr-1" id="terms">
+                    <input v-model="acceptOurTerms" type="checkbox" class="wf-self-baseline wf-mr-1" id="terms">
                     <label class="wf-self-baseline" for="terms">
                         <span class="wf-block wf-text-sm wf-font-medium wf-text-gray-700">
                             Accept our terms &amp; conditions
@@ -74,14 +83,18 @@
 </template>
 
 <script setup lang="ts">
-    import { UserAddIcon, LockClosedIcon, XIcon, MailIcon, EyeIcon, EyeOffIcon, CalendarIcon, RefreshIcon } from '@heroicons/vue/solid';
+    import { UserAddIcon, LockClosedIcon, XIcon, MailIcon, EyeIcon, EyeOffIcon, CalendarIcon, RefreshIcon, UserIcon } from '@heroicons/vue/solid';
     import { ref, onMounted, watch } from 'vue';
+    import { useRegister } from '../../../../composables/register.js';
 
-    let password_visible = ref(false);
-    let password = ref('');
-    let email = ref('');
-    let passoword_error = ref(false);
-    let password_error_msg = ref('Password must be at least 8 and not greater than 32 characters and contain uppercase, lowercase and number');
+    const password_visible = ref(false);
+    const username = ref('');
+    const password = ref('');
+    const email = ref('');
+    const dob = ref('');
+    const acceptOurTerms = ref(false)
+    const passoword_error = ref(false);
+    const password_error_msg = ref('Password must be at least 8 and not greater than 32 characters and contain uppercase, lowercase and number');
     const processRegistration = ref(false);
 
     function togglePasswordVisibily(visibility: boolean) {
@@ -113,6 +126,7 @@
 
     function register() {
         processRegistration.value = true;
+        console.log()
     }
 
     onMounted(() => {
