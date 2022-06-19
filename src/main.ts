@@ -1,4 +1,5 @@
 import { createApp } from "vue";
+import { vue3Debounce } from 'vue-debounce'
 import { createPinia } from "pinia";
 
 import App from "./App.vue";
@@ -11,6 +12,7 @@ import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 
 const app = createApp(App);
 
+app.directive('debounce', vue3Debounce({ lock: true }))
 app.use(createPinia());
 app.use(router);
 app.component('AppLayout', AppLayout);

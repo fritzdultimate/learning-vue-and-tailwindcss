@@ -79,6 +79,30 @@ const routes = [
         }
     },
     {
+        path: '/app/space/user/buy',
+        name: 'BuyView',
+        component: () => import('../views/BuyView.vue'),
+        meta: {
+            // layout: 'AppLayoutHome'
+        }
+    },
+    {
+        path: '/app/space/user/sell',
+        name: 'SellView',
+        component: () => import('../views/SellView.vue'),
+        meta: {
+            // layout: 'AppLayoutHome'
+        }
+    },
+    {
+        path: '/app/space/user/profile',
+        name: 'ProfileView',
+        component: () => import('../views/ProfileView.vue'),
+        meta: {
+            // layout: 'AppLayoutHome'
+        }
+    },
+    {
         path: '/app/space/user/transaction/status/success',
         name: 'TransactionStatusReport',
         component: () => import('../views/TransactionStatusReport.vue'),
