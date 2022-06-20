@@ -26,7 +26,7 @@
         </ul>
 
         <form class="wf-hidden md:wf-block">
-            <button
+            <button @click.prevent="logout"
                 class="wf-outline-0 wf-bg-yellow-700 wf-px-10 wf-py-1 wf-font-medium wf-text-base wf-text-gray-100 wf-rounded wf-mt-10 hover:wf-bg-yellow-900 focus:wf-bg-yellow-900 hover:wf-ring hover:wf-ring-yellow-700/50 focus:wf-ring focus:wf-ring-yellow-700/50">Logout</button>
         </form>
     </nav>
@@ -45,10 +45,10 @@
 
 <script setup lang="ts">
     import { computed, ref } from 'vue';
-    import  router  from '../../../router';
+    import  router  from '@/router';
     import { HomeIcon, ChartSquareBarIcon, TrendingDownIcon, TrendingUpIcon } from '@heroicons/vue/solid';
     import { UserIcon, CreditCardIcon } from '@heroicons/vue/outline';
-    import { Wallet } from 'mdue';
+    import { MouseVariant, Wallet } from 'mdue';
 
     const NavLinks = ref([
         {
@@ -119,5 +119,11 @@
 
     function navigate(nav) {
     //    router.push(nav.to);
+    }
+    function logout(){
+        let confirm = window.confirm("Log Out?")
+        confirm && Moralis.User.logOut().then(() => {
+            router.push({ name : "LoginView" })
+        })
     }
 </script>

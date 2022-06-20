@@ -81,6 +81,7 @@
     import { LockClosedIcon, XIcon, MailIcon, EyeIcon, EyeOffIcon, RefreshIcon } from '@heroicons/vue/solid';
     import { ref } from 'vue';
     import { useLogin } from '../../../../composables/login.js';
+    import router from '@/router';
 
     let password_visible = ref(false);
     const username = ref('');
@@ -95,8 +96,8 @@
    async function login() {
         processLogin.value = true;
         try {
-            let loginData = await useLogin(username.value,  password.value);
-            console.log(loginData);
+            let user = await useLogin(username.value,  password.value);
+            router.go({ name : "UserDashboardView"});
         } catch (e) {
             processLogin.value = false;
             alert(e.message);

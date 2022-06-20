@@ -130,7 +130,7 @@
             let user = await useRegister(username.value, email.value, password.value, dob.value);
             console.log(user);
             processRegistration.value = false;
-            redirect({ name: "UserDashboardView"});
+            router.go({ name: "UserDashboardView" });
         } catch(e){
             processRegistration.value = false;
             alert(e.message);
