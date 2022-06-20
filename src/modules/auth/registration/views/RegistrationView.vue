@@ -86,6 +86,7 @@
     import { UserAddIcon, LockClosedIcon, XIcon, MailIcon, EyeIcon, EyeOffIcon, CalendarIcon, RefreshIcon, UserIcon } from '@heroicons/vue/solid';
     import { ref, onMounted, watch } from 'vue';
     import { useRegister } from '@/composables/register.js';
+    import router from '@/router';
 
     const password_visible = ref(false);
     const username = ref('');
