@@ -45,7 +45,7 @@
                         <EyeIcon v-else class="wf-w-4 wf-h-4 wf-absolute wf-top-2/3 wf-transform -wf-translate-y-1/2 wf-right-3 wf-text-gray-500 wf-cursor-pointer" @click.prevent="togglePasswordVisibily(true)"/>
                     </label>
                 </div>
-                <p v-if="passoword_error" class="wf-block wf-p-2 wf-pt-0 wf-text-center wf-text-xs md:wf-text-sm wf-text-red-500">Password must be at least 8 and not greater than 32 characters and contain uppercase, lowercase and number</p>
+                <p v-if="password_error" class="wf-block wf-p-2 wf-pt-0 wf-text-center wf-text-xs md:wf-text-sm wf-text-red-500">Password must be at least 8 and not greater than 32 characters and contain uppercase, lowercase and number</p>
                 <div class="wf-p-2 wf-pt-0 wf-mt-5">
                     <label class="wf-block wf-relative">
                         <span class="wf-block wf-text-sm wf-font-medium wf-text-slate-700 after:wf-absolute after:wf-content-['*'] after:wf-text-red-500 after:wf-p-px">
@@ -85,7 +85,7 @@
 <script setup lang="ts">
     import { UserAddIcon, LockClosedIcon, XIcon, MailIcon, EyeIcon, EyeOffIcon, CalendarIcon, RefreshIcon, UserIcon } from '@heroicons/vue/solid';
     import { ref, onMounted, watch } from 'vue';
-    import { useRegister } from '../../../../composables/register.js';
+    import { useRegister } from '@/composables/register.js';
 
     const password_visible = ref(false);
     const username = ref('');
@@ -93,7 +93,7 @@
     const email = ref('');
     const dob = ref('');
     const acceptOurTerms = ref(false)
-    const passoword_error = ref(false);
+    const password_error = ref(false);
     const password_error_msg = ref('Password must be at least 8 and not greater than 32 characters and contain uppercase, lowercase and number');
     const processRegistration = ref(false);
 
@@ -121,12 +121,20 @@
     }
 
     watch(password, (value) => {
-        passoword_error.value = passwordStrength(value) < 100 ? true : false;
+        password_error.value = passwordStrength(value) < 100 ? true : false;
     })
 
-    function register() {
+    async function register() {
         processRegistration.value = true;
-        console.log()
+        try {
+            let user = await useRegister(username.value, email.value, password.value, dob.value);
+            console.log(user);
+            processRegistration.value = false;
+            redirect({ name: "UserDashboardView"});
+        } catch(e){
+            processRegistration.value = false;
+            alert(e.message);
+        }
     }
 
     onMounted(() => {
