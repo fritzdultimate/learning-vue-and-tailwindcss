@@ -79,14 +79,19 @@
                 </p>
             </form>
         </div>
+        <SomethingWentWrong :visible="showModal" @closeModal="showModal = false" :heading="'Oh no, something went wrong!'" :message="'So sorry, but something unexpectedly went wrong, please try again. If it persists, please submit a ticket to our team stating what you were doing or trying to do before the error start so we can help resolve the problem. You first.'"/>
     </main>
 </template>
 
 <script setup lang="ts">
     import { UserAddIcon, LockClosedIcon, XIcon, MailIcon, EyeIcon, EyeOffIcon, CalendarIcon, RefreshIcon, UserIcon } from '@heroicons/vue/solid';
     import { ref, onMounted, watch } from 'vue';
-    import { useRegister } from '../../../../composables/register.js';
+    // import { useRegister } from '../../../../composables/register.js';
+    import SomethingWentWrong from '../../../../common//components/Cards/SomethingWentWrong.vue';
 
+    defineEmits(['closeModal'])
+
+    const showModal = ref(true);
     const password_visible = ref(false);
     const username = ref('');
     const password = ref('');
@@ -125,8 +130,8 @@
     })
 
     function register() {
-        processRegistration.value = true;
-        console.log()
+        // processRegistration.value = true;
+        showModal.value = !showModal.value;
     }
 
     onMounted(() => {
