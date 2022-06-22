@@ -79,7 +79,7 @@
                 </p>
             </form>
         </div>
-        <SomethingWentWrong :visible="showModal" @closeModal="showModal = false" :heading="'Oh no, something went wrong!'" :message="'So sorry, but something unexpectedly went wrong, please try again. If it persists, please submit a ticket to our team stating what you were doing or trying to do before the error start so we can help resolve the problem. You first.'"/>
+        <SomethingWentWrong :visible="showModal" @closeModal="showModal = false" :heading="'Oh no, something went wrong!'" :message="'So sorry, but something unexpectedly went wrong, please try again. If it persists, please submit a ticket to our team stating what you were doing or trying to do before the error start so we can help resolve the problem. You first.'" :image="'../../../../src/assets/img/illustration/3081783.jpg'"/>
     </main>
 </template>
 
