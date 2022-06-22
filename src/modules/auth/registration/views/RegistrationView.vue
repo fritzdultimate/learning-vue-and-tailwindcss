@@ -88,7 +88,7 @@
     import { ref, onMounted, watch } from 'vue';
     import { useRegister } from '@/composables/register.js';
     import router from '@/router';
-    import SomethingWentWrong from '../../../../common//components/Cards/SomethingWentWrong.vue';
+    // import SomethingWentWrong from '../../../../common//components/Cards/SomethingWentWrong.vue';
 
     defineEmits(['closeModal'])
 
