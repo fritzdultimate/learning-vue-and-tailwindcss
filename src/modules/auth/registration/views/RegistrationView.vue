@@ -86,7 +86,8 @@
 <script setup lang="ts">
     import { UserAddIcon, LockClosedIcon, XIcon, MailIcon, EyeIcon, EyeOffIcon, CalendarIcon, RefreshIcon, UserIcon } from '@heroicons/vue/solid';
     import { ref, onMounted, watch } from 'vue';
-    // import { useRegister } from '../../../../composables/register.js';
+    import { useRegister } from '@/composables/register.js';
+    import router from '@/router';
     import SomethingWentWrong from '../../../../common//components/Cards/SomethingWentWrong.vue';
 
     defineEmits(['closeModal'])
@@ -129,9 +130,17 @@
         passoword_error.value = passwordStrength(value) < 100 ? true : false;
     })
 
-    function register() {
-        // processRegistration.value = true;
-        showModal.value = !showModal.value;
+    async function register() {
+        processRegistration.value = true;
+        try {
+            let user = await useRegister(username.value, email.value, password.value, dob.value);
+            console.log(user);
+            processRegistration.value = false;
+            router.go({ name: "UserDashboardView" });
+        } catch(e){
+            processRegistration.value = false;
+            alert(e.message);
+        }
     }
 
     onMounted(() => {
