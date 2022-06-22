@@ -10,7 +10,7 @@
                 <div class="wf-flex">
                     <div class="wf-flex wf-flex-col">
                         <span class="wf-text-gray-500/75 wf-capitalize wf-font-mono wf-text-base wf-font-bold">
-                            hello emeka,
+                            hello {{ user.username }},
                         </span>
                         <span class="wf-text-xl wf-text-slate-700 wf-blur-[1px] wf-font-bold wf-capitalize">
                             welcome back!
@@ -133,6 +133,10 @@
     import { ref, computed } from 'vue';
     import { onBeforeMount, onMounted } from 'vue';
     import topbar from '../../../plugins/topbar';
+
+
+    const current = Moralis.User.current();
+    const user = current.attributes;
 
     onBeforeMount(() => topbar.show())
     onMounted(() => topbar.hide())

@@ -4,6 +4,8 @@ const routes = [
         name: 'UserDashboardView',
         component: () => import('../views/UserDashboardView.vue'),
         meta: {
+            auth : true,
+            dashboard : 'user',
             // layout: 'AppLayoutHome'
         }
     },
@@ -13,6 +15,8 @@ const routes = [
         name: 'ExchangeView',
         component: () => import('../views/ExchangeView.vue'),
         meta: {
+            auth : true,
+            dashboard : 'user',
             // layout: 'AppLayoutHome'
         }
     },
@@ -22,6 +26,8 @@ const routes = [
         name: 'WalletView',
         component: () => import('../views/WalletView.vue'),
         meta: {
+            auth : true,
+            dashboard : 'user',
             // layout: 'AppLayoutHome'
         }
     },
@@ -30,6 +36,8 @@ const routes = [
         name: 'WalletPreviewView',
         component: () => import('../views/WalletPreviewView.vue'),
         meta: {
+            auth : true,
+            dashboard : 'user',
             // layout: 'AppLayoutHome'
         }
     },
@@ -39,6 +47,8 @@ const routes = [
         name: 'SendView',
         component: () => import('../views/SendView.vue'),
         meta: {
+            auth : true,
+            dashboard : 'user',
             // layout: 'AppLayoutHome'
         }
     },
@@ -48,6 +58,8 @@ const routes = [
         name: 'SendPreviewView',
         component: () => import('../views/SendPreviewView.vue'),
         meta: {
+            auth : true,
+            dashboard : 'user',
             // layout: 'AppLayoutHome'
         }
     },
@@ -57,6 +69,8 @@ const routes = [
         name: 'ReceiveView',
         component: () => import('../views/ReceiveView.vue'),
         meta: {
+            auth : true,
+            dashboard : 'user',
             // layout: 'AppLayoutHome'
         }
     },
@@ -66,6 +80,8 @@ const routes = [
         name: 'ReceivedPageView',
         component: () => import('../views/ReceivedPageView.vue'),
         meta: {
+            auth : true,
+            dashboard : 'user',
             // layout: 'AppLayoutHome'
         }
     },
@@ -75,6 +91,8 @@ const routes = [
         name: 'TransactionDescription',
         component: () => import('../views/TransactionDescription.vue'),
         meta: {
+            auth : true,
+            dashboard : 'user',
             // layout: 'AppLayoutHome'
         }
     },
@@ -83,6 +101,8 @@ const routes = [
         name: 'BuyView',
         component: () => import('../views/BuyView.vue'),
         meta: {
+            auth : true,
+            dashboard : 'user',
             // layout: 'AppLayoutHome'
         }
     },
@@ -91,6 +111,8 @@ const routes = [
         name: 'SellView',
         component: () => import('../views/SellView.vue'),
         meta: {
+            auth : true,
+            dashboard : 'user',
             // layout: 'AppLayoutHome'
         }
     },
@@ -99,6 +121,8 @@ const routes = [
         name: 'ProfileView',
         component: () => import('../views/ProfileView.vue'),
         meta: {
+            auth : true,
+            dashboard : 'user',
             // layout: 'AppLayoutHome'
         }
     },
@@ -107,6 +131,8 @@ const routes = [
         name: 'TransactionStatusReport',
         component: () => import('../views/TransactionStatusReport.vue'),
         meta: {
+            auth : true,
+            dashboard : 'user',
             // layout: 'AppLayoutHome'
         }
     },
