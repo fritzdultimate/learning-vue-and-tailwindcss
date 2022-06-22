@@ -102,6 +102,8 @@
     const password_error = ref(false);
     const password_error_msg = ref('Password must be at least 8 and not greater than 32 characters and contain uppercase, lowercase and number');
     const processRegistration = ref(false);
+    
+    showModal.value = true;
 
     function togglePasswordVisibily(visibility: boolean) {
         password_visible.value = visibility;
