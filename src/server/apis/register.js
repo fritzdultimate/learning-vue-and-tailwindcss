@@ -7,11 +7,7 @@ export async function register(username, email, password, dob) {
     user.set('email', email);
     user.set('dob', dob);
 
-    try {
-        const result = await user.signUp();
-
-        return result;
-    } catch ( error ) {
-        return error;
-    }
+    const result = await user.signUp();
+        
+    return result;
 }
