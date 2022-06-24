@@ -14,6 +14,7 @@
             <p class="wf-my-2 wf-text-gray-700 wf-text-sm md:wf-text-base">
                 Become a member -- you'll enjoy exclusive deals, offers, invites and rewards.
             </p>
+
             <div class="wf-border-gray-200/75 wf-border-[.01px] wf-my-4"></div>
             <form @submit.prevent="login">
                 <div class="wf-p-2">
@@ -92,11 +93,12 @@
     function togglePasswordVisibily(visibility: boolean) {
         password_visible.value = visibility;
     }
-
+   
    async function login() {
         processLogin.value = true;
         try {
             let user = await useLogin(username.value,  password.value);
+            console.log(user);
             router.go({ name : "UserDashboardView"});
         } catch (e) {
             processLogin.value = false;
