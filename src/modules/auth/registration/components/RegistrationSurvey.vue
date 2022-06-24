@@ -23,6 +23,14 @@
                             </transition>
                         </li>
                     </ul>
+                    <dl class="wf-flex sm:wf-block lg:wf-flex xl:wf-block wf-mt-5">
+                        <div class="wf-col-start-2 wf-row-start-1 wf-row-end-3 sm:wf-mt-4 lg:wf-mt-0 xl:wf-mt-4">
+                            <dt class="wf-sr-only">Users</dt>
+                            <dd class="wf-flex wf-justify-en sm:wf-justify-start lg:wf-justify-end xl:wf-justify-start -wf-space-x-2">
+                                <img src="../../../../assets/img/fritz_3.jpg" v-for="i in 4" :key="i" alt="" class="wf-w-6 wf-h-6 wf-rounded-full wf-bg-slate-100 wf-ring-2 wf-ring-white" loading="lazy">
+                            </dd>
+                        </div>
+                    </dl>
                 </div>
             </transition>
         </template>
