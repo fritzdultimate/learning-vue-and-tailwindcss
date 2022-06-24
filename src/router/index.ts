@@ -13,7 +13,7 @@ function isLoginPage(to){
   return to.name == LOGIN
 }
 function isAuthPage(to){
-    const authPages = new Set(["LoginView", "RegistrationView", "VerifyAccountView", "ForgotPasswordView", "ChangePasswordView"]);
+    const authPages = new Set(["RegistrationView", "VerifyAccountView", "ForgotPasswordView", "ChangePasswordView"]);
     return authPages.has(to.name);
 }
 function isAuthenticated(){

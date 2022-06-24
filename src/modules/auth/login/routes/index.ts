@@ -2,6 +2,9 @@ const routes = [
     {
         path: '/auth/login',
         name: 'LoginView',
+        meta : {
+            dashboard : 'user',
+        },
         component: () => import('../views/LoginView.vue'),
     },
 
