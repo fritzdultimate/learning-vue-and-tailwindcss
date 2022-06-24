@@ -1,20 +1,22 @@
 
 const ENDPOINT = 'https://api-eu1.tatum.io/v3'
 
-const apiKey =  import.meta.env.VITE_MAINNET;
+const apiKey =  import.meta.env.VITE_TESTNET;
 const apiHeader = {
     header : {
-        'x-api-key':apiKey
+        'x-api-key':apiKey,
+        // 'mode' : 'no-cors'
     }
 }
 
 const requestObject = {
     method: 'GET',
+    // 'mode' : 'no-cors',
     ...apiHeader
 }
 
 
-export async function generateWalletDetails(currency){
+export async function useGenerateWalletDetails(currency){
     let mnemonicData = await generateMnemonic(currency);
     const { mnemonic, xpub } = mnemonicData;
     let walletAddress = await generateWalletAddress(currency, xpub);
@@ -38,8 +40,10 @@ async function generatePrivateKey(currency, mnemonic){
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            // 'mode' : 'no-cors',
             'x-api-key':apiKey
         },
+        // 'mode' : 'no-cors',
         body: JSON.stringify({
             index: 0,
             mnemonic
