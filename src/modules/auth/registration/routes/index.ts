@@ -10,6 +10,12 @@ const routes = [
         name: 'VerifyAccountView',
         component: () => import('../views/VerifyAccountView.vue'),
     },
+    // this route is temporary
+    {
+        path: '/auth/register/setups/survey',
+        name: 'RegistrationSurvey',
+        component: () => import('../components/RegistrationSurvey.vue'),
+    },
 ];
 
 export default routes;
