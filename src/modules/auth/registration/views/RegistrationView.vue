@@ -109,8 +109,8 @@
             :heading="'Oh no, something went wrong!'"
             :message="'So sorry, but something unexpectedly went wrong, please try again. If it persists, please submit a ticket to our team stating what you were doing or trying to do before the error start so we can help resolve the problem. You first.'"
             :image="'../../../../src/assets/img/illustration/3081783.jpg'" />
-        <AccountSetUpModal :visible="showWalletModal" @closeModal="showModal = false" :heading="walletHeading"
-            :message="walletMessage" :progress="progressWidth" />
+        <AccountSetUpModal :visible="showWalletModal" @closeWalletModal="showWalletModal = false"
+            :heading="walletHeading" :message="walletMessage" :progress="progressWidth" />
     </main>
 </template>
 
@@ -124,7 +124,7 @@
     import { useSetUpWallets } from '@/composables/setUpWallet.js'
 
 
-    defineEmits(['closeModal'])
+    defineEmits(['closeModal', 'closeWalletModal'])
 
     const showModal = ref(false);
     const showWalletModal = ref(false);
@@ -132,10 +132,10 @@
     const progressWidth = ref(0);
     const walletHeading = ref('Setting up your account');
     const password_visible = ref(false);
-    const username = ref('noble');
-    const password = ref('22richard@C');
-    const email = ref('nobledsmarts@gmail.com');
-    const dob = ref('13/08/1999');
+    const username = ref('');
+    const password = ref('');
+    const email = ref('');
+    const dob = ref('');
     const acceptOurTerms = ref(false)
     const password_error = ref(false);
     const password_error_msg = ref('Password must be at least 8 and not greater than 32 characters and contain uppercase, lowercase and number');
@@ -182,9 +182,11 @@
                 router.go({ name : "userDashboardView" });
             }).catch((err) => {
                 console.log(err);
+                showModal.value = true;
             });
         } catch(e){
             processRegistration.value = false;
+            showModal.value = true;
             alert(e.message);
         }
     }

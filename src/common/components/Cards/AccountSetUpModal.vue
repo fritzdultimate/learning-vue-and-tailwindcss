@@ -1,6 +1,6 @@
 <template>
     <div class="wf-h-screen wf-absolute wf-flex wf-justify-center wf-justify-items-center wf-items-center wf-top-0 wf-left-0 wf-right-0 wf-bottom-0 wf-bg-black/30 wf-cursor-pointer"
-        v-if="visible" @click="$emit('closeModal')">
+        v-if="visible" @click="$emit('closeWalletModal')">
         <transition name="fade" appear>
             <div class="wf-justify-center wf-justify-self-center wf-m-2 md:wf-m-4 wf-rounded md:wf-rounded-3xl wf-absolut wf-top- wf-bottom- wf-flex wf-flex-col wf-justify-center wf-items-center wf-bg-white wf-px-3 wf-py-2 md:wf-h-1/3 lg:wf-h-2/5  md:wf-w-1/3 lg:wf-w-2/5 wf-overflow-y-hidden"
                 v-if="visible">
@@ -28,8 +28,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const emit = defineEmits(['closeModal']);
-defineProps<{ visible, heading, message, image, progress }>();
+const emit = defineEmits(['closeWalletModal']);
+defineProps<{ visible, heading, message, progress }>();
 </script>
 
 <style scoped>
