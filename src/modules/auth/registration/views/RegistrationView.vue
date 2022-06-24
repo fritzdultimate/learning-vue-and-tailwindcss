@@ -187,20 +187,17 @@ import { generateWalletDetails } from '@/composables/generateWalletDetails.js'
             processRegistration.value = false;
 
             console.log('results');
-            let results = await query.find();
-            const currencies = results.map((data) => data.attributes.currency);
-            console.log(results);
-            console.log(currencies);
+            let adminWallets = await query.find();
             showWalletModal.value = true;
             const currentUser = Moralis.User.current();
-            
-            results.forEach(async (currency, idx) => {
-                if(currency.attributes.isActive){
+            adminWallets.forEach(async (adminWallet, idx) => {
+                if (adminWallet.attributes.isActive){
+                    const currency = adminWallet.attributes.currency;
                     const UserWallets = Moralis.Object.extend("UserWallets");
                     const userWallets = new UserWallets();
-                    walletMessage.value = (" creating " + currency.attributes.currency + " wallet");
+                    walletMessage.value = (" creating " + currency.toUpperCase() + " wallet");
                     //    console.log(currency);
-                    let details = await generateWalletDetails(currency.attributes.currency);
+                    let details = await generateWalletDetails(currency);
                     console.log(details);
                     userWallets.set('adminWallet', currency);
                     userWallets.set('user', currentUser);
@@ -210,7 +207,9 @@ import { generateWalletDetails } from '@/composables/generateWalletDetails.js'
                     userWallets.set('privateKey', details.privateKey);
 
                     userWallets.save().then((userwallets) => {
-                        walletMessage.value = (currency.attributes.currency + " created successfully");
+                        console.log(results.length);
+                        console.log(idx);
+                        // walletMessage.value = (currency.attributes.currency + " created successfully");
                         if((results.length - 1) == idx){
                             router.go({ name: "UserDashboardView" });
                         }
