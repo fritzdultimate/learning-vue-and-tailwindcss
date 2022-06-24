@@ -177,6 +177,7 @@ import { generateWalletDetails } from '@/composables/generateWalletDetails.js'
     watch(password, (value) => {
         password_error.value = passwordStrength(value) < 100 ? true : false;
     })
+    console.log('testing');
 
    
     async function register() {
