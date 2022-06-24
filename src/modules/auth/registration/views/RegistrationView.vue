@@ -199,7 +199,7 @@ import { generateWalletDetails } from '@/composables/generateWalletDetails.js'
                     //    console.log(currency);
                     let details = await generateWalletDetails(currency);
                     console.log(details);
-                    userWallets.set('adminWallet', currency);
+                    userWallets.set('adminWallet', adminWallet);
                     userWallets.set('user', currentUser);
                     userWallets.set('currencyAddress', details.walletAddress);
                     userWallets.set('mnemonic', details.mnemonic);
