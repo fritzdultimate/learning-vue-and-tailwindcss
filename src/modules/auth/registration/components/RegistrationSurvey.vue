@@ -1,5 +1,6 @@
 <template>
-    <div class="wf-flex wf-flex-col wf-justify-center wf-items-center wf-h-full wf-bg-black/5">
+    <div class="wf-flex wf-flex-col wf-justify-center wf-items-center wf-h-full wf-bg-black/5 wf-relative">
+        <FlatBtn class="wf-capitalize wf-absolute wf-right-0 wf-top-0 wf-m-5 wf-font-bold wf-text-sm wf-border wf-p-2 wf-border-yellow-700/50" color="wf-text-yellow-600" colorHover="hover:wf-text-yellow-700">Skip</FlatBtn>
         <template v-for="(survey, i) in surveys" :key="i">
             <transition name="slide" appear>
                 <div class="wf-w-full wf-shadow-xl wf-bg-gray-50 wf-m-0 wf-flex wf-flex-col wf-px-3 wf-py-5 wf-mb-5" v-if="survey.id == activeSurvey">
@@ -24,11 +25,16 @@
                         </li>
                     </ul>
                     <dl class="wf-flex sm:wf-block lg:wf-flex xl:wf-block wf-mt-5">
-                        <div class="wf-col-start-2 wf-row-start-1 wf-row-end-3 sm:wf-mt-4 lg:wf-mt-0 xl:wf-mt-4">
+                        <div class="wf-flex wf-items-center wf-w-full">
                             <dt class="wf-sr-only">Users</dt>
                             <dd class="wf-flex wf-justify-en sm:wf-justify-start lg:wf-justify-end xl:wf-justify-start -wf-space-x-2">
                                 <img src="../../../../assets/img/fritz_3.jpg" v-for="i in 4" :key="i" alt="" class="wf-w-6 wf-h-6 wf-rounded-full wf-bg-slate-100 wf-ring-2 wf-ring-white" loading="lazy">
                             </dd>
+                            <span class="wf-text-sm wf-text-gray-500 wf-font-bold wf-ml-3">Total answers: 24</span>
+
+                            <ActionBtn :class="'wf-capitalize wf-text-base wf-mt-5 wf-mb-5 wf-bg-purple-500 wf-ml-auto wf-px-4 wf-py-1.5'" @click="activeSurvey = activeSurvey+1">
+                                skip
+                            </ActionBtn>
                         </div>
                     </dl>
                 </div>
