@@ -109,8 +109,8 @@
             :heading="'Oh no, something went wrong!'"
             :message="'So sorry, but something unexpectedly went wrong, please try again. If it persists, please submit a ticket to our team stating what you were doing or trying to do before the error start so we can help resolve the problem. You first.'"
             :image="'../../../../src/assets/img/illustration/3081783.jpg'" />
-        <AccountSetUpModal :visible="showWalletModal" @closeModal="showModal = false" :heading="walletHeading"
-            :message="walletMessage" />
+        <AccountSetUpModal :visible="showWalletModal" @closeWalletModal="showWalletModal = false"
+            :heading="walletHeading" :message="walletMessage" :progress="progressWidth" />
     </main>
 </template>
 
@@ -121,20 +121,16 @@
     import router from '@/router';
     import SomethingWentWrong from '../../../../common/components/Cards/SomethingWentWrong.vue';
     import AccountSetUpModal from '@/common/components/Cards/AccountSetUpModal.vue';
+    import { useSetUpWallets } from '@/composables/setUpWallet.js'
 
-import { generateWalletDetails } from '@/composables/generateWalletDetails.js'
-    
-    
-    // const bip39 = require('bip39')
 
-    // console.log(bip39);
-
-    defineEmits(['closeModal'])
+    defineEmits(['closeModal', 'closeWalletModal'])
 
     const showModal = ref(false);
     const showWalletModal = ref(false);
-    const walletMessage = ref('loading...');
-    const walletHeading = ref('Please wait while we set up your account');
+    const walletMessage = ref('please wait...');
+    const progressWidth = ref(0);
+    const walletHeading = ref('Setting up your account');
     const password_visible = ref(false);
     const username = ref('');
     const password = ref('');
@@ -145,12 +141,8 @@ import { generateWalletDetails } from '@/composables/generateWalletDetails.js'
     const password_error_msg = ref('Password must be at least 8 and not greater than 32 characters and contain uppercase, lowercase and number');
     const processRegistration = ref(false);
 
-
-    const AdminWallets = Moralis.Object.extend("AdminWallets");
-    const query = new Moralis.Query(AdminWallets);
     
-    // showModal.value = true;
-
+    
     function togglePasswordVisibily(visibility: boolean) {
         password_visible.value = visibility;
     }
@@ -183,47 +175,23 @@ import { generateWalletDetails } from '@/composables/generateWalletDetails.js'
         processRegistration.value = true;
         try {
             let user = await useRegister(username.value, email.value, password.value, dob.value);
-            console.log(user);
             processRegistration.value = false;
-
-            console.log('results');
-            let adminWallets = await query.find();
             showWalletModal.value = true;
-            const currentUser = Moralis.User.current();
-            adminWallets.forEach(async (adminWallet, idx) => {
-                if (adminWallet.attributes.isActive){
-                    const currency = adminWallet.attributes.currency;
-                    const UserWallets = Moralis.Object.extend("UserWallets");
-                    const userWallets = new UserWallets();
-                    walletMessage.value = (" creating " + currency.toUpperCase() + " wallet");
-                    //    console.log(currency);
-                    let details = await generateWalletDetails(currency);
-                    console.log(details);
-                    userWallets.set('adminWallet', adminWallet);
-                    userWallets.set('user', currentUser);
-                    userWallets.set('currencyAddress', details.walletAddress);
-                    userWallets.set('mnemonic', details.mnemonic);
-                    userWallets.set('xpub', details.xpub);
-                    userWallets.set('privateKey', details.privateKey);
-
-                    userWallets.save().then((userwallets) => {
-                        console.log(results.length);
-                        console.log(idx);
-                        // walletMessage.value = (currency.attributes.currency + " created successfully");
-                        if((results.length - 1) == idx){
-                            router.go({ name: "UserDashboardView" });
-                        }
-                    });
-                }
-            });            // 
-
+            console.log('results');
+            useSetUpWallets(progressWidth, walletMessage).then(() => {
+                router.go({ name : "userDashboardView" });
+            }).catch((err) => {
+                console.log(err);
+                showModal.value = true;
+            });
         } catch(e){
             processRegistration.value = false;
+            showModal.value = true;
             alert(e.message);
         }
     }
 
-    onMounted(() => {
-        // 
+    onMounted(async () => {
+        
     })
 </script>
