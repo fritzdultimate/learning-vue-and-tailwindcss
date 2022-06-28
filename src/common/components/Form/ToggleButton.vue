@@ -1,7 +1,7 @@
 <template>
     <label class="wf-items-center wf-cursor-pointer wf-inline" for="switch">
         <div class="wf-relative">
-            <input type="checkbox" v-model="twoFactor" id="switch" class="wf-sr-only" @change="toggle">
+            <input ref="checkbox" type="checkbox" id="switch" class="wf-sr-only" @change="toggle">
             <!-- line -->
             <div class="wf-line wf-block wf-bg-gray-600 wf-w-[53px] wf-h-7 wf-rounded-full"></div>
             <!-- dot -->
@@ -15,14 +15,23 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue';
+    import { ref, onMounted, watch } from 'vue';
 
-    const twoFactor = ref(false);
-    const emit = defineEmits(['update:modelValue'])
+    const props = defineProps<{state}>();
+    const checkbox = ref(null);
+    const emit = defineEmits(['update'])
 
     function toggle() {
-        emit('update:modelValue', twoFactor.value);
+        console.log(checkbox.value.checked, props.state)
+        emit('update', checkbox.value.checked);
     }
+
+    watch(() => props.state, (value) => {
+        console.log('changed', value)
+        checkbox.value.checked = value;
+    })
+
+    onMounted(() => checkbox.value.checked = props.state)
 </script>
 
 <style scoped>

@@ -9,8 +9,8 @@
                     Help protect your account from unauthorized access by requiring a second authentication method in addition to your password.
                 </p>
             </div>
-            <ToggleButton v-model="toggle"></ToggleButton>
-            <PromptModal />
+            <ToggleButton :state="toggle" @update="text"></ToggleButton>
+            <PromptModal :header="promptHeader" :message="promptMessage" :cancelText="promptCancelBtnText" :enableText="promptEnableBtnText" :visible="isPromptVisible" @dismiss="closePrompt" />
         </div>
     </main>
 </template>
@@ -21,10 +21,36 @@
     import { ref, watch } from 'vue';
 
     const toggle = ref(false)
+    const prompt = ref(null);
+    const isPromptVisible = ref(false);
+    const promptEnableBtnText = ref('Yes, enable');
+    const promptCancelBtnText = ref('Cancel');
+    const promptMessage = ref('Enter your password to confirm that you want to enable two-factor authentication.');
+    const promptHeader = ref('Enable 2FA');
 
     watch(toggle, (value) => {
-        console.log(watch)
+        if(value) {
+           isPromptVisible.value = true;
+        }
     })
+
+    function text(e) {
+        toggle.value = e;
+    }
+
+    function closePrompt(value) {
+        if(typeof(value) == 'boolean' && value == false) {
+            isPromptVisible.value = false;
+            toggle.value = false;
+        } else {
+            isPromptVisible.value = false;
+            // prompt value
+            prompt.value = value;
+            // using a middleware check if the user password is correct, before accepting the password
+            // if password is wrong, notify user, and switch off the twoFactor
+            console.log(prompt.value)
+        }
+    }
 </script>
 
 <style scoped>
