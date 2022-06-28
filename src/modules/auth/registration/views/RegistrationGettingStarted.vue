@@ -1,22 +1,28 @@
 <template>
-    <main class="wf-bg-gray-100 wf-h-full wf-flex wf-justify-center wf-items-center">
-        <div class="wf-flex wf-items-center wf-bg-white wf-shadow-lg wf-min-h-1/3 md:wf-w-1/3 wf-rounded-md  wf-p-4 md:wf-m-0 wf-m-4 wf-w-full">
-            <div>
-                <h3 class="wf-text-gray-800 wf-font-bold wf-text-base wf-mb-1">
-                    Two-factor authentication
-                </h3>
-                <p class="wf-text-xs wf-text-gray-600 wf-font-medium">
-                    Help protect your account from unauthorized access by requiring a second authentication method in addition to your password.
-                </p>
+    <main class="wf-bg-gray-100 wf-h-full wf-flex  wf-flex-col wf-justify-center wf-items-center">
+        <!-- <router-link to="#">Skip</router-link> -->
+        <div class="wf-m-4 wf-flex wf-flex-col wf-justify-center wf-items-center">
+            <div class="wf-flex wf-items-center wf-bg-white wf-shadow-lg wf-min-h-1/3 md:wf-w-1/3 wf-rounded-md  wf-p-4 md:wf-m-0 wf-w-full wf-mb-5">
+                <div>
+                    <h3 class="wf-text-gray-800 wf-font-bold wf-text-base wf-mb-1">
+                        Two-factor authentication
+                    </h3>
+                    <p class="wf-text-xs wf-text-gray-600 wf-font-medium">
+                        Help protect your account from unauthorized access by requiring a second authentication method in addition to your password.
+                    </p>
+                </div>
+                <ToggleButton :state="toggle" @update="text"></ToggleButton>
+                <PromptModal :header="promptHeader" :message="promptMessage" :cancelText="promptCancelBtnText" :enableText="promptEnableBtnText" :visible="isPromptVisible" @dismiss="closePrompt" />
             </div>
-            <ToggleButton :state="toggle" @update="text"></ToggleButton>
-            <PromptModal :header="promptHeader" :message="promptMessage" :cancelText="promptCancelBtnText" :enableText="promptEnableBtnText" :visible="isPromptVisible" @dismiss="closePrompt" />
+            <!-- upload profile -->
+            <DragAndDropFileUploader />
         </div>
     </main>
 </template>
 
 <script setup lang="ts">
     import ToggleButton from '../../../../common/components/Form/ToggleButton.vue';
+    import DragAndDropFileUploader from '../../../../common/components/Form/DragAndDropFileUploader.vue';
     import PromptModal from '../../../../common/components/Cards/PromptModal.vue';
     import { ref, watch } from 'vue';
 
