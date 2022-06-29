@@ -17,10 +17,10 @@
             <!-- upload profile -->
             <DragAndDropFileUploader :multiple="uploadMultiple" :type="supportedUploadType" />
             
-             <ActionBtn :class="'wf-w-1/2 wf-py-3 wf-capitalize wf-text-base wf-mt-5 wf-mb-5'">
+             <ActionBtn :class="'wf-w-1/2 wf-py-3 wf-capitalize wf-text-base wf-mt-5'">
                 Finish
             </ActionBtn>
-            <ActionBtn :class="'wf-w-1/2 wf-py-3 wf-capitalize wf-text-base wf-mt-5 wf-mb-5 wf-bg-green-600 hover:wf-ring-green-500'">
+            <ActionBtn :class="'wf-w-1/2 wf-py-3 wf-capitalize wf-text-base wf-mt-5 wf-mb-5 wf-bg-green-600 focus:wf-ring-green-500 focus:wf-ring'">
                 Skip 
             </ActionBtn>
         </div>

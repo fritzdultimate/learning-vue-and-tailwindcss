@@ -18,7 +18,7 @@
             </div>
         </template>
         <label for="file" class="wf-w-24 wf-h-24 wf-bg-gray-200 wf-rounded-full wf-flex wf-justify-center wf-items-center wf-ring wf-ring-yellow-600" v-if="!multiple && files.length">
-            <img :ref="el => { imgs[0] = el }" class="wf-bg-cover wf-w-full wf-h-full wf-rounded-full">
+            <img :ref="el => { imgs[0] = el }" class="wf-flex-shrink-0 wf-bg-contain wf-w-full wf-h-full wf-rounded-full">
         </label>
     </div>
 </template>
