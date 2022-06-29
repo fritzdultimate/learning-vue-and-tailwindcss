@@ -15,7 +15,7 @@
                 <PromptModal :header="promptHeader" :message="promptMessage" :cancelText="promptCancelBtnText" :enableText="promptEnableBtnText" :visible="isPromptVisible" @dismiss="closePrompt" />
             </div>
             <!-- upload profile -->
-            <DragAndDropFileUploader />
+            <DragAndDropFileUploader :multiple="uploadMultiple" :type="supportedUploadType" />
         </div>
     </main>
 </template>
@@ -33,6 +33,8 @@
     const promptCancelBtnText = ref('Cancel');
     const promptMessage = ref('Enter your password to confirm that you want to enable two-factor authentication.');
     const promptHeader = ref('Enable 2FA');
+    const uploadMultiple = ref(false);
+    const supportedUploadType = ref(['.jpg', '.png', '.jpeg']);
 
     watch(toggle, (value) => {
         if(value) {
