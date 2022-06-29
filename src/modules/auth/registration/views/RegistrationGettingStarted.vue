@@ -16,11 +16,19 @@
             </div>
             <!-- upload profile -->
             <DragAndDropFileUploader :multiple="uploadMultiple" :type="supportedUploadType" />
+            
+             <ActionBtn :class="'wf-w-1/2 wf-py-3 wf-capitalize wf-text-base wf-mt-5 wf-mb-5'">
+                Finish
+            </ActionBtn>
+            <ActionBtn :class="'wf-w-1/2 wf-py-3 wf-capitalize wf-text-base wf-mt-5 wf-mb-5 wf-bg-green-600 hover:wf-ring-green-500'">
+                Skip 
+            </ActionBtn>
         </div>
     </main>
 </template>
 
 <script setup lang="ts">
+    import ActionBtn from '../../../../common/components/Form/ActionBtn.vue';
     import ToggleButton from '../../../../common/components/Form/ToggleButton.vue';
     import DragAndDropFileUploader from '../../../../common/components/Form/DragAndDropFileUploader.vue';
     import PromptModal from '../../../../common/components/Cards/PromptModal.vue';
