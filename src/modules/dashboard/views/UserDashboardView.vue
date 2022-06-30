@@ -138,8 +138,41 @@
     const current = Moralis.User.current();
     const user = current.attributes;
 
-    onBeforeMount(() => topbar.show())
+    onBeforeMount(async () => {
+        // let cryptoBalance = await Moralis.Cloud.run("cryptoBalance", { id : current.id});
+        topbar.show();
+
+    })
     onMounted(() => topbar.hide())
+    onMounted(async () => {
+        // console.log(current);
+       
+        // console.log(results);
+        // const options = {
+        //     chain: "Eth",
+        //     address: "0xbfc95c6471fd1c717abfac578ecff70fc14783a5",
+        //     from_block: "0",
+        // };
+        // const transactions = await Moralis.Web3API.account.getTransactions(options);
+        // console.log(transactions);
+    });
+    // const results = await Moralis.Cloud.run("watchEthAddress", {address: "0xbfc95c6471fd1c717abfac578ecff70fc14783a5", syncHistorical: true}, {useMasterKey: true});
+    // console.log(results);
+        // alert('hello');
+        // const web3 = new Moralis.Web3();
+        // const binanceWallet = "0xbfc95c6471fd1c717abfac578ecff70fc14783a5";
+
+        // // create query
+        // const query = new Moralis.Query("EthTransactions");
+        // query.equalTo("to_address", binanceWallet);
+
+        // // subscribe for real-time updates
+        // const subscription = await query.subscribe();
+        // subscription.on("create", function (data) {
+        // const amountEth = web3.utils.fromWei(data.attributes.value);
+        // console.log(`${amountEth} deposited to Binance`);
+        // });
+    // })
 
     const investmentCallActionCards = [
         {
