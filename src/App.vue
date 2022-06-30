@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import { useServer } from './composables/server.js'
-    // useServer();
+    useServer();
 
 </script>
 

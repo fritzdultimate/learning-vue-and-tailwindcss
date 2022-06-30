@@ -59,6 +59,7 @@
 </template>
 
 <script setup lang="ts">
+    import { ref, watch, onBeforeMount } from 'vue';
     import NotificationsHeaderPartial from './NotificationsHeaderPartial.vue';
     import { HomeIcon, ChevronDownIcon } from '@heroicons/vue/solid';
     import { IdentificationIcon } from '@heroicons/vue/outline';
@@ -68,7 +69,11 @@
     function computeBalanceCardBgColor(color, strength) {
         return `wf-bg-${color}-${strength}`;
     }
-    const balanceSideBarRight = [
+    const balances = ref({
+        crypto : 0
+    });
+
+    let balanceSideBarRight = ref([
         {
             name: 'Total Balance',
             balance: 50000,
@@ -129,5 +134,15 @@
                 bgColor: 'wf-text-blue-200',
             }
         }
-    ]
+    ]);
+    onBeforeMount(async () => {
+        balances.value.crypto = await Moralis.Cloud.run("cryptoBalance");
+        balanceSideBarRight.value = balanceSideBarRight.value.map((list) => {
+            if (list.name == 'Crypto Currency'){
+                list.balance = balances.value.crypto;
+                return list;
+            }
+            return list;
+        });
+    });
 </script>

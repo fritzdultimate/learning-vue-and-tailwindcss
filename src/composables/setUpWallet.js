@@ -3,8 +3,8 @@ import { useGenerateWalletDetails } from '@/composables/generateWalletDetails.js
 export const useSetUpWallets = (progressWidth, walletMessage) => new Promise(async(resolve, reject) => {
     try {
 
-        const AdminWallets = Moralis.Object.extend("AdminWallets");
-        const query = new Moralis.Query(AdminWallets);
+        // const AdminWallets = Moralis.Object.extend("AdminWallets");
+        const query = new Moralis.Query("AdminWallets");
         let adminWallets = await query.equalTo('isActive', 'true').find();
         const currentUser = Moralis.User.current();
         let currentIdx = 0;
