@@ -77,8 +77,11 @@ Moralis.Cloud.define('cloudCryptoBalance', async(request) => {
                     currencySymbol
                 });
 
+                // const logger = Moralis.Cloud.getLogger();
+
                 const usdRate2dp = parseFloat(((+usdRate).toFixed(2)));
                 totalBalance += balance * usdRate2dp;
+                // logger.info(`${balance} * ${usdRate2dp} == ${balance * usdRate2dp}`);
 
                 idx++;
             }
