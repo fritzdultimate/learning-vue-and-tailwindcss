@@ -3,7 +3,6 @@ const TATUM_TESTNET='6873e50f-a592-4b68-b65c-f24ab54c1c9c';
 const TATUM_MAINNET='5c00f0e9-77aa-4fb6-b5b0-1c414d5ae5f6';
 
 Moralis.Cloud.define("linkAddress", async (request) => {
-    // await Moralis.start( { serverUrl : 'https://zqqlc9enecak.usemoralis.com:2053/server', appId : '71OxWlUqGzRnbphLQRhv8UEWzYlC6WalG7C3e5Fp', masterKey : 'Q0gw9it8d1lGmtpUAl9fstNMPitOMZKtw5qPE9ro' } );
     const results = await Moralis.Cloud.run(
     'watchEthAddress',
     {
