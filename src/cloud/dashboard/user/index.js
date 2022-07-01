@@ -14,24 +14,31 @@ Moralis.Cloud.define("linkAddress", async (request) => {
 });
 
 Moralis.Cloud.define('getUsdRate', async (request) => {
+    const logger = Moralis.Cloud.getLogger();
     const { currencySymbol } = request.params;
     return Moralis.Cloud.httpRequest({
-        url: `https://min-api.cryptocompare.com/data/price?fsym=btc&tsyms=${currencySymbol}`,
-    }).then((httpResponse) => httpResponse.data[currencySymbol.toUpperCase()]);
+        url: `https://min-api.cryptocompare.com/data/price?fsym=${currencySymbol}&tsyms=usd`,
+    }).then((httpResponse) => {
+        return httpResponse.data['USD']
+    });
 });
 
 Moralis.Cloud.define('getBalance', async (request) => {
+    const logger = Moralis.Cloud.getLogger();
     const { currency, currencyAddress } = request.params;
+    
     return Moralis.Cloud.httpRequest({
         url : `${TATUM_ENDPOINT}/${currency}/address/balance/${currencyAddress}`,
+        followRedirects : true,
         headers: {
-            'x-api-key': TATUM_TESTNET
+            'x-api-key': TATUM_MAINNET
         }
     }).then((response) => {
         const { data } = response;
         let balance = (data.incoming - data.outgoing);
         return balance;
     }, (response) => {
+        logger.info(response);
         return 0;
     });
 });
@@ -69,7 +76,9 @@ Moralis.Cloud.define('cloudCryptoBalance', async(request) => {
                 const usdRate = await Moralis.Cloud.run('getUsdRate', {
                     currencySymbol
                 });
-                totalBalance += balance * usdRate;
+
+                const usdRate2dp = parseFloat(((+usdRate).toFixed(2)));
+                totalBalance += balance * usdRate2dp;
 
                 idx++;
             }
@@ -81,5 +90,5 @@ Moralis.Cloud.define("cryptoBalance", async(request) => {
     const cryptoBalance = await Moralis.Cloud.run('cloudCryptoBalance', {
          userId : request.user.id 
     });
-     return cryptoBalance;
+    return parseFloat(((+cryptoBalance).toFixed(2)));
 })
