@@ -24,5 +24,5 @@
     import RightSidebarPartial from './RightSidebarPartial.vue';
     import HeaderPartial from './header/HeaderPartial.vue';
 
-    defineProps<{visibleHeader:{default: true}}>()
+    defineProps({visibleHeader:{default: true}})
 </script>

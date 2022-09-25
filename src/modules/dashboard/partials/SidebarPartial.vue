@@ -44,13 +44,13 @@
 </template>
 
 <script setup lang="ts">
-    import { computed, ref } from 'vue';
+    import { computed, shallowRef } from 'vue';
     import  router  from '@/router';
     import { HomeIcon, ChartSquareBarIcon, TrendingDownIcon, TrendingUpIcon } from '@heroicons/vue/solid';
     import { UserIcon, CreditCardIcon } from '@heroicons/vue/outline';
     import { MouseVariant, Wallet } from 'mdue';
 
-    const NavLinks = ref([
+    const NavLinks = shallowRef([
         {
             name: 'Dashboard',
             icon: HomeIcon,
@@ -109,7 +109,6 @@
 
     const mobileNavLinks = computed(() => NavLinks.value.filter(el => el.mobile));
     const activeLink = computed(() => router.currentRoute.value.path);
-    console.log(activeLink.value)
 
     function navigate(path: string) {
        router.push(path);

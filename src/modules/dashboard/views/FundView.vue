@@ -31,7 +31,7 @@
                     <span class="wf-text-xl wf-text-gray-900 wf-capitalize wf-font-bold">
                         spacearn
                         <span class="wf-text-gray-700 wf-text-base wf-capitalize wf-font-medium wf-ml-2">
-                            Buy
+                            Fund
                         </span>
                     </span>
                     <DotsHorizontalIcon class="wf-ml-auto wf-w-6 wf-h-6 wf-text-gray-900" />
@@ -40,23 +40,13 @@
                     <div class="wf-px-3 wf-flex wf-flex-col">
                         <div class="wf-flex wf-flex-col wf-mb-3">
                             <span class="wf-text-base wf-font-bold wf-ml-3 wf-mb-2">
-                                YOU PAY
+                                YOU GET
                             </span>
                             <div
                                 class="wf-w-full wf-bg-gray-800 wf-py-2 wf-rounded-full wf-px-2 wf-flex wf-items-center">
-                                <!-- <span
-                                    class="wf-flex wf-items-center wf-uppercase wf-text-xs wf-font-bold wf-rounded-full wf-bg-gray-600 wf-shadow wf-shadow-gray-800 wf-py-2 wf-px-2.5 wf-text-gray-100">
-                                     img 
-                                    <figure class="wf-rounded-full wf-w-5 wf-h-5 wf-bg-yellow-500 wf-mr-2"></figure>
-                                    $usd
-                                    <ChevronRightIcon class="wf-w-4 wf-h-4 wf-ml-1" />
-                                </span> -->
                                 <label
                                     class="wf-bg-red- wf-relative before:wf-top-[calc(50%-10px)] before:wf-bg-yellow-500 before:wf-h-5 before:wf-w-5 before:wf-content-[''] before:wf-rounded-full before:wf-absolute wf-flex wf-items-center wf-outline-0 wf-uppercase wf-text-xs wf-font-bold wf-rounded-full wf-bg-gray-600 wf-shadow wf-shadow-gray-800 wf-text-gray-100 wf-pl-2">
                                     <!-- img -->
-                                    <!-- <figure class="wf-rounded-full wf-w-5 wf-h-5 wf-bg-green-500 wf-mr-2"></figure>
-                                    usdt
-                                    <ChevronRightIcon class="wf-w-4 wf-h-4 wf-ml-1" /> -->
                                     <select
                                         class="wf-flex wf-items-center wf-outline-0 wf-uppercase wf-text-xs wf-font-bold wf-rounded-full wf-bg-gray-600 wf-shado wf-shadow-gray-800 wf-py-2 wf-px-2.5 wf-text-gray-100 wf-ml-3"
                                         @change="changeCoin" v-model="currency">
@@ -75,16 +65,12 @@
                                         placeholder="0.0002 - 100" data-model="currency_value"
                                         @focus="setActiveKeyboard" @blur="clearActiveKeyboard" autofocus>
                                 </div>
-                                <span
-                                    class="wf-ml-auto wf-uppercase wf-text-yellow-600 wf-text-sm wf-font-medium wf-mr-1">max</span>
                             </div>
-                            <!-- balance -->
-                            <!-- <span class="wf-text-xs wf-font-medium wf-ml-4 wf-text-gray-700">Available: 430.00</span> -->
                         </div>
 
                         <div class="wf-flex wf-flex-col wf-mb-3">
                             <span class="wf-text-base wf-font-bold wf-ml-3 wf-mb-2">
-                                YOU GET
+                                YOU PAY
                             </span>
                             <div
                                 class="wf-w-full wf-bg-gray-800 wf-py-2 wf-rounded-full wf-px-2 wf-flex wf-items-center">
@@ -121,7 +107,7 @@
                         <button
                             class="wf-w-full wf-bg-yellow-700 wf-capitalize wf-rounded-full wf-py-3 wf-text-yellow-50 wf-font-medium wf-flex wf-justify-center wf-items-center">
                             <SwitchVerticalIcon class="wf-w-5 wf-h-5 wf-mr-2" />
-                            Buy
+                            Fund
                         </button>
                     </div>
 
@@ -278,7 +264,6 @@ async function setRate(){
     coin_value.value = rate * (+currency_value.value);
 }
 function changeCoin(){
-    // alert(currency.value)
     setRate();
 }
 async function getCurrencyValue() {

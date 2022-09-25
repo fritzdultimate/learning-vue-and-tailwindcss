@@ -66,7 +66,7 @@
     import RecentActivityPartial from './RecentActivityPartial.vue';
 
 
-    function computeBalanceCardBgColor(color, strength) {
+    function computeBalanceCardBgColor(color: string, strength: string) {
         return `wf-bg-${color}-${strength}`;
     }
     const balances = ref({
@@ -136,13 +136,6 @@
         }
     ]);
     onBeforeMount(async () => {
-        balances.value.crypto = await Moralis.Cloud.run("cryptoBalance");
-        balanceSideBarRight.value = balanceSideBarRight.value.map((list) => {
-            if (list.name == 'Crypto Currency'){
-                list.balance = balances.value.crypto;
-                return list;
-            }
-            return list;
-        });
+        
     });
 </script>

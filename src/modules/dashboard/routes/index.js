@@ -1,4 +1,3 @@
-import UserDashboardView from '@/modules/dashboard/views/UserDashboardView.vue';
 
 const routes = [
     {
@@ -109,6 +108,16 @@ const routes = [
         }
     },
     {
+        path: '/app/space/user/fund/invoice',
+        name: 'FundReceiptView',
+        component: () => import('../views/FundingReceiptView.vue'),
+        meta: {
+            auth : true,
+            dashboard : 'user',
+            // layout: 'AppLayoutHome'
+        }
+    },
+    {
         path: '/app/space/user/sell',
         name: 'SellView',
         component: () => import('../views/SellView.vue'),
@@ -126,6 +135,15 @@ const routes = [
             auth : true,
             dashboard : 'user',
             // layout: 'AppLayoutHome'
+        }
+    },
+    {
+        path: '/app/space/user/settings',
+        name: 'SettingsView',
+        component: () => import('../views/SettingsView.vue'),
+        meta: {
+            auth : true,
+            dashboard : 'user',
         }
     },
     {
