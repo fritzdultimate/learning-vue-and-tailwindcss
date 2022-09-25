@@ -1,7 +1,7 @@
 <template>
-    <di>
+    <div>
         <QrcodeVue :value="value" :size="size" :render-as="renderAs" :margin="margin" :level="level" :background="background" :foreground="foreground" :class="className"></QrcodeVue>
-    </di>
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -9,7 +9,7 @@
 
     interface Props {
         value,
-        size? : {default: 700},
+        size? : number,
         renderAs?: {default: 'svg'},
         margin? : {default: 0},
         level? : {default: 'H'},
