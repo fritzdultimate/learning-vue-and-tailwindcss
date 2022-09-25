@@ -5,7 +5,7 @@ export function connect(serverUrl, appId) {
     try {
         
 
-        Moralis.start( { serverUrl, appId, masterKey : 'Q0gw9it8d1lGmtpUAl9fstNMPitOMZKtw5qPE9ro' } );
+        // Moralis.start( { serverUrl, appId, masterKey : 'Q0gw9it8d1lGmtpUAl9fstNMPitOMZKtw5qPE9ro' } );
 
     } catch (err){
         console.log(err.code);

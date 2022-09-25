@@ -10,7 +10,7 @@
                 <div class="wf-flex">
                     <div class="wf-flex wf-flex-col">
                         <span class="wf-text-gray-500/75 wf-capitalize wf-font-mono wf-text-base wf-font-bold">
-                            hello {{ user.username }},
+                            hello Darlington,
                         </span>
                         <span class="wf-text-xl wf-text-slate-700 wf-blur-[1px] wf-font-bold wf-capitalize">
                             welcome back!
@@ -46,7 +46,7 @@
                     </div>
 
                     <!-- Invest in stocks, crypto etc -->
-                    <InvestHeroCard v-for="(card, i) in investmentCallActionCards" :key="i" v-bind="card" />
+                    <InvestHeroCard v-for="(card, i) in investmentCallActionCards" :key="i" :item="card.item" :icon="card.icon" :bg-color="card.bgColor" :border-color="card.borderColor" :text-color="card.textColor" />
 
                     <div class="wf-flex wf-mt-5">
                         <div class="wf-w-1/3">
@@ -134,45 +134,12 @@
     import { onBeforeMount, onMounted } from 'vue';
     import topbar from '../../../plugins/topbar';
 
-
-    const current = Moralis.User.current();
-    const user = current.attributes;
-
     onBeforeMount(async () => {
         // let cryptoBalance = await Moralis.Cloud.run("cryptoBalance", { id : current.id});
         topbar.show();
 
     })
     onMounted(() => topbar.hide())
-    onMounted(async () => {
-        // console.log(current);
-       
-        // console.log(results);
-        // const options = {
-        //     chain: "Eth",
-        //     address: "0xbfc95c6471fd1c717abfac578ecff70fc14783a5",
-        //     from_block: "0",
-        // };
-        // const transactions = await Moralis.Web3API.account.getTransactions(options);
-        // console.log(transactions);
-    });
-    // const results = await Moralis.Cloud.run("watchEthAddress", {address: "0xbfc95c6471fd1c717abfac578ecff70fc14783a5", syncHistorical: true}, {useMasterKey: true});
-    // console.log(results);
-        // alert('hello');
-        // const web3 = new Moralis.Web3();
-        // const binanceWallet = "0xbfc95c6471fd1c717abfac578ecff70fc14783a5";
-
-        // // create query
-        // const query = new Moralis.Query("EthTransactions");
-        // query.equalTo("to_address", binanceWallet);
-
-        // // subscribe for real-time updates
-        // const subscription = await query.subscribe();
-        // subscription.on("create", function (data) {
-        // const amountEth = web3.utils.fromWei(data.attributes.value);
-        // console.log(`${amountEth} deposited to Binance`);
-        // });
-    // })
 
     const investmentCallActionCards = [
         {

@@ -11,23 +11,13 @@
 </template>
 
 <script setup lang="ts">
-    import  ListBox  from '../../../../common/components/Form/ListBox.vue'
-    interface Props {
-        item: string,
-        icon: string,
-        bgColor: {
-            required: true, 
-            type: string
-        },
-        borderColor: {
-            required: true, 
-            type: string
-        },
-        textColor: {
-            required: true, 
-            type: string
-        }
-    }
+    import  ListBox  from '../../../../common/components/Form/ListBox.vue';
 
-    defineProps<Props>();
+    defineProps<{
+        item: String,
+        icon: any,
+        bgColor: String
+        borderColor: String,
+        textColor: String
+    }>();
 </script>
