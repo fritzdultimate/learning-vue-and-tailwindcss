@@ -10,7 +10,7 @@
                     {{ header }}
                 </h1>
                 <ul class="wf-px-3">
-                    <component :is="DropDownSummaryList" v-for="(feature, i) in features" :key="i" :dataId="i" :data-id="i" @click="toggleFeature(i)" :currentId="current_id" :summary="feature.summary" :detail="feature.detail"/>
+                    <component :is="DropDownSummaryList" v-for="(feature, i) in features" :key="i" :dataId="i" @click="toggleFeature(i)" :currentId="current_id" :summary="feature.summary" :detail="feature.detail"/>
                 </ul>
             </div>
             <div class="wf-w-full md:wf-w-1/2 wf-order-first md:wf-order-last wf-inline-flex wf-justify-end wf-h-screen wf-overflow-hidden wf-will-change-transform wf-cursor-grab wf-bg-repeat wf-text-yellow-50 slider-container"  style="background-image: url('../../../src/assets/img/bg/home-wallet-shapes-bg.png'); transform: translateX(0);">
@@ -30,22 +30,14 @@
     import { onMounted } from 'vue'
     import { ref } from 'vue';
 
-    interface Props {
-        readonly features: {
-            type: object,
-            required: true
-        },
+    const props = defineProps<{
+        readonly features: any
         readonly header: string,
-        readonly headerIcon: {
-            type: object,
-            required: true
-        }
-    };
-
-    const props = defineProps<Props>();
+        readonly headerIcon: any
+    }>();
     
     const current_id = ref(null);
-    function toggleFeature(id) {
+    function toggleFeature(id: any) {
         current_id.value = id;
     }
 </script>
