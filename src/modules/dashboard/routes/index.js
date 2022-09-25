@@ -109,8 +109,18 @@ const routes = [
     },
     {
         path: '/app/space/user/fund/invoice',
-        name: 'FundReceiptView',
+        name: 'FundingReceiptView',
         component: () => import('../views/FundingReceiptView.vue'),
+        meta: {
+            auth : true,
+            dashboard : 'user',
+            // layout: 'AppLayoutHome'
+        }
+    },
+    {
+        path: '/app/space/user/fund/invoice/confirmed',
+        name: 'FundingReceiptConfirmedView',
+        component: () => import('../views/FundingReceiptConfirmedView.vue'),
         meta: {
             auth : true,
             dashboard : 'user',
