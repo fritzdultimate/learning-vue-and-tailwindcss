@@ -17,7 +17,7 @@
                 <router-link :to="link.to"
                     class="wf-flex wf-items-center wf-py-1.5 wf-rounded-lg wf-ml-5 wf-text-gray-100 wf-transition-all"
                     :class="activeLink == link.to ? 'wf-bg-yellow-700' : 'hover:wf-text-gray-900/50 wf-text-[#a16207bf] hover:wf-bg-yellow-700/30'"
-                    @click.prevent="navigate(link)">
+                    @click.prevent="navigate(link.to)">
                     <component :is="link.icon" class="wf-w-8 wf-h-6 wf-mr-3 wf-ml-4" />
                     <span class="wf-font-bold">{{ link.name }}</span>
                     <!-- {{ activeLink }} -->
@@ -85,18 +85,11 @@
             id: 'receive'
         },
         {
-            name: 'Buy',
+            name: 'Fund',
             icon: TrendingDownIcon,
             to: "/app/space/user/buy",
-            id: 'buy',
+            id: 'fund',
             mobile: true,
-        },
-        {
-            name: 'Sell',
-            icon: TrendingUpIcon,
-            to: "/app/space/user/sell",
-            id: 'sell',
-            mobile: true
         },
         {
             name: 'Profile',
@@ -112,18 +105,16 @@
             id: 'settings'
         }
     ])
-    //const activeLink = shallowRef('dashboard')
+    // const activeLink = shallowRef('dashboard')
 
     const mobileNavLinks = computed(() => NavLinks.value.filter(el => el.mobile));
     const activeLink = computed(() => router.currentRoute.value.path);
+    console.log(activeLink.value)
 
-    function navigate(nav) {
-    //    router.push(nav.to);
+    function navigate(path: string) {
+       router.push(path);
     }
     function logout(){
-        let confirm = window.confirm("Log Out?")
-        confirm && Moralis.User.logOut().then(() => {
-            router.push({ name : "LoginView" })
-        })
+
     }
 </script>
