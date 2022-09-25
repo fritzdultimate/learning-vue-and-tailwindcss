@@ -87,7 +87,7 @@
         {
             name: 'Fund',
             icon: TrendingDownIcon,
-            to: "/app/space/user/buy",
+            to: "/app/space/user/fund",
             id: 'fund',
             mobile: true,
         },

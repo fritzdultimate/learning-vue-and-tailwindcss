@@ -1,8 +1,10 @@
+import UserDashboardView from '@/modules/dashboard/views/UserDashboardView.vue';
+
 const routes = [
     {
         path: '/app/space/user/dashboard',
         name: 'UserDashboardView',
-        component: () => import('../views/UserDashboardView.vue'),
+        component: () => import('@/modules/dashboard/views/UserDashboardView.vue'),
         meta: {
             auth : true,
             dashboard : 'user',
@@ -97,9 +99,9 @@ const routes = [
         }
     },
     {
-        path: '/app/space/user/buy',
-        name: 'BuyView',
-        component: () => import('../views/BuyView.vue'),
+        path: '/app/space/user/fund',
+        name: 'FundView',
+        component: () => import('../views/FundView.vue'),
         meta: {
             auth : true,
             dashboard : 'user',
