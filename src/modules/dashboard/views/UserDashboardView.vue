@@ -143,28 +143,28 @@
 
     const investmentCallActionCards = [
         {
-            item: 'Cryptocurrency',
+            item: 'Invest on Cryptocurrency',
             icon: ShoppingCartIcon,
             bgColor: 'wf-bg-yellow-200',
             borderColor: 'wf-border-yellow-600',
             textColor: 'wf-text-yellow-700'
         },
         {
-            item: 'Live Socks',
+            item: 'Invest on Live Socks',
             icon: ShoppingCartIcon,
             bgColor: 'wf-bg-green-200',
             borderColor: 'wf-border-green-600',
             textColor: 'wf-text-green-700'
         },
         {
-            item: 'Real Estate',
+            item: 'Invest on Real Estate',
             icon: ShoppingCartIcon,
             bgColor: 'wf-bg-red-200',
             borderColor: 'wf-border-red-600',
             textColor: 'wf-text-red-700'
         },
         {
-            item: 'NFTs',
+            item: 'Mint NFTs',
             icon: ShoppingCartIcon,
             bgColor: 'wf-bg-blue-200',
             borderColor: 'wf-border-blue-600',
