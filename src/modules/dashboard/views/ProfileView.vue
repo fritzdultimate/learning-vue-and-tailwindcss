@@ -101,7 +101,15 @@ onMounted(() => topbar.hide());
 const accountListOptions = [
     {
         name: "Native currency",
-        icon: CurrencyDollarIcon
+        icon: CurrencyDollarIcon,
+        danger: false,
+        input: "select",
+        message: "Select preferred currency for your account",
+        columns: [{
+            label: "Currency",
+            column: "preferred_currency"
+        }],
+        button: "Save"
     },
     {
         name: "Country",
