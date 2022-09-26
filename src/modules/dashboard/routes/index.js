@@ -128,6 +128,16 @@ const routes = [
         }
     },
     {
+        path: '/app/space/user/fund/invoice/failed',
+        name: 'FundingReceiptFailedView',
+        component: () => import('../views/FundingReceiptFailedView.vue'),
+        meta: {
+            auth : true,
+            dashboard : 'user',
+            // layout: 'AppLayoutHome'
+        }
+    },
+    {
         path: '/app/space/user/sell',
         name: 'SellView',
         component: () => import('../views/SellView.vue'),
