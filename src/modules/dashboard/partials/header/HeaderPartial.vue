@@ -1,5 +1,5 @@
 <template>
-    <div class="wf-flex wf-pb-10">
+    <div :class="['wf-flex wf-pb-10', {'wf-px-5': isFilteredPage}]">
         <span class="wf-p-4 wf-bg-gray-700 wf-rounded-full">
             <ViewGridIcon class="wf-w-5 wf-h-5 wf-text-white" />
         </span>
@@ -15,4 +15,10 @@
 
 <script setup lang="ts">
     import { ViewGridIcon, BellIcon } from '@heroicons/vue/solid';
+    import  router  from '@/router';
+    import { computed } from 'vue';
+
+    const activeLink = computed(() => router.currentRoute.value.path);
+    const FILTER_PAGES_WITHOUT_PADDING = ['/app/space/user/profile', '/app/space/user/fund/invoice']
+    const isFilteredPage = FILTER_PAGES_WITHOUT_PADDING.join(', ').includes(activeLink.value);
 </script>

@@ -98,12 +98,6 @@
             id: 'profile',
             mobile: true,
         },
-        {
-            name: 'Settings',
-            icon: Wallet,
-            to: "/app/space/user/settings",
-            id: 'settings'
-        }
     ])
     // const activeLink = shallowRef('dashboard')
 

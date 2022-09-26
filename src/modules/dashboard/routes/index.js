@@ -158,15 +158,6 @@ const routes = [
         }
     },
     {
-        path: '/app/space/user/settings',
-        name: 'SettingsView',
-        component: () => import('../views/SettingsView.vue'),
-        meta: {
-            auth : true,
-            dashboard : 'user',
-        }
-    },
-    {
         path: '/app/space/user/transaction/status/success',
         name: 'TransactionStatusReport',
         component: () => import('../views/TransactionStatusReport.vue'),
