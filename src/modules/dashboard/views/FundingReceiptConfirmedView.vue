@@ -23,7 +23,7 @@
             </figure>
 
             <div class="wf-flex wf-justify-center wf-mt-10">
-                <ActionBtn class="wf-w-full wf-mx-10 wf-bg-green-600">Goto home</ActionBtn>
+                <ActionBtn class="wf-w-full wf-mx-10 wf-bg-green-600">View Transaction</ActionBtn>
             </div>
         </section>
     </ViewWrapper>
