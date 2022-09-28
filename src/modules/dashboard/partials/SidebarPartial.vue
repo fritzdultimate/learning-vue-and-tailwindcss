@@ -46,8 +46,8 @@
 <script setup lang="ts">
     import { computed, shallowRef } from 'vue';
     import  router  from '@/router';
-    import { HomeIcon, ChartSquareBarIcon, TrendingDownIcon, TrendingUpIcon } from '@heroicons/vue/solid';
-    import { UserIcon, CreditCardIcon } from '@heroicons/vue/outline';
+    import { HomeIcon, ChartBarSquareIcon, ArrowTrendingDownIcon, ArrowTrendingUpIcon } from '@heroicons/vue/24/solid';
+    import { UserIcon, CreditCardIcon } from '@heroicons/vue/24/outline';
     import { MouseVariant, Wallet } from 'mdue';
 
     const NavLinks = shallowRef([
@@ -61,7 +61,7 @@
         },
         {
             name: 'Exchange',
-            icon: ChartSquareBarIcon,
+            icon: ChartBarSquareIcon,
             to: "/app/space/user/exchange",
             id: 'exchange',
         },
@@ -86,7 +86,7 @@
         },
         {
             name: 'Fund',
-            icon: TrendingDownIcon,
+            icon: ArrowTrendingDownIcon,
             to: "/app/space/user/fund",
             id: 'fund',
             mobile: true,

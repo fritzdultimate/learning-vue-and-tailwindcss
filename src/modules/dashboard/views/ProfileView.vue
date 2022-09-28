@@ -132,7 +132,8 @@
 import ViewWrapper from '../partials/ViewWrapper.vue';
 import { onBeforeMount, onMounted } from 'vue';
 import topbar from '../../../plugins/topbar';
-import { ChevronRightIcon, CurrencyDollarIcon, FlagIcon, ShieldCheckIcon, BellIcon, LockClosedIcon, KeyIcon, ClockIcon, FingerPrintIcon, EyeIcon, TrashIcon, ChatIcon, DocumentIcon, UserAddIcon, QuestionMarkCircleIcon, CheckIcon, ChevronDownIcon } from '@heroicons/vue/solid';
+import { ChevronRightIcon, CurrencyDollarIcon, FlagIcon, ShieldCheckIcon, BellIcon, LockClosedIcon, KeyIcon, ClockIcon, FingerPrintIcon, EyeIcon, TrashIcon, ChatBubbleLeftEllipsisIcon, DocumentIcon, UserPlusIcon, QuestionMarkCircleIcon } from '@heroicons/vue/20/solid';
+import { CheckIcon, ChevronUpDownIcon } from '@heroicons/vue/20/solid';
 import { Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions } from '@headlessui/vue'
 import { shallowRef, ref } from 'vue';
 
@@ -196,7 +197,7 @@ const securityListOptions = [
 const generalListOptions = [
     {
         name: "Support",
-        icon: ChatIcon
+        icon: ChatBubbleLeftEllipsisIcon
     },
     {
         name: "Terms of service",
@@ -204,7 +205,7 @@ const generalListOptions = [
     },
     {
         name: "Invite friends",
-        icon: UserAddIcon
+        icon: UserPlusIcon
     },
     {
         name: "Help center",

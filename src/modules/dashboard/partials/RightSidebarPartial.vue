@@ -61,8 +61,8 @@
 <script setup lang="ts">
     import { ref, watch, onBeforeMount } from 'vue';
     import NotificationsHeaderPartial from './NotificationsHeaderPartial.vue';
-    import { HomeIcon, ChevronDownIcon } from '@heroicons/vue/solid';
-    import { IdentificationIcon } from '@heroicons/vue/outline';
+    import { HomeIcon, ChevronDownIcon } from '@heroicons/vue/24/solid';
+    import { IdentificationIcon } from '@heroicons/vue/24/outline';
     import RecentActivityPartial from './RecentActivityPartial.vue';
 
 
