@@ -19,54 +19,13 @@
             </div>
 
             <div class="wf-bg-slate-200 wf-h-full wf-py-4 wf-px-4">
-                <section class="wf-flex wf-flex-col wf-mb-4">
+                <section class="wf-flex wf-flex-col wf-mb-4" v-for="list in optionLists" :key="list.header">
                     <h1 class="wf-text-base wf-font-medium wf-text-gray-700">
-                        Account
+                        {{ list.header }}
                     </h1>
                     
                     <ul class="wf-mt-5">
-                        <li class="wf-flex wf-bg-white wf-rounded wf-py-4 wf-px-2 wf-mt-2.5 first:wf-mt-0 wf-cursor-pointer hover:wf-bg-gray-100 hover:wf-shadow-md wf-transition wf-duration-75" v-for="option in accountListOptions" :key="option.name">
-                            <span class="wf-bg-gray-300 wf-rounded-full wf-p-px wf-shadow wf-mr-3">
-                                <component :is="option.icon" class="wf-w-5 wf-h-5 wf-text-white wf-fill-gray-700" />
-                            </span>
-
-                            <span class="wf-text-sm wf-font-medium wf-text-gray-900">
-                                {{ option.name }}
-                            </span>
-                            <span class="wf-ml-auto wf-bg-gray-300 wf-rounded-full wf-p-px wf-shadow">
-                                <ChevronRightIcon class="wf-w-5 wf-h-5" />
-                            </span>
-                        </li>
-                    </ul>
-                </section>
-                <section class="wf-flex wf-flex-col wf-mb-4">
-                    <h1 class="wf-text-base wf-font-medium wf-text-gray-700">
-                        Security
-                    </h1>
-                    
-                    <ul class="wf-mt-5">
-                        <li class="wf-flex wf-bg-white wf-rounded wf-py-4 wf-px-2 wf-mt-2.5 first:wf-mt-0 wf-cursor-pointer hover:wf-bg-gray-100 hover:wf-shadow-md wf-transition wf-duration-75" v-for="option in securityListOptions" :key="option.name">
-                            <span class="wf-bg-gray-300 wf-rounded-full wf-p-px wf-shadow wf-mr-3">
-                                <component :is="option.icon" class="wf-w-5 wf-h-5 wf-text-white wf-fill-gray-700" />
-                            </span>
-
-                            <span class="wf-text-sm wf-font-medium wf-text-gray-900">
-                                {{ option.name }}
-                            </span>
-                            <span class="wf-ml-auto wf-bg-gray-300 wf-rounded-full wf-p-px wf-shadow">
-                                <ChevronRightIcon class="wf-w-5 wf-h-5" />
-                            </span>
-                        </li>
-                    </ul>
-                </section>
-
-                <section class="wf-flex wf-flex-col wf-mb-4">
-                    <h1 class="wf-text-base wf-font-medium wf-text-gray-700">
-                        General
-                    </h1>
-                    
-                    <ul class="wf-mt-5">
-                        <li class="wf-flex wf-bg-white wf-rounded wf-py-4 wf-px-2 wf-mt-2.5 first:wf-mt-0 wf-cursor-pointer hover:wf-bg-gray-100 hover:wf-shadow-md wf-transition wf-duration-75" v-for="option in generalListOptions" :key="option.name">
+                        <li class="wf-flex wf-bg-white wf-rounded wf-py-4 wf-px-2 wf-mt-2.5 first:wf-mt-0 wf-cursor-pointer hover:wf-bg-gray-100 hover:wf-shadow-md wf-transition wf-duration-75" v-for="option in list.options" :key="option.name" @click="selectOption(option)">
                             <span class="wf-bg-gray-300 wf-rounded-full wf-p-px wf-shadow wf-mr-3">
                                 <component :is="option.icon" class="wf-w-5 wf-h-5 wf-text-white wf-fill-gray-700" />
                             </span>
@@ -82,11 +41,11 @@
                 </section>
             </div>
         </ViewWrapper>
-        <div class="wf-fixed wf-w-full wf-h-full wf-bg-black/50 wf-top-0 wf-left-0 wf-z-0 wf-flex wf-items-end wf-overflow-auto">
+        <div class="wf-fixed wf-w-full wf-h-full wf-bg-black/50 wf-top-0 wf-left-0 wf-z-0 wf-flex wf-items-end wf-overflow-auto" v-if="isEditingOption && selectedOption">
             <div class="wf-w-full wf-min-h-[200px] wf-overflow-auto md:wf-w-1/3 wf-mx-auto">
                 <div class="wf-w-full wf-min-h-[200px] wf-bg-white wf-absolut wf-z-10 wf-bottom-0 wf-rounded-t-2xl wf-flex wf-flex-col wf-items-center wf-pb-10">
                     <h1 class="wf-text-base wf-text-gray-800 wf-font-bold wf-capitalize wf-py-4 wf-border-b wf-border-b-gray-300 wf-w-full wf-text-center">
-                        native currency
+                        {{ selectedOption.name }}
                     </h1>
                     <p class="wf-text-sm wf-text-gray-900 wf-font-medium wf-mt-10 wf-mb-5 wf-px-4">
                         Choose the currency you want all your funds calculated in. Please note, not withstanding any currency you select, we still make use of <strong><small class="wf-text-blue-600">USD</small></strong> internally
@@ -134,93 +93,113 @@
 
 <script setup lang="ts">
 import ViewWrapper from '../partials/ViewWrapper.vue';
-import { onBeforeMount, onMounted } from 'vue';
+import { onBeforeMount, onMounted, type Ref } from 'vue';
 import topbar from '../../../plugins/topbar';
 import { ChevronRightIcon, CurrencyDollarIcon, FlagIcon, ShieldCheckIcon, BellIcon, LockClosedIcon, KeyIcon, ClockIcon, FingerPrintIcon, EyeIcon, TrashIcon, ChatBubbleLeftEllipsisIcon, DocumentIcon, UserPlusIcon, QuestionMarkCircleIcon } from '@heroicons/vue/20/solid';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/vue/20/solid';
 import { Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions } from '@headlessui/vue'
-import { shallowRef, ref } from 'vue';
+import { shallowRef, ref, reactive } from 'vue';
 import ActionBtn from '../../../common/components/Form/ActionBtn.vue';
 
 onBeforeMount(() => topbar.show())
 onMounted(() => topbar.hide());
 
-const accountListOptions = [
+const optionLists = [
     {
-        name: "Native currency",
-        icon: CurrencyDollarIcon,
-        danger: false,
-        input: "select",
-        message: "Select preferred currency for your account",
-        columns: [{
-            label: "Currency",
-            column: "preferred_currency"
-        }],
-        button: "Save"
+        header: "Account",
+        options: [
+            {
+                name: "Native currency",
+                icon: CurrencyDollarIcon,
+                danger: false,
+                input: "select",
+                message: "Select preferred currency for your account",
+                columns: [{
+                    label: "Currency",
+                    column: "preferred_currency"
+                }],
+                button: "Save"
+            },
+            {
+                name: "Country",
+                icon: FlagIcon
+            },
+            {
+                name: "Export private key",
+                icon: ShieldCheckIcon
+            },
+            {
+                name: "Notifications settings",
+                icon: BellIcon
+            }
+        ]
     },
     {
-        name: "Country",
-        icon: FlagIcon
+        header: "Security",
+        options: [
+            {
+                name: "Change password",
+                icon: LockClosedIcon
+            },
+            {
+                name: "Enable 2FA",
+                icon: KeyIcon
+            },
+            {
+                name: "Fund proccessing duration",
+                icon: ClockIcon
+            },
+            {
+                name: "Transaction pin",
+                icon: FingerPrintIcon
+            },
+            {
+                name: "View passphrase",
+                icon: EyeIcon
+            },
+            {
+                name: "Delete account",
+                icon: TrashIcon
+            }
+        ]
     },
     {
-        name: "Export private key",
-        icon: ShieldCheckIcon
-    },
-    {
-        name: "Notifications settings",
-        icon: BellIcon
+        header: "General",
+        options: [
+            {
+                name: "Support",
+                icon: ChatBubbleLeftEllipsisIcon
+            },
+            {
+                name: "Terms of service",
+                icon: DocumentIcon
+            },
+            {
+                name: "Invite friends",
+                icon: UserPlusIcon
+            },
+            {
+                name: "Help center",
+                icon: QuestionMarkCircleIcon
+            },
+            {
+                name: "Report issue",
+                icon: FlagIcon
+            }
+        ]
     }
 ]
+interface Option {
+  name?: string
+}
 
-const securityListOptions = [
-    {
-        name: "Change password",
-        icon: LockClosedIcon
-    },
-    {
-        name: "Enable 2FA",
-        icon: KeyIcon
-    },
-    {
-        name: "Fund proccessing duration",
-        icon: ClockIcon
-    },
-    {
-        name: "Transaction pin",
-        icon: FingerPrintIcon
-    },
-    {
-        name: "View passphrase",
-        icon: EyeIcon
-    },
-    {
-        name: "Delete account",
-        icon: TrashIcon
-    }
-]
-
-const generalListOptions = [
-    {
-        name: "Support",
-        icon: ChatBubbleLeftEllipsisIcon
-    },
-    {
-        name: "Terms of service",
-        icon: DocumentIcon
-    },
-    {
-        name: "Invite friends",
-        icon: UserPlusIcon
-    },
-    {
-        name: "Help center",
-        icon: QuestionMarkCircleIcon
-    },
-    {
-        name: "Report issue",
-        icon: FlagIcon
-    }
-];
+const isEditingOption = ref(false)
+let selectedOption: Ref<Option> = ref({});
+function selectOption(option: Object) {
+    selectedOption.value = option;
+    isEditingOption.value = Object.keys(selectedOption.value).length ? true : false;
+    console.log(selectedOption)
+}
 
 const people = [
   {
