@@ -41,15 +41,13 @@
                 </section>
             </div>
         </ViewWrapper>
-        <div class="wf-fixed wf-w-full wf-h-full wf-bg-black/50 wf-top-0 wf-left-0 wf-z-0 wf-flex wf-items-end wf-overflow-auto" v-if="isEditingOption && selectedOption">
+        <div class="wf-fixed wf-w-full wf-h-full wf-bg-black/50 wf-top-0 wf-left-0 wf-z-0 wf-flex wf-items-end wf-overflow-auto" @click.self="isEditingOption = false" v-if="isEditingOption && selectedOption">
             <div class="wf-w-full wf-min-h-[200px] wf-overflow-auto md:wf-w-1/3 wf-mx-auto">
                 <div class="wf-w-full wf-min-h-[200px] wf-bg-white wf-absolut wf-z-10 wf-bottom-0 wf-rounded-t-2xl wf-flex wf-flex-col wf-items-center wf-pb-10">
                     <h1 class="wf-text-base wf-text-gray-800 wf-font-bold wf-capitalize wf-py-4 wf-border-b wf-border-b-gray-300 wf-w-full wf-text-center">
                         {{ selectedOption.name }}
                     </h1>
-                    <p class="wf-text-sm wf-text-gray-900 wf-font-medium wf-mt-10 wf-mb-5 wf-px-4">
-                        Choose the currency you want all your funds calculated in. Please note, not withstanding any currency you select, we still make use of <strong><small class="wf-text-blue-600">USD</small></strong> internally
-                    </p>
+                    <p class="wf-text-sm wf-text-gray-900 wf-font-medium wf-mt-10 wf-mb-5 wf-px-4 wf-border-b wf-border-b-gray-300 wf-pb-4 wf-w-full wf-text-center" v-html="selectedOption.message"></p>
 
                     <Listbox as="div" v-model="selected" class="wf-w-full wf-mb-5">
                         <div class="wf-relative wf-mt-1 wf-mx-20">
@@ -112,17 +110,23 @@ const optionLists = [
                 name: "Native currency",
                 icon: CurrencyDollarIcon,
                 danger: false,
-                input: "select",
-                message: "Select preferred currency for your account",
-                columns: [{
-                    label: "Currency",
-                    column: "preferred_currency"
-                }],
+                inputs: [
+                    {
+                        "type": "select",
+                        "name": "preferred_currency",
+                        label: "Currency"
+                    }
+                ],
+                message: `
+                    Choose the currency you want all your funds to be calculated in. Please note, not withstanding any currency you select, we still make use of <strong><small class="wf-text-blue-600">USD</small></strong> internally`,
                 button: "Save"
             },
             {
                 name: "Country",
-                icon: FlagIcon
+                icon: FlagIcon,
+                danger: false,
+                input: [],
+                message: `Select your country of residence`,
             },
             {
                 name: "Export private key",
@@ -190,7 +194,8 @@ const optionLists = [
     }
 ]
 interface Option {
-  name?: string
+  name?: string,
+  message?: any
 }
 
 const isEditingOption = ref(false)
