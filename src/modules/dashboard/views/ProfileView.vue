@@ -74,8 +74,7 @@ onBeforeMount(() => topbar.show())
 onMounted(() => topbar.hide());
 
 const isProcessingValues = ref(false);
-const currency = ref('');
-const people = [
+const currencies = [
   {
     id: 1,
     name: 'USD',
@@ -138,7 +137,27 @@ const people = [
   },
 ]
 
-const selected = ref(people[3])
+const countries = [
+    {
+        id: 1,
+        name: "Nigeria",
+        avatar: 'https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    },
+    {
+        id: 2,
+        name: "Cameroon",
+        avatar: 'https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    },
+    {
+        id: 3,
+        name: "Algeria",
+        avatar: 'https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    }
+]
+
+// const
+
+// const selected = ref(currencies[3])
 const optionLists = [
     {
         header: "Account",
@@ -154,12 +173,12 @@ const optionLists = [
                         "name": "preferred_currency",
                         label: "Currency",
                         props: {
-                            options: people,
+                            options: currencies,
                             selectedIndex: 3
                         }
                     },
                 ],
-                modelValue: ref(people[3].name),
+                modelValue: ref(currencies[3].name),
                 message: `
                     Choose the currency you want all your funds to be calculated in. Please note, not withstanding any currency you select, we still make use of <strong><small class="wf-text-blue-600">USD</small></strong> internally`,
                 button: "Save"
@@ -168,8 +187,21 @@ const optionLists = [
                 name: "Country",
                 icon: FlagIcon,
                 danger: false,
-                input: [],
+                inputs: [
+                    {
+                        type: "select",
+                        "component": shallowRef(SelectBox),
+                        "name": "country",
+                        label: "Currency",
+                        props: {
+                            options: countries,
+                            selectedIndex: 0
+                        }
+                    }
+                ],
+                modelValue: ref(countries[0].name),
                 message: `Select your country of residence`,
+                button: "Aswoooore"
             },
             {
                 name: "Export private key",
