@@ -49,9 +49,11 @@
                     </h1>
                     <p class="wf-text-sm wf-text-gray-900 wf-font-medium wf-mt-10 wf-mb-5 wf-px-4 wf-border-b wf-border-b-gray-300 wf-pb-4 wf-w-full wf-text-center" v-html="selectedOption.message"></p>
 
-                    <div v-for="input in selectedOption.inputs" :key="input.name" class="wf-w-full">
-                        <component :is="input.component" @update:value="selectedOption.modelValue = $event" v-bind="input.props" />
-                    </div>
+                    <template v-if="selectedOption.inputs">
+                        <div v-for="input in selectedOption.inputs" :key="input.name" class="wf-w-full">
+                            <component :is="input.component" @update:value="selectedOption.modelValue = $event" v-bind="input.props" />
+                        </div>
+                    </template>
                     <div class="wf-w-full wf-flex">
                         <ActionBtn class="wf-mx-20 wf-w-full" @click="saveSettings(selectedOption.modelValue)">{{ isProcessingValues ? 'Processing' : selectedOption.button }}</ActionBtn>
                     </div>
@@ -69,6 +71,7 @@ import { ChevronRightIcon, CurrencyDollarIcon, FlagIcon, ShieldCheckIcon, BellIc
 import { shallowRef, ref } from 'vue';
 import ActionBtn from '../../../common/components/Form/ActionBtn.vue';
 import SelectBox from '../../../common/components/Form/SelectBox.vue';
+import SwitchBtn from '../../../common/components/Form/SwitchBtn.vue';
 
 onBeforeMount(() => topbar.show())
 onMounted(() => topbar.hide());
@@ -204,12 +207,22 @@ const optionLists = [
                 button: "Aswoooore"
             },
             {
-                name: "Export private key",
-                icon: ShieldCheckIcon
-            },
-            {
                 name: "Notifications settings",
-                icon: BellIcon
+                icon: BellIcon,
+                inputs: [
+                    {
+                        type: "select",
+                        "component": shallowRef(SwitchBtn),
+                        "name": "country",
+                        label: "Currency",
+                        props: {
+                            options: countries,
+                            selectedIndex: 0
+                        }
+                    }
+                ],
+                message: `Update your account notification setings`,
+                button: "Save"
             }
         ]
     },
