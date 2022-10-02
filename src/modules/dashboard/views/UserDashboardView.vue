@@ -51,24 +51,24 @@
                     <div class="wf-flex wf-mt-5">
                         <div class="wf-w-1/3">
                             <div class="wf-rounded-md wf-h-[105px] wf-bg-blue-700/80 wf-w-[calc(100%-10px)] wf-flex wf-flex-col wf-justify-center wf-items-center wf-text-blue-100">
-                                <span class="wf-flex wf-justify-center wf-items-center wf-p-2 wf-rounded-full wf-shadow wf-bg-blue-300">
-                                    <ReplyIcon class="wf-w-6 wf-h-6 wf-rotate-180" />
+                                <span class="wf-flex wf-justify-center wf-items-center wf-p-2 wf-rounded-full wf-shadow wf-bg-blue-400">
+                                    <ArrowUpRightIcon class="wf-w-6 wf-h-6" />
                                 </span>
                                 <span class="wf-text-base wf-font-bold wf-mt-3">Send</span>
                             </div>
                         </div>
                         <div class="wf-w-1/3">
                             <div class="wf-mx-auto wf-rounded-md wf-h-[105px] wf-bg-purple-700/80 wf-w-[calc(100%-10px)] wf-flex wf-flex-col wf-justify-center wf-items-center wf-text-purple-100">
-                                <span class="wf-p-2 wf-rounded-full wf-shadow wf-bg-purple-300">
-                                    <ReplyIcon class="wf-w-6 wf-h-6" />
+                                <span class="wf-p-2 wf-rounded-full wf-shadow wf-bg-purple-400">
+                                    <ArrowUpRightIcon class="wf-w-6 wf-h-6 wf-rotate-180" />
                                 </span>
                                 <span class="wf-text-base wf-font-bold wf-mt-3">Receive</span>
                             </div>
                         </div>
                         <div class="wf-w-1/3">
                             <div class="wf-ml-auto wf-rounded-md wf-h-[105px] wf-bg-orange-700/80 wf-w-[calc(100%-10px)] wf-flex wf-flex-col wf-justify-center wf-items-center wf-text-orange-100">
-                                <span class="wf-p-2 wf-rounded-full wf-shadow wf-bg-orange-300">
-                                    <ViewGridIcon class="wf-w-6 wf-h-6" />
+                                <span class="wf-p-2 wf-rounded-full wf-shadow wf-bg-orange-400">
+                                    <SquaresPlusIcon class="wf-w-6 wf-h-6" />
                                 </span>
                                 <span class="wf-text-base wf-font-bold wf-mt-3">More</span>
                             </div>
@@ -85,7 +85,7 @@
                             <div class="wf-w-1/5 md:wf-hidden wf-flex wf-flex-col wf-items-center wf-mx-px first:wf-ml-0">
                                 <figure class="wf-p-1 wf-bg-gray-100 wf-border wf-border-gray-300 wf-rounded-full">
                                     <span class="wf-bg-black wf-rounded-full wf-flex wf-p-1.5 wf-justify-center wf-items-center wf-text-gray-100">
-                                        <SearchIcon class="wf-w-6 wf-h-6" />
+                                        <MagnifyingGlassIcon class="wf-w-6 wf-h-6" />
                                     </span>
                                     
                                 </figure>
@@ -121,8 +121,8 @@
 </template>
 
 <script setup lang="ts">
-    import { ViewGridIcon, ReplyIcon } from '@heroicons/vue/solid'
-    import { PlusIcon, SearchIcon, CreditCardIcon, ShoppingCartIcon } from '@heroicons/vue/outline';
+    import {  ArrowUpRightIcon, SquaresPlusIcon } from '@heroicons/vue/20/solid'
+    import { PlusIcon, MagnifyingGlassIcon, CreditCardIcon, ShoppingCartIcon } from '@heroicons/vue/24/outline';
     import CoinDataPartial from '../partials/CoinDataPartial.vue';
     import SearchBoxHeaderPartial from '../partials/SearchBoxHeaderPartial.vue';
     import ContentAreaPartial from '../partials/ContentAreaPartial.vue';

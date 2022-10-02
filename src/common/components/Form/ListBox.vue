@@ -12,7 +12,7 @@
                     </span>
                 </span>
                 <span class="wf-ml-3 wf-absolute wf-inset-y-0 wf-right-0 wf-flex wf-items-center wf-pr-2 wf-pointer-events-none">
-                    <SelectorIcon class="wf-h-5 wf-w-5 wf-text-gray-400" />
+                    <!-- <SelectorIcon class="wf-h-5 wf-w-5 wf-text-gray-400" /> -->
                 </span>
             </button>
 
@@ -37,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-    import { SelectorIcon, CheckIcon } from '@heroicons/vue/solid'
+    import {  CheckIcon } from '@heroicons/vue/20/solid'
     import { ref } from 'vue';
 
     const isSelecting = ref(false);
@@ -58,7 +58,7 @@
     ]
 
     const selected = ref(options[2]);
-    function selectOption(id) {
+    function selectOption(id: number) {
         selected.value = options[id];
         isSelecting.value = false;
     }
