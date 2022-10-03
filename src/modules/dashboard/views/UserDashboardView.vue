@@ -135,7 +135,6 @@
     import topbar from '../../../plugins/topbar';
 
     onBeforeMount(async () => {
-        // let cryptoBalance = await Moralis.Cloud.run("cryptoBalance", { id : current.id});
         topbar.show();
 
     })
